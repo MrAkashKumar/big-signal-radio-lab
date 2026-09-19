@@ -5,5 +5,6 @@ import './style.css';
 import './workshop-theme.css';
 import './human-radio.css';
 import './interface-polish.css';
+import './student-theme.css';
 export type { Graphics } from './missions';
 createRoot(document.getElementById('root')!).render(<StrictMode><ProductApp/></StrictMode>);

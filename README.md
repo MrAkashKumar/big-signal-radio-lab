@@ -1,5 +1,7 @@
 # BIG SIGNAL — Radio Science Lab
 
+![BIG SIGNAL radio logo](docs/images/bigsignal-logo.svg)
+
 ![BIG SIGNAL — Radio Science Lab. See the signal. Understand the science.](docs/images/bigsignal-banner.svg)
 
 **See the signal. Understand the science.**
@@ -41,13 +43,36 @@ Open the local URL printed by Vite (normally `http://127.0.0.1:5173/`). Start wi
 
 Stop the development server with `Ctrl+C` in its terminal. If the normal port is occupied, use the URL Vite prints instead.
 
+### Run it again after setup
+
+Open a terminal in the cloned repository (the folder containing `package.json`) and run:
+
+```sh
+bun run dev
+```
+
+Keep that terminal running, then open the printed address in your browser. Saving a UI file refreshes the development preview automatically. For the optional tutor, open a second terminal and follow [Tutor setup](docs/TUTOR_SETUP.md); it is not required to explore the lab.
+
+To check a production build locally:
+
+```sh
+bun run build
+bun x vite preview apps/web --host 127.0.0.1 --port 4180
+```
+
+Open `http://127.0.0.1:4180/`. This is a local preview, not a public deployment. For tutor requests through this preview, include its exact origin in the tutor server's `APP_ORIGIN` configuration.
+
 ## Website preview
 
-These are actual captures of the local website, taken on 19 September 2026 at the available browser width. The banner above is a project illustration, not a screenshot or calculated radio path. Layout adapts to screen size.
+The refreshed interface uses a mint, violet, and amber radio logo, warm light surfaces, teal selected navigation, and pastel mission cards. The logo plays a short arrival animation (under four seconds); reduced-motion settings disable it. Existing animated scenes retain their pause controls. Color and animation never determine a simulation result.
 
-| Start with a human story | Explore the illustrated challenge |
+These are actual captures of the local website, refreshed on 19 September 2026 after the logo change. The banner above is a project illustration, not a screenshot or calculated radio path. Layout adapts to screen size.
+
+![Updated BIG SIGNAL interface with colorful logo and student-friendly theme](docs/images/website-student-refresh.jpg)
+
+| Mobile layout with the new logo | Student mission choices |
 | --- | --- |
-| ![Website home: Phones are down. Hope isn't. with navigation and hospital mission button.](docs/images/website-home.jpg) | ![Website rescue story: a hospital, obstructing terrain, hilltop relay, and relief base.](docs/images/website-rescue-story.jpg) |
+| ![Mobile website with colorful radio logo and wrapping navigation](docs/images/website-student-mobile.jpg) | ![Pastel guided-learning and hospital mission cards](docs/images/website-student-missions.jpg) |
 
 The rescue illustration explains a scenario; only the laboratory's engine results assess a modeled connection. See [how to update these pictures](docs/images/README.md).
 
@@ -152,6 +177,8 @@ bun x vite preview apps/web --host 127.0.0.1 --port 4180
 The production artifact is `apps/web/dist`. Load the preview once and wait for **Ready offline**. The core lessons, simulations, and bundled assets then work on an offline reload. Close old tabs and reopen after updates. The development server does not install an offline cache.
 
 ## Documentation
+
+Browse the [complete documentation index](docs/README.md) for all product, engineering, model, source, verification, and planning documents.
 
 | Document | Who it helps / what it answers |
 | --- | --- |

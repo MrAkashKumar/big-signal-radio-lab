@@ -1,0 +1,108 @@
+/* Student-facing finish. Keep dark simulation scenes and result semantics intact. */
+:root {
+  --workshop-paper: #f8f8f3;
+  --workshop-sheet: #fff;
+  --workshop-ink: #203b43;
+  --workshop-muted: #52686c;
+  --workshop-line: #d4e1dd;
+  --workshop-blue: #226d77;
+  --workshop-signal: #f5cf72;
+}
+.product-app {
+  background: radial-gradient(ellipse at 95% 0, #e5f3ed 0, transparent 38%), var(--workshop-paper);
+  --section-color: #176d5f;
+  --section-tint: #e7f5ef;
+}
+.product-app .product-header { border-bottom-color: #d5e4dc; }
+.product-app .signal-mark { color: #177563; }
+.product-app .primary-nav { background: #eef3ed; border-color: #d3e1d7; border-radius: 16px; padding: 8px; }
+.product-app .primary-nav button { border-radius: 10px; min-height: 46px; }
+.product-app .primary-nav button:hover { background: #fff; color: #244a48; border-color: #c1d5ca; }
+.product-app .primary-nav button[aria-current=page],
+.product-app .primary-nav button[aria-current=page]:hover {
+  color: #fff; background: var(--section-color); border-color: var(--section-color);
+  box-shadow: 0 3px 8px #203b4315;
+}
+.product-app .primary-nav button[aria-current=page] .nav-section-dot { background: #fff; }
+.product-app .secondary-nav button { min-height: 44px; }
+.product-app .secondary-nav button[aria-current=page] { background: #e5f2eb; color: #1f5c4e; border-color: #afcfc0; }
+.product-app :is(button, input, select, textarea, summary):focus-visible { outline: 3px solid #8351c6; outline-offset: 3px; }
+.product-app .onboarding { padding-block: 36px 48px; }
+.product-app .onboarding .eyebrow {
+  display: inline-block; padding: 9px 12px; border: 1px solid #c7ded0;
+  background: #edf7ee; color: #29624d; border-radius: 30px; line-height: 1.5;
+}
+.product-app .onboarding h1 { letter-spacing: -.045em; line-height: 1.06; }
+.product-app .onboarding h1 em { color: #176d5f; }
+.product-app .onboarding p { color: #4b646a; }
+.product-app .primary { border-radius: 13px; box-shadow: 0 6px 16px #176d5f1c; }
+.product-app .primary:hover:not(:disabled) { background: #115447; color: #fff; border-color: #115447; }
+.product-app .rescue-scene { border-radius: 24px; box-shadow: 0 15px 35px #213e421c; }
+.product-app .launchpad-cards { gap: 20px; }
+.product-app .launchpad-cards > button {
+  border-radius: 20px; padding: 27px; border-top: 4px solid var(--card-accent);
+  box-shadow: 0 4px 12px #203b4307;
+}
+.product-app .launchpad-cards > button h3 { font-size: 23px; line-height: 1.2; }
+.product-app .launchpad-cards > button p { color: #45606a; }
+.product-app .launchpad-icon { width: 52px; height: 52px; border-radius: 16px; }
+.product-app .explain-strip { border-style: solid; background: #fffdf5; border-color: #e5d8b4; border-radius: 16px; }
+.product-app .explain-strip > span { color: #77571d; }
+.product-app .course-tiers button { border-radius: 15px; }
+.product-app .course-tiers button:not([aria-pressed=true]):hover { background: #f1f8f3; color: #203b43; border-color: #82bca5; }
+.product-app .course-tiers button[aria-pressed=true],
+.product-app .course-tiers button[aria-pressed=true]:hover { background: #206957; color: #fff; border-color: #206957; }
+.product-app .lesson-card { border-radius: 15px; box-shadow: 0 3px 10px #203b4305; }
+.product-app .lesson-card:not(:disabled):hover { background: #f0f8f3; border-color: #82bca5; }
+.product-app :is(.surface, .radio-guide, .tab-story) { border-radius: 17px; }
+.product-app .tab-story { box-shadow: 0 5px 20px #203b4309; }
+.product-app .tab-story header { border-bottom-color: #d4e1dd; }
+.product-app .tab-story-steps button { border-radius: 11px; }
+.product-app .tab-story-steps button:not([aria-pressed=true]):hover { background: #e7f0ee; color: #234a49; }
+.product-app .tab-story-steps button[aria-pressed=true]:hover { background: var(--story-accent); color: #fff; }
+.product-app .experiment-bar { border-radius: 14px; box-shadow: 0 3px 10px #203b4305; }
+.product-app .experiment-workspace .configure { border-radius: 16px; border-color: #c5dcd5; }
+.product-app .configure .panel-title { background: #e5f3eb; border-bottom-color: #c5dcd5; }
+.product-app .configure .panel-title h2 { color: #214e44; }
+.product-app .configure-action { background: #f2f7ef; border-top-color: #c8dbce; }
+.product-app .configure-action .send:not(:disabled) { background: #f5cf72; color: #3d321a; border-color: #af852b; box-shadow: 0 3px 0 #af852b; }
+.product-app .configure-action .send:hover:not(:disabled) { background: #ebba48; color: #30260e; border-color: #8d681a; }
+.product-app .configure-action .send:disabled { background: #ebe7db; color: #626354; opacity: 1; border-color: #bcbba9; box-shadow: none; }
+.product-app .configure-action .choice-grid button { background: #fff; color: #2e514e; border-color: #c2d5cc; min-height: 44px; border-radius: 9px; }
+.product-app .configure-action .choice-grid button:hover { background: #e1eee6; color: #23483e; }
+.product-app .configure-action .choice-grid button[aria-pressed=true],
+.product-app .configure-action .choice-grid button[aria-pressed=true]:hover { background: #226d77; color: #fff; border-color: #226d77; }
+.product-app .metric-grid > div { border-radius: 13px; }
+.product-app .metric-grid > div:nth-child(2) { background: #f2edfa; }
+.product-app .metric-grid > div:nth-child(4) { background: #e9f5ed; }
+.product-app .radio-guide-grid article { border: 1px solid #d7e4df; border-radius: 13px; }
+.product-app :is(.workspace-views,.result-tabs,.mobile-workspace-switch,.lesson-phases) button[aria-pressed=true],
+.product-app :is(.workspace-views,.result-tabs,.mobile-workspace-switch,.lesson-phases) button[aria-pressed=true]:hover { background: #226d77; color: #fff; border-color: #226d77; }
+.product-app :is(.df-focus-nav,.df-control-nav) button[aria-current],
+.product-app :is(.df-focus-nav,.df-control-nav) button[aria-current]:hover,
+.product-app .al-tabs button[aria-pressed=true],
+.product-app .al-tabs button[aria-pressed=true]:hover { background: #226d77; color: #fff; border-color: #226d77; }
+.signal-logo { display: block; width: 54px; height: 54px; flex-shrink: 0; filter: drop-shadow(0 3px 5px #123b4518); }
+.signal-logo-wave { transform-origin: 23px 33px; }
+@keyframes brand-signal-arrival { 0%, 100% { opacity: 1; transform: scale(1); } 45% { opacity: .65; transform: scale(.91); } }
+@media (prefers-reduced-motion: no-preference) {
+  .signal-logo-wave-one { animation: brand-signal-arrival 1.2s ease-in-out 3; }
+  .signal-logo-wave-two { animation: brand-signal-arrival 1.2s ease-in-out .15s 3; }
+}
+/* Motion responds to intent; existing scene animations retain their pause controls. */
+@media (prefers-reduced-motion: no-preference) and (hover: hover) {
+  .product-app .launchpad-cards > button { transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease; }
+  .product-app .launchpad-cards > button:hover { transform: translateY(-4px); box-shadow: 0 12px 24px #203b4312; }
+}
+@media (max-width: 760px) {
+  .product-app .primary-nav { padding: 6px; border-radius: 13px; }
+  .product-app .onboarding { padding-block: 20px 30px; gap: 24px; }
+  .product-app .onboarding h1 { font-size: clamp(39px, 10vw, 60px); }
+  .product-app .onboarding .eyebrow { font-size: 9px; }
+  .product-app .launchpad-cards { gap: 13px; }
+  .product-app .launchpad-cards > button { padding: 22px; }
+  .product-app .rescue-scene { border-radius: 17px; }
+  .product-app .configure-action .choice-grid button { padding-inline: 5px; }
+  .product-app .course-tiers { flex-wrap: wrap; }
+  .product-app .course-tiers button { min-width: 0; flex: 1 1 130px; }
+}

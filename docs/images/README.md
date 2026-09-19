@@ -5,6 +5,10 @@ The root README embeds local images so GitHub can display them without a third-p
 | Asset | Purpose | Source |
 | --- | --- | --- |
 | `bigsignal-banner.svg` | Project name, Radio Science Lab subtitle, and learning promise | Repository-authored vector illustration; conceptual path, not simulation evidence |
+| `bigsignal-logo.svg` | Static copy of the mint, violet, and amber application mark | Repository-authored SVG; the app version adds brief reduced-motion-aware animation |
+| `website-student-refresh.jpg` | Refreshed desktop UI and new logo | Actual local capture, 19 September 2026, 1280 × 900 |
+| `website-student-mobile.jpg` | Refreshed mobile UI and new logo | Actual local capture, 19 September 2026, 390 × 844 |
+| `website-student-missions.jpg` | Pastel student mission cards | Cropped local browser capture, 19 September 2026 |
 | `website-home.jpg` | Actual website introduction and navigation | Local browser capture, 19 September 2026 |
 | `website-rescue-story.jpg` | Actual rescue-story interface | Local browser capture, 19 September 2026; the app labels the terrain and routes illustrative |
 

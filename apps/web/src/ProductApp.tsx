@@ -29,6 +29,7 @@ import {
 import type { ProductState } from "./productStorage";
 import type { PhysicsSettings } from "../../../packages/simulation/src/laboratory";
 import { RescueScene, TabStory } from "./features/guides";
+import { SignalLogo } from "./SignalLogo";
 import { WalkthroughConsole } from "./features/walkthrough";
 import { mainPages, toolPages, pageLabels, type Page } from "./app/navigation";
 import { walkthroughStops, walkthroughLanguages } from "../../../content/explanations/walkthrough";
@@ -384,9 +385,9 @@ function Product() {
           onClick={() => navigate("learn")}
           aria-label="BIG SIGNAL home"
         >
-          <span className="signal-mark">◖)))</span>
+          <SignalLogo />
           <span>
-            BIG SIGNAL<small>A radio science workshop</small>
+            BIG SIGNAL<small>Radio Science Lab</small>
           </span>
         </button>
         <div className="header-actions">
