@@ -1,0 +1,193 @@
+.country-toolbar {
+  position: absolute;
+  top: 94px;
+  left: 20px;
+  width: 235px;
+  z-index: 4;
+}
+.country-toolbar > label {
+  display: block;
+  font: 8px monospace;
+  letter-spacing: 1.7px;
+  color: #a8c3c2;
+  margin-bottom: 9px;
+}
+.country-search-wrap {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0 12px;
+  background: #0c1a20eb;
+  border: 1px solid #40575b;
+  border-radius: 8px;
+  box-shadow: 0 5px 20px #0003;
+}
+.country-search-wrap > span {
+  font-size: 24px;
+  color: #d1f888;
+}
+.country-search-wrap input {
+  width: 100%;
+  min-width: 0;
+  background: none;
+  border: 0;
+  padding: 12px 0;
+  color: #e5f0ea;
+  font-size: 12px;
+  outline-offset: 0;
+}
+.country-search-wrap input::placeholder {
+  color: #a0b5b6;
+}
+.country-options {
+  position: absolute;
+  top: 65px;
+  left: 0;
+  right: 0;
+  max-height: 280px;
+  overflow: auto;
+  background: #10242a;
+  border: 1px solid #49605f;
+  border-radius: 8px;
+  box-shadow: 0 12px 30px #0007;
+  z-index: 8;
+  padding: 5px;
+}
+.country-options button {
+  display: block;
+  width: 100%;
+  text-align: left;
+  border: 0;
+  padding: 10px;
+}
+.country-options b {
+  font-size: 12px;
+  font-weight: 500;
+}
+.country-options small {
+  font-size: 9px;
+  letter-spacing: 0;
+  margin-top: 4px;
+}
+.country-options p {
+  font-size: 11px;
+  padding: 10px;
+}
+.country-toolbar .labels-toggle {
+  font-size: 9px;
+  padding: 6px 9px;
+  margin-top: 8px;
+  border-color: #30484c;
+  background: #102028c9;
+}
+.scene .map-navigation {
+  position: absolute;
+  right: 20px;
+  top: 174px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  z-index: 3;
+}
+.map-navigation button {
+  width: 33px;
+  height: 32px;
+  padding: 0;
+  font: 17px monospace;
+  border-color: #3b5559;
+  background: #0d1d25e8;
+  box-shadow: 0 3px 12px #0002;
+}
+.map-navigation button:nth-last-child(-n + 2) {
+  font-size: 10px;
+}
+.scene .country-card {
+  position: absolute;
+  left: 22px;
+  bottom: 24px;
+  max-width: 310px;
+  min-width: 240px;
+  padding: 18px 40px 18px 18px;
+  border: 1px solid #6b835a;
+  border-radius: 10px;
+  background: #11262bed;
+  z-index: 3;
+  box-shadow: 0 8px 30px #0005;
+}
+.country-card h3 {
+  font-size: 23px;
+  letter-spacing: -0.5px;
+  margin: 9px 0;
+  color: #e2ffc0;
+  font-weight: 500;
+}
+.country-card p {
+  font: 12px monospace;
+  margin: 10px 0;
+  color: #d4e4df;
+}
+.country-card small {
+  font-size: 9px;
+  color: #a7bcba;
+}
+.country-card button {
+  position: absolute;
+  right: 8px;
+  top: 8px;
+  border: 0;
+  font-size: 19px;
+  padding: 2px 7px;
+}
+.scene-card:has(.country-card) .scene-caption {
+  display: none;
+}
+.scene .country-map-key {
+  right: 20px;
+  top: 90px;
+  font-size: 8px;
+  opacity: 0.8;
+}
+.country-toolbar input:focus-visible {
+  outline: 2px solid #d1f888;
+}
+.country-map-key {
+  pointer-events: none;
+}
+@media (max-width: 800px) {
+  .country-toolbar {
+    top: 85px;
+    left: 14px;
+    width: 195px;
+  }
+  .scene .country-map-key {
+    display: none;
+  }
+  .scene .map-navigation {
+    right: 12px;
+    top: 148px;
+    gap: 3px;
+  }
+  .map-navigation button {
+    width: 30px;
+    height: 29px;
+  }
+  .scene .country-card {
+    left: 14px;
+    bottom: 18px;
+    min-width: 210px;
+    max-width: 260px;
+    padding: 14px 34px 14px 14px;
+  }
+  .country-card h3 {
+    font-size: 20px;
+  }
+  .country-options {
+    max-height: 225px;
+  }
+  .country-toolbar > label {
+    font-size: 7px;
+  }
+  .country-toolbar .labels-toggle {
+    font-size: 8px;
+  }
+}

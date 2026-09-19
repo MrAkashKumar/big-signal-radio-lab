@@ -1,0 +1,726 @@
+{
+  "vhf-clear": {
+    "schemaVersion": 1,
+    "id": "vhf-clear",
+    "title": "VHF line of sight",
+    "difficulty": "beginner",
+    "frequencyHz": 145000000,
+    "modeId": "fm-voice",
+    "transmitter": {
+      "position": {
+        "latitudeDeg": 0,
+        "longitudeDeg": 0,
+        "altitudeM": 0
+      },
+      "powerDbm": 36.98970004336019,
+      "antenna": {
+        "id": "tx-vertical",
+        "type": "vertical",
+        "gainDbi": 2,
+        "heightM": 2,
+        "polarization": "vertical"
+      },
+      "feedline": {
+        "lengthM": 2,
+        "lossDb": 1
+      }
+    },
+    "receiver": {
+      "position": {
+        "latitudeDeg": 0,
+        "longitudeDeg": 0.04,
+        "altitudeM": 0
+      },
+      "antenna": {
+        "id": "rx-vertical",
+        "type": "vertical",
+        "gainDbi": 2,
+        "heightM": 2,
+        "polarization": "vertical"
+      },
+      "feedline": {
+        "lengthM": 2,
+        "lossDb": 1
+      },
+      "bandwidthHz": 12500,
+      "noiseFigureDb": 5
+    },
+    "environment": {
+      "model": "vhf-terrain",
+      "temperatureK": 290,
+      "externalNoiseDb": 6,
+      "effectiveEarthRadiusFactor": 1.3333333333333333
+    },
+    "time": {
+      "utcIso": "2026-09-13T00:00:00.000Z"
+    }
+  },
+  "vhf-ridge": {
+    "schemaVersion": 1,
+    "id": "vhf-ridge",
+    "title": "A ridge and a noisy receiver",
+    "difficulty": "beginner",
+    "frequencyHz": 145000000,
+    "modeId": "fm-voice",
+    "transmitter": {
+      "position": {
+        "latitudeDeg": 0,
+        "longitudeDeg": 0,
+        "altitudeM": 0
+      },
+      "powerDbm": 36.98970004336019,
+      "antenna": {
+        "id": "tx-vertical",
+        "type": "vertical",
+        "gainDbi": -7,
+        "heightM": 2,
+        "polarization": "vertical"
+      },
+      "feedline": {
+        "lengthM": 2,
+        "lossDb": 1
+      }
+    },
+    "receiver": {
+      "position": {
+        "latitudeDeg": 0,
+        "longitudeDeg": 0.04,
+        "altitudeM": 0
+      },
+      "antenna": {
+        "id": "rx-vertical",
+        "type": "vertical",
+        "gainDbi": -7,
+        "heightM": 2,
+        "polarization": "vertical"
+      },
+      "feedline": {
+        "lengthM": 2,
+        "lossDb": 1
+      },
+      "bandwidthHz": 12500,
+      "noiseFigureDb": 5
+    },
+    "environment": {
+      "model": "vhf-terrain",
+      "temperatureK": 290,
+      "externalNoiseDb": 47,
+      "effectiveEarthRadiusFactor": 1.3333333333333333,
+      "obstruction": {
+        "fraction": 0.01,
+        "altitudeM": 9
+      }
+    },
+    "time": {
+      "utcIso": "2026-09-13T00:00:00.000Z"
+    }
+  },
+  "vhf-ridge-power": {
+    "schemaVersion": 1,
+    "id": "vhf-ridge-power",
+    "title": "Same ridge, ten times the power",
+    "difficulty": "beginner",
+    "frequencyHz": 145000000,
+    "modeId": "fm-voice",
+    "transmitter": {
+      "position": {
+        "latitudeDeg": 0,
+        "longitudeDeg": 0,
+        "altitudeM": 0
+      },
+      "powerDbm": 46.98970004336019,
+      "antenna": {
+        "id": "tx-vertical",
+        "type": "vertical",
+        "gainDbi": -7,
+        "heightM": 2,
+        "polarization": "vertical"
+      },
+      "feedline": {
+        "lengthM": 2,
+        "lossDb": 1
+      }
+    },
+    "receiver": {
+      "position": {
+        "latitudeDeg": 0,
+        "longitudeDeg": 0.04,
+        "altitudeM": 0
+      },
+      "antenna": {
+        "id": "rx-vertical",
+        "type": "vertical",
+        "gainDbi": -7,
+        "heightM": 2,
+        "polarization": "vertical"
+      },
+      "feedline": {
+        "lengthM": 2,
+        "lossDb": 1
+      },
+      "bandwidthHz": 12500,
+      "noiseFigureDb": 5
+    },
+    "environment": {
+      "model": "vhf-terrain",
+      "temperatureK": 290,
+      "externalNoiseDb": 47,
+      "effectiveEarthRadiusFactor": 1.3333333333333333,
+      "obstruction": {
+        "fraction": 0.01,
+        "altitudeM": 9
+      }
+    },
+    "time": {
+      "utcIso": "2026-09-13T00:00:00.000Z"
+    }
+  },
+  "vhf-ridge-height": {
+    "schemaVersion": 1,
+    "id": "vhf-ridge-height",
+    "title": "Same ridge, a 15 m antenna",
+    "difficulty": "beginner",
+    "frequencyHz": 145000000,
+    "modeId": "fm-voice",
+    "transmitter": {
+      "position": {
+        "latitudeDeg": 0,
+        "longitudeDeg": 0,
+        "altitudeM": 0
+      },
+      "powerDbm": 36.98970004336019,
+      "antenna": {
+        "id": "tx-vertical",
+        "type": "vertical",
+        "gainDbi": -7,
+        "heightM": 15,
+        "polarization": "vertical"
+      },
+      "feedline": {
+        "lengthM": 2,
+        "lossDb": 1
+      }
+    },
+    "receiver": {
+      "position": {
+        "latitudeDeg": 0,
+        "longitudeDeg": 0.04,
+        "altitudeM": 0
+      },
+      "antenna": {
+        "id": "rx-vertical",
+        "type": "vertical",
+        "gainDbi": -7,
+        "heightM": 2,
+        "polarization": "vertical"
+      },
+      "feedline": {
+        "lengthM": 2,
+        "lossDb": 1
+      },
+      "bandwidthHz": 12500,
+      "noiseFigureDb": 5
+    },
+    "environment": {
+      "model": "vhf-terrain",
+      "temperatureK": 290,
+      "externalNoiseDb": 47,
+      "effectiveEarthRadiusFactor": 1.3333333333333333,
+      "obstruction": {
+        "fraction": 0.01,
+        "altitudeM": 9
+      }
+    },
+    "time": {
+      "utcIso": "2026-09-13T00:00:00.000Z"
+    }
+  },
+  "vhf-horizon": {
+    "schemaVersion": 1,
+    "id": "vhf-horizon",
+    "title": "Beyond the modeled radio horizon",
+    "difficulty": "beginner",
+    "frequencyHz": 145000000,
+    "modeId": "fm-voice",
+    "transmitter": {
+      "position": {
+        "latitudeDeg": 0,
+        "longitudeDeg": 0,
+        "altitudeM": 0
+      },
+      "powerDbm": 36.98970004336019,
+      "antenna": {
+        "id": "tx-vertical",
+        "type": "vertical",
+        "gainDbi": 2,
+        "heightM": 2,
+        "polarization": "vertical"
+      },
+      "feedline": {
+        "lengthM": 2,
+        "lossDb": 1
+      }
+    },
+    "receiver": {
+      "position": {
+        "latitudeDeg": 0,
+        "longitudeDeg": 1,
+        "altitudeM": 0
+      },
+      "antenna": {
+        "id": "rx-vertical",
+        "type": "vertical",
+        "gainDbi": 2,
+        "heightM": 2,
+        "polarization": "vertical"
+      },
+      "feedline": {
+        "lengthM": 2,
+        "lossDb": 1
+      },
+      "bandwidthHz": 12500,
+      "noiseFigureDb": 5
+    },
+    "environment": {
+      "model": "vhf-terrain",
+      "temperatureK": 290,
+      "externalNoiseDb": 6,
+      "effectiveEarthRadiusFactor": 1.3333333333333333
+    },
+    "time": {
+      "utcIso": "2026-09-13T00:00:00.000Z"
+    }
+  },
+  "hf-day": {
+    "schemaVersion": 1,
+    "id": "hf-day",
+    "title": "HF daytime skywave",
+    "difficulty": "beginner",
+    "frequencyHz": 14000000,
+    "modeId": "ssb",
+    "transmitter": {
+      "position": {
+        "latitudeDeg": 0,
+        "longitudeDeg": 0,
+        "altitudeM": 0
+      },
+      "powerDbm": 50,
+      "antenna": {
+        "id": "tx-dipole",
+        "type": "dipole",
+        "gainDbi": 2.15,
+        "heightM": 10,
+        "polarization": "horizontal"
+      },
+      "feedline": {
+        "lengthM": 2,
+        "lossDb": 1
+      }
+    },
+    "receiver": {
+      "position": {
+        "latitudeDeg": 0,
+        "longitudeDeg": 20,
+        "altitudeM": 0
+      },
+      "antenna": {
+        "id": "rx-dipole",
+        "type": "dipole",
+        "gainDbi": 2.15,
+        "heightM": 10,
+        "polarization": "horizontal"
+      },
+      "feedline": {
+        "lengthM": 2,
+        "lossDb": 1
+      },
+      "bandwidthHz": 2400,
+      "noiseFigureDb": 5
+    },
+    "environment": {
+      "model": "hf-skywave",
+      "temperatureK": 290,
+      "externalNoiseDb": 20.820738179602394,
+      "effectiveHeightM": 300000,
+      "criticalFrequencyMHzDay": 7,
+      "criticalFrequencyMHzNight": 3,
+      "absorptionDbAt10MHzDay": 4,
+      "absorptionDbAt10MHzNight": 0.5,
+      "groundReflectionLossDb": 3,
+      "maxHops": 6
+    },
+    "time": {
+      "utcIso": "2026-09-13T11:20:00.000Z"
+    }
+  },
+  "hf-night": {
+    "schemaVersion": 1,
+    "id": "hf-night",
+    "title": "Same HF circuit at night",
+    "difficulty": "beginner",
+    "frequencyHz": 14000000,
+    "modeId": "ssb",
+    "transmitter": {
+      "position": {
+        "latitudeDeg": 0,
+        "longitudeDeg": 0,
+        "altitudeM": 0
+      },
+      "powerDbm": 50,
+      "antenna": {
+        "id": "tx-dipole",
+        "type": "dipole",
+        "gainDbi": 2.15,
+        "heightM": 10,
+        "polarization": "horizontal"
+      },
+      "feedline": {
+        "lengthM": 2,
+        "lossDb": 1
+      }
+    },
+    "receiver": {
+      "position": {
+        "latitudeDeg": 0,
+        "longitudeDeg": 20,
+        "altitudeM": 0
+      },
+      "antenna": {
+        "id": "rx-dipole",
+        "type": "dipole",
+        "gainDbi": 2.15,
+        "heightM": 10,
+        "polarization": "horizontal"
+      },
+      "feedline": {
+        "lengthM": 2,
+        "lossDb": 1
+      },
+      "bandwidthHz": 2400,
+      "noiseFigureDb": 5
+    },
+    "environment": {
+      "model": "hf-skywave",
+      "temperatureK": 290,
+      "externalNoiseDb": 20.820738179602394,
+      "effectiveHeightM": 300000,
+      "criticalFrequencyMHzDay": 7,
+      "criticalFrequencyMHzNight": 3,
+      "absorptionDbAt10MHzDay": 4,
+      "absorptionDbAt10MHzNight": 0.5,
+      "groundReflectionLossDb": 3,
+      "maxHops": 6
+    },
+    "time": {
+      "utcIso": "2026-09-13T23:20:00.000Z"
+    }
+  },
+  "hf-above-muf": {
+    "schemaVersion": 1,
+    "id": "hf-above-muf",
+    "title": "The ionosphere has declined your request",
+    "difficulty": "beginner",
+    "frequencyHz": 30000000,
+    "modeId": "ssb",
+    "transmitter": {
+      "position": {
+        "latitudeDeg": 0,
+        "longitudeDeg": 0,
+        "altitudeM": 0
+      },
+      "powerDbm": 50,
+      "antenna": {
+        "id": "tx-dipole",
+        "type": "dipole",
+        "gainDbi": 2.15,
+        "heightM": 10,
+        "polarization": "horizontal"
+      },
+      "feedline": {
+        "lengthM": 2,
+        "lossDb": 1
+      }
+    },
+    "receiver": {
+      "position": {
+        "latitudeDeg": 0,
+        "longitudeDeg": 20,
+        "altitudeM": 0
+      },
+      "antenna": {
+        "id": "rx-dipole",
+        "type": "dipole",
+        "gainDbi": 2.15,
+        "heightM": 10,
+        "polarization": "horizontal"
+      },
+      "feedline": {
+        "lengthM": 2,
+        "lossDb": 1
+      },
+      "bandwidthHz": 2400,
+      "noiseFigureDb": 5
+    },
+    "environment": {
+      "model": "hf-skywave",
+      "temperatureK": 290,
+      "externalNoiseDb": 11.354332115017655,
+      "effectiveHeightM": 300000,
+      "criticalFrequencyMHzDay": 7,
+      "criticalFrequencyMHzNight": 3,
+      "absorptionDbAt10MHzDay": 4,
+      "absorptionDbAt10MHzNight": 0.5,
+      "groundReflectionLossDb": 3,
+      "maxHops": 6
+    },
+    "time": {
+      "utcIso": "2026-09-13T11:20:00.000Z"
+    }
+  },
+  "hf-absorption": {
+    "schemaVersion": 1,
+    "id": "hf-absorption",
+    "title": "Low-frequency daytime absorption",
+    "difficulty": "beginner",
+    "frequencyHz": 1800000,
+    "modeId": "ssb",
+    "transmitter": {
+      "position": {
+        "latitudeDeg": 0,
+        "longitudeDeg": 0,
+        "altitudeM": 0
+      },
+      "powerDbm": 50,
+      "antenna": {
+        "id": "tx-dipole",
+        "type": "dipole",
+        "gainDbi": 2.15,
+        "heightM": 10,
+        "polarization": "horizontal"
+      },
+      "feedline": {
+        "lengthM": 2,
+        "lossDb": 1
+      }
+    },
+    "receiver": {
+      "position": {
+        "latitudeDeg": 0,
+        "longitudeDeg": 20,
+        "altitudeM": 0
+      },
+      "antenna": {
+        "id": "rx-dipole",
+        "type": "dipole",
+        "gainDbi": 2.15,
+        "heightM": 10,
+        "polarization": "horizontal"
+      },
+      "feedline": {
+        "lengthM": 2,
+        "lossDb": 1
+      },
+      "bandwidthHz": 2400,
+      "noiseFigureDb": 5
+    },
+    "environment": {
+      "model": "hf-skywave",
+      "temperatureK": 290,
+      "externalNoiseDb": 46.299206354045445,
+      "effectiveHeightM": 300000,
+      "criticalFrequencyMHzDay": 7,
+      "criticalFrequencyMHzNight": 3,
+      "absorptionDbAt10MHzDay": 4,
+      "absorptionDbAt10MHzNight": 0.5,
+      "groundReflectionLossDb": 3,
+      "maxHops": 6
+    },
+    "time": {
+      "utcIso": "2026-09-13T11:20:00.000Z"
+    }
+  },
+  "hf-multihop": {
+    "schemaVersion": 1,
+    "id": "hf-multihop",
+    "title": "HF across multiple hops",
+    "difficulty": "beginner",
+    "frequencyHz": 7000000,
+    "modeId": "ssb",
+    "transmitter": {
+      "position": {
+        "latitudeDeg": 0,
+        "longitudeDeg": 0,
+        "altitudeM": 0
+      },
+      "powerDbm": 50,
+      "antenna": {
+        "id": "tx-dipole",
+        "type": "dipole",
+        "gainDbi": 2.15,
+        "heightM": 10,
+        "polarization": "horizontal"
+      },
+      "feedline": {
+        "lengthM": 2,
+        "lossDb": 1
+      }
+    },
+    "receiver": {
+      "position": {
+        "latitudeDeg": 0,
+        "longitudeDeg": 80,
+        "altitudeM": 0
+      },
+      "antenna": {
+        "id": "rx-dipole",
+        "type": "dipole",
+        "gainDbi": 2.15,
+        "heightM": 10,
+        "polarization": "horizontal"
+      },
+      "feedline": {
+        "lengthM": 2,
+        "lossDb": 1
+      },
+      "bandwidthHz": 2400,
+      "noiseFigureDb": 5
+    },
+    "environment": {
+      "model": "hf-skywave",
+      "temperatureK": 290,
+      "externalNoiseDb": 29.430196055592255,
+      "effectiveHeightM": 300000,
+      "criticalFrequencyMHzDay": 7,
+      "criticalFrequencyMHzNight": 3,
+      "absorptionDbAt10MHzDay": 4,
+      "absorptionDbAt10MHzNight": 0.5,
+      "groundReflectionLossDb": 3,
+      "maxHops": 6
+    },
+    "time": {
+      "utcIso": "2026-09-13T09:20:00.000Z"
+    }
+  },
+  "hf-ft8": {
+    "schemaVersion": 1,
+    "id": "hf-ft8",
+    "title": "Weak-signal FT8 budget",
+    "difficulty": "beginner",
+    "frequencyHz": 7000000,
+    "modeId": "ft8",
+    "transmitter": {
+      "position": {
+        "latitudeDeg": 0,
+        "longitudeDeg": 0,
+        "altitudeM": 0
+      },
+      "powerDbm": 30,
+      "antenna": {
+        "id": "tx-dipole",
+        "type": "dipole",
+        "gainDbi": 2.15,
+        "heightM": 10,
+        "polarization": "horizontal"
+      },
+      "feedline": {
+        "lengthM": 2,
+        "lossDb": 1
+      }
+    },
+    "receiver": {
+      "position": {
+        "latitudeDeg": 0,
+        "longitudeDeg": 80,
+        "altitudeM": 0
+      },
+      "antenna": {
+        "id": "rx-dipole",
+        "type": "dipole",
+        "gainDbi": 2.15,
+        "heightM": 10,
+        "polarization": "horizontal"
+      },
+      "feedline": {
+        "lengthM": 2,
+        "lossDb": 1
+      },
+      "bandwidthHz": 2500,
+      "noiseFigureDb": 5
+    },
+    "environment": {
+      "model": "hf-skywave",
+      "temperatureK": 290,
+      "externalNoiseDb": 29.430196055592255,
+      "effectiveHeightM": 300000,
+      "criticalFrequencyMHzDay": 7,
+      "criticalFrequencyMHzNight": 3,
+      "absorptionDbAt10MHzDay": 4,
+      "absorptionDbAt10MHzNight": 0.5,
+      "groundReflectionLossDb": 3,
+      "maxHops": 6
+    },
+    "time": {
+      "utcIso": "2026-09-13T09:20:00.000Z"
+    }
+  },
+  "microwave-clear": {
+    "schemaVersion": 1,
+    "id": "microwave-clear",
+    "title": "2.4 GHz directional link",
+    "difficulty": "beginner",
+    "frequencyHz": 2400000000,
+    "modeId": "fm-voice",
+    "transmitter": {
+      "position": {
+        "latitudeDeg": 0,
+        "longitudeDeg": 0,
+        "altitudeM": 0
+      },
+      "powerDbm": 30,
+      "antenna": {
+        "id": "tx-vertical",
+        "type": "dish",
+        "gainDbi": 24,
+        "heightM": 15,
+        "polarization": "vertical"
+      },
+      "feedline": {
+        "lengthM": 2,
+        "lossDb": 1
+      }
+    },
+    "receiver": {
+      "position": {
+        "latitudeDeg": 0,
+        "longitudeDeg": 0.05,
+        "altitudeM": 0
+      },
+      "antenna": {
+        "id": "rx-vertical",
+        "type": "dish",
+        "gainDbi": 24,
+        "heightM": 15,
+        "polarization": "vertical"
+      },
+      "feedline": {
+        "lengthM": 2,
+        "lossDb": 1
+      },
+      "bandwidthHz": 12500,
+      "noiseFigureDb": 5
+    },
+    "environment": {
+      "model": "vhf-terrain",
+      "temperatureK": 290,
+      "externalNoiseDb": 0,
+      "effectiveEarthRadiusFactor": 1.3333333333333333,
+      "obstruction": {
+        "fraction": 0.5,
+        "altitudeM": 5
+      }
+    },
+    "time": {
+      "utcIso": "2026-09-13T00:00:00.000Z"
+    }
+  }
+}

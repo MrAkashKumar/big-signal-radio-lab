@@ -1,0 +1,230 @@
+[
+  {
+    "id": "hf-80m-100km",
+    "label": "HF 3.5 MHz, 100 km",
+    "frequencyHz": 3500000.0,
+    "distanceM": 100000.0,
+    "txPowerW": 5.0,
+    "txGainDbi": 0.0,
+    "rxGainDbi": 0.0,
+    "txCableLossDb": 1.0,
+    "rxCableLossDb": 1.0,
+    "bandwidthHz": 2400.0,
+    "noiseFigureDb": 6.0,
+    "temperatureK": 290,
+    "expected": {
+      "pathLossDb": 83.32914410888888,
+      "receivedPowerDbm": -48.339444065528696,
+      "noiseFloorDbm": -134.17307477711205
+    }
+  },
+  {
+    "id": "hf-40m-1000km",
+    "label": "HF 7 MHz, 1000 km",
+    "frequencyHz": 7000000.0,
+    "distanceM": 1000000.0,
+    "txPowerW": 100.0,
+    "txGainDbi": 2.15,
+    "rxGainDbi": 2.15,
+    "txCableLossDb": 1.0,
+    "rxCableLossDb": 1.0,
+    "bandwidthHz": 2400.0,
+    "noiseFigureDb": 6.0,
+    "temperatureK": 290,
+    "expected": {
+      "pathLossDb": 109.34974402216851,
+      "receivedPowerDbm": -57.04974402216851,
+      "noiseFloorDbm": -134.17307477711205
+    }
+  },
+  {
+    "id": "hf-20m-3000km",
+    "label": "HF 14 MHz, 3000 km",
+    "frequencyHz": 14000000.0,
+    "distanceM": 3000000.0,
+    "txPowerW": 100.0,
+    "txGainDbi": 2.15,
+    "rxGainDbi": 2.15,
+    "txCableLossDb": 1.0,
+    "rxCableLossDb": 1.0,
+    "bandwidthHz": 2400.0,
+    "noiseFigureDb": 6.0,
+    "temperatureK": 290,
+    "expected": {
+      "pathLossDb": 124.91276902984139,
+      "receivedPowerDbm": -72.61276902984139,
+      "noiseFloorDbm": -134.17307477711205
+    }
+  },
+  {
+    "id": "hf-10m-3000km",
+    "label": "HF 28 MHz, 3000 km",
+    "frequencyHz": 28000000.0,
+    "distanceM": 3000000.0,
+    "txPowerW": 100.0,
+    "txGainDbi": 2.15,
+    "rxGainDbi": 2.15,
+    "txCableLossDb": 1.0,
+    "rxCableLossDb": 1.0,
+    "bandwidthHz": 2400.0,
+    "noiseFigureDb": 6.0,
+    "temperatureK": 290,
+    "expected": {
+      "pathLossDb": 130.933368943121,
+      "receivedPowerDbm": -78.63336894312101,
+      "noiseFloorDbm": -134.17307477711205
+    }
+  },
+  {
+    "id": "hf-qrp-narrow-filter",
+    "label": "HF 7 MHz, 1 W, 500 Hz filter",
+    "frequencyHz": 7000000.0,
+    "distanceM": 1000000.0,
+    "txPowerW": 1.0,
+    "txGainDbi": 0.0,
+    "rxGainDbi": 0.0,
+    "txCableLossDb": 2.0,
+    "rxCableLossDb": 2.0,
+    "bandwidthHz": 500.0,
+    "noiseFigureDb": 6.0,
+    "temperatureK": 290,
+    "expected": {
+      "pathLossDb": 109.34974402216851,
+      "receivedPowerDbm": -83.34974402216851,
+      "noiseFloorDbm": -140.98548715086793
+    }
+  },
+  {
+    "id": "hf-very-narrow-filter",
+    "label": "HF 14 MHz, 50 Hz test filter",
+    "frequencyHz": 14000000.0,
+    "distanceM": 3000000.0,
+    "txPowerW": 5.0,
+    "txGainDbi": 0.0,
+    "rxGainDbi": 0.0,
+    "txCableLossDb": 1.0,
+    "rxCableLossDb": 1.0,
+    "bandwidthHz": 50.0,
+    "noiseFigureDb": 6.0,
+    "temperatureK": 290,
+    "expected": {
+      "pathLossDb": 124.91276902984139,
+      "receivedPowerDbm": -89.9230689864812,
+      "noiseFloorDbm": -150.98548715086793
+    }
+  },
+  {
+    "id": "vhf-handheld",
+    "label": "VHF 145 MHz, 5 W, 10 km",
+    "frequencyHz": 145000000.0,
+    "distanceM": 10000.0,
+    "txPowerW": 5.0,
+    "txGainDbi": 2.0,
+    "rxGainDbi": 2.0,
+    "txCableLossDb": 1.0,
+    "rxCableLossDb": 1.0,
+    "bandwidthHz": 12500.0,
+    "noiseFigureDb": 5.0,
+    "temperatureK": 290,
+    "expected": {
+      "pathLossDb": 95.67514326658288,
+      "receivedPowerDbm": -56.685443223222684,
+      "noiseFloorDbm": -128.00608706414755
+    }
+  },
+  {
+    "id": "uhf-link",
+    "label": "UHF 435 MHz, 5 W, 10 km",
+    "frequencyHz": 435000000.0,
+    "distanceM": 10000.0,
+    "txPowerW": 5.0,
+    "txGainDbi": 2.0,
+    "rxGainDbi": 2.0,
+    "txCableLossDb": 1.0,
+    "rxCableLossDb": 1.0,
+    "bandwidthHz": 12500.0,
+    "noiseFigureDb": 5.0,
+    "temperatureK": 290,
+    "expected": {
+      "pathLossDb": 105.21756836097612,
+      "receivedPowerDbm": -66.22786831761593,
+      "noiseFloorDbm": -128.00608706414755
+    }
+  },
+  {
+    "id": "microwave-2ghz",
+    "label": "Microwave 2.4 GHz, 1 W, 10 km",
+    "frequencyHz": 2400000000.0,
+    "distanceM": 10000.0,
+    "txPowerW": 1.0,
+    "txGainDbi": 24.0,
+    "rxGainDbi": 24.0,
+    "txCableLossDb": 2.0,
+    "rxCableLossDb": 2.0,
+    "bandwidthHz": 20000000.0,
+    "noiseFigureDb": 7.0,
+    "temperatureK": 290,
+    "expected": {
+      "pathLossDb": 120.0520080561155,
+      "receivedPowerDbm": -46.0520080561155,
+      "noiseFloorDbm": -93.96488723758829
+    }
+  },
+  {
+    "id": "microwave-5ghz",
+    "label": "Microwave 5.8 GHz, 1 W, 10 km",
+    "frequencyHz": 5800000000.0,
+    "distanceM": 10000.0,
+    "txPowerW": 1.0,
+    "txGainDbi": 24.0,
+    "rxGainDbi": 24.0,
+    "txCableLossDb": 2.0,
+    "rxCableLossDb": 2.0,
+    "bandwidthHz": 20000000.0,
+    "noiseFigureDb": 7.0,
+    "temperatureK": 290,
+    "expected": {
+      "pathLossDb": 127.71634309314211,
+      "receivedPowerDbm": -53.71634309314212,
+      "noiseFloorDbm": -93.96488723758829
+    }
+  },
+  {
+    "id": "space-distance",
+    "label": "2.2 GHz, 384400 km free-space distance",
+    "frequencyHz": 2200000000.0,
+    "distanceM": 384400000.0,
+    "txPowerW": 20.0,
+    "txGainDbi": 30.0,
+    "rxGainDbi": 40.0,
+    "txCableLossDb": 1.0,
+    "rxCableLossDb": 1.0,
+    "bandwidthHz": 1000.0,
+    "noiseFigureDb": 2.0,
+    "temperatureK": 290,
+    "expected": {
+      "pathLossDb": 210.99190441825766,
+      "receivedPowerDbm": -99.98160446161783,
+      "noiseFloorDbm": -141.9751871942281
+    }
+  },
+  {
+    "id": "extreme-power",
+    "label": "145 MHz, 100 MW arithmetic stress",
+    "frequencyHz": 145000000.0,
+    "distanceM": 10000.0,
+    "txPowerW": 100000000.0,
+    "txGainDbi": 0.0,
+    "rxGainDbi": 0.0,
+    "txCableLossDb": 0.0,
+    "rxCableLossDb": 0.0,
+    "bandwidthHz": 12500.0,
+    "noiseFigureDb": 5.0,
+    "temperatureK": 290,
+    "expected": {
+      "pathLossDb": 95.67514326658288,
+      "receivedPowerDbm": 14.324856733417128,
+      "noiseFloorDbm": -128.00608706414755
+    }
+  }
+]

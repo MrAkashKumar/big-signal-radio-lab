@@ -1,0 +1,4727 @@
+{
+  "vhf-clear": {
+    "schemaVersion": 1,
+    "propagationAvailable": true,
+    "receivedPowerDbm": -49.64834250323929,
+    "noiseFloorDbm": -125.57865741474694,
+    "snrDb": 75.93031491150765,
+    "requiredSnrDb": 12,
+    "linkMarginDb": 63.93031491150765,
+    "success": "good",
+    "confidence": {
+      "level": "low",
+      "reasons": [
+        "Educational model with configured antenna gains and losses. Not a field measurement.",
+        "FM voice threshold confidence: low."
+      ]
+    },
+    "calculations": [
+      {
+        "id": "surface-distance",
+        "label": "Great-circle surface distance",
+        "value": 4447.79706578235,
+        "unit": "m",
+        "equation": "R × central angle"
+      },
+      {
+        "id": "radio-horizon",
+        "label": "Effective-Earth radio horizon",
+        "value": 11658.244579123679,
+        "unit": "m",
+        "equation": "sqrt(2kRhTX) + sqrt(2kRhRX)"
+      },
+      {
+        "id": "fspl",
+        "label": "Free-space spreading loss",
+        "value": 88.63804254659948,
+        "unit": "dB",
+        "equation": "20 log10(4πdf/c)",
+        "children": [
+          {
+            "id": "wave-speed",
+            "label": "Wave speed",
+            "value": 299792458,
+            "unit": "m/s"
+          },
+          {
+            "id": "frequency",
+            "label": "Frequency",
+            "value": 145000000,
+            "unit": "Hz"
+          },
+          {
+            "id": "spreading-distance",
+            "label": "Ray path distance",
+            "value": 4447.79706578235,
+            "unit": "m"
+          }
+        ],
+        "assumptions": [
+          "Isotropic free-space spreading with antenna gains applied separately. Far-field approximation."
+        ]
+      },
+      {
+        "id": "link-budget",
+        "label": "Received power",
+        "value": -49.64834250323929,
+        "unit": "dBm",
+        "equation": "Ptx - Ltx + Gtx - Lfs - Lexcess - Lpol + Grx - Lrx",
+        "children": [
+          {
+            "id": "tx-power",
+            "label": "Transmitter power",
+            "value": 36.98970004336019,
+            "unit": "dBm"
+          },
+          {
+            "id": "tx-feedline",
+            "label": "Transmitter cable loss",
+            "value": 1,
+            "unit": "dB"
+          },
+          {
+            "id": "tx-gain",
+            "label": "Transmitter antenna gain",
+            "value": 2,
+            "unit": "dBi"
+          },
+          {
+            "id": "path-loss",
+            "label": "Free-space loss",
+            "value": 88.63804254659948,
+            "unit": "dB"
+          },
+          {
+            "id": "excess-loss",
+            "label": "Excess propagation loss",
+            "value": 0,
+            "unit": "dB"
+          },
+          {
+            "id": "polarization-loss",
+            "label": "Polarization loss",
+            "value": 0,
+            "unit": "dB"
+          },
+          {
+            "id": "rx-gain",
+            "label": "Receiver antenna gain",
+            "value": 2,
+            "unit": "dBi"
+          },
+          {
+            "id": "rx-feedline",
+            "label": "Receiver cable loss",
+            "value": 1,
+            "unit": "dB"
+          }
+        ]
+      },
+      {
+        "id": "noise-floor",
+        "label": "Receiver noise floor",
+        "value": -125.57865741474694,
+        "unit": "dBm",
+        "equation": "10 log10(1000 k B [Ta/Lrx + Tcable(1 - 1/Lrx) + 290(F - 1)])",
+        "children": [
+          {
+            "id": "bandwidth",
+            "label": "Receiver noise bandwidth",
+            "value": 12500,
+            "unit": "Hz"
+          },
+          {
+            "id": "noise-figure",
+            "label": "Receiver noise figure at 290 K",
+            "value": 5,
+            "unit": "dB"
+          },
+          {
+            "id": "temperature",
+            "label": "Ambient temperature",
+            "value": 290,
+            "unit": "K"
+          },
+          {
+            "id": "external-noise",
+            "label": "External antenna noise excess",
+            "value": 6,
+            "unit": "dB"
+          },
+          {
+            "id": "antenna-temperature",
+            "label": "Equivalent antenna noise temperature before cable",
+            "value": 1154.5107946051419,
+            "unit": "K"
+          },
+          {
+            "id": "receiver-input-temperature",
+            "label": "Noise temperature after receiver cable",
+            "value": 976.7053333787882,
+            "unit": "K",
+            "equation": "Ta/Lrx + Tcable(1 - 1/Lrx)"
+          }
+        ]
+      },
+      {
+        "id": "travel-time",
+        "label": "Candidate path travel time",
+        "value": 0.000014836254038726851,
+        "unit": "s",
+        "equation": "distance / wave speed"
+      },
+      {
+        "id": "snr",
+        "label": "Signal-to-noise ratio",
+        "value": 75.93031491150765,
+        "unit": "dB",
+        "equation": "Received power - noise floor"
+      },
+      {
+        "id": "required-snr",
+        "label": "FM voice required SNR",
+        "value": 12,
+        "unit": "dB",
+        "equation": "SNRref + 10 log10(Bref / B)",
+        "assumptions": [
+          "Educational 12 dB input-SNR threshold, not a measured receiver limit. Icom specifies FM sensitivity using 12 dB SINAD, which is not input SNR: https://www.icomjapan.com/lineup/products/IC-2730A/",
+          "Educational threshold. Receiver filtering and implementation loss are simplified."
+        ]
+      },
+      {
+        "id": "link-margin",
+        "label": "Link margin",
+        "value": 63.93031491150765,
+        "unit": "dB",
+        "equation": "SNR - required SNR"
+      }
+    ],
+    "limitingFactors": [
+      {
+        "id": "power",
+        "label": "Increase transmitter power tenfold",
+        "impactDb": -10,
+        "possibleImprovementDb": 10,
+        "confidence": 0.8,
+        "explanationKey": "more-power"
+      },
+      {
+        "id": "feedline",
+        "label": "Remove feedline loss",
+        "impactDb": -1.5433775105582868,
+        "possibleImprovementDb": 1.5433775105582868,
+        "confidence": 0.8,
+        "explanationKey": "feedline-loss"
+      }
+    ],
+    "propagationPaths": [
+      {
+        "type": "direct",
+        "points": [
+          {
+            "lat": 0,
+            "lon": 0,
+            "altitudeM": 2
+          },
+          {
+            "lat": 0,
+            "lon": 0.00125,
+            "altitudeM": 1.9647486845554913
+          },
+          {
+            "lat": 0,
+            "lon": 0.0025,
+            "altitudeM": 1.9317716475267575
+          },
+          {
+            "lat": 0,
+            "lon": 0.0037500000000000003,
+            "altitudeM": 1.9010688889137983
+          },
+          {
+            "lat": 0,
+            "lon": 0.004999999999999999,
+            "altitudeM": 1.872640408716614
+          },
+          {
+            "lat": 0,
+            "lon": 0.00625,
+            "altitudeM": 1.8464862069352044
+          },
+          {
+            "lat": 0,
+            "lon": 0.007500000000000001,
+            "altitudeM": 1.8226062835695693
+          },
+          {
+            "lat": 0,
+            "lon": 0.00875,
+            "altitudeM": 1.8010006386197093
+          },
+          {
+            "lat": 0,
+            "lon": 0.01,
+            "altitudeM": 1.781669272085624
+          },
+          {
+            "lat": 0,
+            "lon": 0.011249999999999998,
+            "altitudeM": 1.7646121839673132
+          },
+          {
+            "lat": 0,
+            "lon": 0.0125,
+            "altitudeM": 1.7498293742647775
+          },
+          {
+            "lat": 0,
+            "lon": 0.01375,
+            "altitudeM": 1.7373208429780163
+          },
+          {
+            "lat": 0,
+            "lon": 0.015000000000000001,
+            "altitudeM": 1.7270865901070298
+          },
+          {
+            "lat": 0,
+            "lon": 0.01625,
+            "altitudeM": 1.7191266156518181
+          },
+          {
+            "lat": 0,
+            "lon": 0.017499999999999998,
+            "altitudeM": 1.7134409196123812
+          },
+          {
+            "lat": 0,
+            "lon": 0.018750000000000003,
+            "altitudeM": 1.7100295019887193
+          },
+          {
+            "lat": 0,
+            "lon": 0.02,
+            "altitudeM": 1.708892362780832
+          },
+          {
+            "lat": 0,
+            "lon": 0.021250000000000005,
+            "altitudeM": 1.710029501988719
+          },
+          {
+            "lat": 0,
+            "lon": 0.0225,
+            "altitudeM": 1.7134409196123812
+          },
+          {
+            "lat": 0,
+            "lon": 0.023750000000000004,
+            "altitudeM": 1.7191266156518181
+          },
+          {
+            "lat": 0,
+            "lon": 0.025,
+            "altitudeM": 1.7270865901070298
+          },
+          {
+            "lat": 0,
+            "lon": 0.026250000000000006,
+            "altitudeM": 1.7373208429780163
+          },
+          {
+            "lat": 0,
+            "lon": 0.0275,
+            "altitudeM": 1.7498293742647775
+          },
+          {
+            "lat": 0,
+            "lon": 0.028750000000000005,
+            "altitudeM": 1.7646121839673132
+          },
+          {
+            "lat": 0,
+            "lon": 0.03,
+            "altitudeM": 1.781669272085624
+          },
+          {
+            "lat": 0,
+            "lon": 0.03125,
+            "altitudeM": 1.8010006386197093
+          },
+          {
+            "lat": 0,
+            "lon": 0.0325,
+            "altitudeM": 1.8226062835695693
+          },
+          {
+            "lat": 0,
+            "lon": 0.03375,
+            "altitudeM": 1.8464862069352042
+          },
+          {
+            "lat": 0,
+            "lon": 0.035,
+            "altitudeM": 1.872640408716614
+          },
+          {
+            "lat": 0,
+            "lon": 0.03625,
+            "altitudeM": 1.9010688889137983
+          },
+          {
+            "lat": 0,
+            "lon": 0.037500000000000006,
+            "altitudeM": 1.9317716475267575
+          },
+          {
+            "lat": 0,
+            "lon": 0.03875,
+            "altitudeM": 1.9647486845554913
+          },
+          {
+            "lat": 0,
+            "lon": 0.04,
+            "altitudeM": 2
+          }
+        ]
+      }
+    ],
+    "warnings": [
+      "Educational effective-Earth and single knife-edge approximation; excludes terrain profiles, reflections, foliage and weather."
+    ],
+    "explanationKeys": [
+      "line-of-sight",
+      "link-good"
+    ]
+  },
+  "vhf-ridge": {
+    "schemaVersion": 1,
+    "propagationAvailable": true,
+    "receivedPowerDbm": -81.82488271668609,
+    "noiseFloorDbm": -87.00582875260184,
+    "snrDb": 5.180946035915753,
+    "requiredSnrDb": 12,
+    "linkMarginDb": -6.819053964084247,
+    "success": "failed",
+    "confidence": {
+      "level": "low",
+      "reasons": [
+        "Educational model with configured antenna gains and losses. Not a field measurement.",
+        "FM voice threshold confidence: low."
+      ]
+    },
+    "calculations": [
+      {
+        "id": "surface-distance",
+        "label": "Great-circle surface distance",
+        "value": 4447.79706578235,
+        "unit": "m",
+        "equation": "R × central angle"
+      },
+      {
+        "id": "radio-horizon",
+        "label": "Effective-Earth radio horizon",
+        "value": 11658.244579123679,
+        "unit": "m",
+        "equation": "sqrt(2kRhTX) + sqrt(2kRhRX)"
+      },
+      {
+        "id": "earth-bulge",
+        "label": "Earth bulge at obstruction",
+        "value": 0.011527862433879058,
+        "unit": "m",
+        "equation": "d1 d2 / (2kR)"
+      },
+      {
+        "id": "obstruction-height",
+        "label": "Obstruction above effective LOS",
+        "value": 7.01152786243388,
+        "unit": "m"
+      },
+      {
+        "id": "fresnel-radius",
+        "label": "First Fresnel radius at obstruction",
+        "value": 9.54149505702083,
+        "unit": "m",
+        "equation": "sqrt(λ d1 d2 / (d1+d2))"
+      },
+      {
+        "id": "knife-edge-v",
+        "label": "Knife-edge diffraction parameter",
+        "value": 1.0392289401978552,
+        "unit": "1",
+        "equation": "h sqrt(2(d1+d2)/(λ d1 d2))"
+      },
+      {
+        "id": "diffraction-loss",
+        "label": "Single knife-edge loss",
+        "value": 14.176540213446799,
+        "unit": "dB",
+        "equation": "J(v)=6.9+20log10(sqrt((v−0.1)²+1)+v−0.1), v>−0.78; otherwise 0"
+      },
+      {
+        "id": "fspl",
+        "label": "Free-space spreading loss",
+        "value": 88.63804254659948,
+        "unit": "dB",
+        "equation": "20 log10(4πdf/c)",
+        "children": [
+          {
+            "id": "wave-speed",
+            "label": "Wave speed",
+            "value": 299792458,
+            "unit": "m/s"
+          },
+          {
+            "id": "frequency",
+            "label": "Frequency",
+            "value": 145000000,
+            "unit": "Hz"
+          },
+          {
+            "id": "spreading-distance",
+            "label": "Ray path distance",
+            "value": 4447.79706578235,
+            "unit": "m"
+          }
+        ],
+        "assumptions": [
+          "Isotropic free-space spreading with antenna gains applied separately. Far-field approximation."
+        ]
+      },
+      {
+        "id": "link-budget",
+        "label": "Received power",
+        "value": -81.82488271668609,
+        "unit": "dBm",
+        "equation": "Ptx - Ltx + Gtx - Lfs - Lexcess - Lpol + Grx - Lrx",
+        "children": [
+          {
+            "id": "tx-power",
+            "label": "Transmitter power",
+            "value": 36.98970004336019,
+            "unit": "dBm"
+          },
+          {
+            "id": "tx-feedline",
+            "label": "Transmitter cable loss",
+            "value": 1,
+            "unit": "dB"
+          },
+          {
+            "id": "tx-gain",
+            "label": "Transmitter antenna gain",
+            "value": -7,
+            "unit": "dBi"
+          },
+          {
+            "id": "path-loss",
+            "label": "Free-space loss",
+            "value": 88.63804254659948,
+            "unit": "dB"
+          },
+          {
+            "id": "excess-loss",
+            "label": "Excess propagation loss",
+            "value": 14.176540213446799,
+            "unit": "dB"
+          },
+          {
+            "id": "polarization-loss",
+            "label": "Polarization loss",
+            "value": 0,
+            "unit": "dB"
+          },
+          {
+            "id": "rx-gain",
+            "label": "Receiver antenna gain",
+            "value": -7,
+            "unit": "dBi"
+          },
+          {
+            "id": "rx-feedline",
+            "label": "Receiver cable loss",
+            "value": 1,
+            "unit": "dB"
+          }
+        ]
+      },
+      {
+        "id": "noise-floor",
+        "label": "Receiver noise floor",
+        "value": -87.00582875260184,
+        "unit": "dBm",
+        "equation": "10 log10(1000 k B [Ta/Lrx + Tcable(1 - 1/Lrx) + 290(F - 1)])",
+        "children": [
+          {
+            "id": "bandwidth",
+            "label": "Receiver noise bandwidth",
+            "value": 12500,
+            "unit": "Hz"
+          },
+          {
+            "id": "noise-figure",
+            "label": "Receiver noise figure at 290 K",
+            "value": 5,
+            "unit": "dB"
+          },
+          {
+            "id": "temperature",
+            "label": "Ambient temperature",
+            "value": 290,
+            "unit": "K"
+          },
+          {
+            "id": "external-noise",
+            "label": "External antenna noise excess",
+            "value": 47,
+            "unit": "dB"
+          },
+          {
+            "id": "antenna-temperature",
+            "label": "Equivalent antenna noise temperature before cable",
+            "value": 14534429.775190903,
+            "unit": "K"
+          },
+          {
+            "id": "receiver-input-temperature",
+            "label": "Noise temperature after receiver cable",
+            "value": 11545167.590863356,
+            "unit": "K",
+            "equation": "Ta/Lrx + Tcable(1 - 1/Lrx)"
+          }
+        ]
+      },
+      {
+        "id": "travel-time",
+        "label": "Candidate path travel time",
+        "value": 0.000014836254038726851,
+        "unit": "s",
+        "equation": "distance / wave speed"
+      },
+      {
+        "id": "snr",
+        "label": "Signal-to-noise ratio",
+        "value": 5.180946035915753,
+        "unit": "dB",
+        "equation": "Received power - noise floor"
+      },
+      {
+        "id": "required-snr",
+        "label": "FM voice required SNR",
+        "value": 12,
+        "unit": "dB",
+        "equation": "SNRref + 10 log10(Bref / B)",
+        "assumptions": [
+          "Educational 12 dB input-SNR threshold, not a measured receiver limit. Icom specifies FM sensitivity using 12 dB SINAD, which is not input SNR: https://www.icomjapan.com/lineup/products/IC-2730A/",
+          "Educational threshold. Receiver filtering and implementation loss are simplified."
+        ]
+      },
+      {
+        "id": "link-margin",
+        "label": "Link margin",
+        "value": -6.819053964084247,
+        "unit": "dB",
+        "equation": "SNR - required SNR"
+      }
+    ],
+    "limitingFactors": [
+      {
+        "id": "height",
+        "label": "Raise low antennas to 15 m",
+        "impactDb": -14.176540213446799,
+        "possibleImprovementDb": 14.176540213446799,
+        "confidence": 0.8,
+        "explanationKey": "antenna-height"
+      },
+      {
+        "id": "terrain",
+        "label": "Relocate to clear the modeled obstruction",
+        "impactDb": -14.176540213446799,
+        "possibleImprovementDb": 14.176540213446799,
+        "confidence": 0.8,
+        "explanationKey": "terrain-obstruction"
+      },
+      {
+        "id": "power",
+        "label": "Increase transmitter power tenfold",
+        "impactDb": -10,
+        "possibleImprovementDb": 10,
+        "confidence": 0.8,
+        "explanationKey": "more-power"
+      },
+      {
+        "id": "feedline",
+        "label": "Remove feedline loss",
+        "impactDb": -1.0000709474357166,
+        "possibleImprovementDb": 1.0000709474357166,
+        "confidence": 0.8,
+        "explanationKey": "feedline-loss"
+      }
+    ],
+    "propagationPaths": [
+      {
+        "type": "diffracted",
+        "points": [
+          {
+            "lat": 0,
+            "lon": 0,
+            "altitudeM": 2
+          },
+          {
+            "lat": 0,
+            "lon": 0.000012499999999999997,
+            "altitudeM": 2.2187464748684556
+          },
+          {
+            "lat": 0,
+            "lon": 0.00002499999999999999,
+            "altitudeM": 2.4374931771647526
+          },
+          {
+            "lat": 0,
+            "lon": 0.0000375,
+            "altitudeM": 2.6562401068888915
+          },
+          {
+            "lat": 0,
+            "lon": 0.00004999999999999999,
+            "altitudeM": 2.874987264040872
+          },
+          {
+            "lat": 0,
+            "lon": 0.0000625,
+            "altitudeM": 3.0937346486206936
+          },
+          {
+            "lat": 0,
+            "lon": 0.000075,
+            "altitudeM": 3.312482260628357
+          },
+          {
+            "lat": 0,
+            "lon": 0.00008749999999999999,
+            "altitudeM": 3.531230100063862
+          },
+          {
+            "lat": 0,
+            "lon": 0.0001,
+            "altitudeM": 3.7499781669272085
+          },
+          {
+            "lat": 0,
+            "lon": 0.0001125,
+            "altitudeM": 3.9687264612183966
+          },
+          {
+            "lat": 0,
+            "lon": 0.000125,
+            "altitudeM": 4.1874749829374265
+          },
+          {
+            "lat": 0,
+            "lon": 0.00013749999999999998,
+            "altitudeM": 4.406223732084298
+          },
+          {
+            "lat": 0,
+            "lon": 0.00015,
+            "altitudeM": 4.624972708659011
+          },
+          {
+            "lat": 0,
+            "lon": 0.00016249999999999997,
+            "altitudeM": 4.843721912661565
+          },
+          {
+            "lat": 0,
+            "lon": 0.00017499999999999997,
+            "altitudeM": 5.0624713440919615
+          },
+          {
+            "lat": 0,
+            "lon": 0.00018749999999999998,
+            "altitudeM": 5.281221002950199
+          },
+          {
+            "lat": 0,
+            "lon": 0.00019999999999999996,
+            "altitudeM": 5.499970889236278
+          },
+          {
+            "lat": 0,
+            "lon": 0.0002125,
+            "altitudeM": 5.718721002950199
+          },
+          {
+            "lat": 0,
+            "lon": 0.000225,
+            "altitudeM": 5.9374713440919615
+          },
+          {
+            "lat": 0,
+            "lon": 0.00023749999999999995,
+            "altitudeM": 6.156221912661565
+          },
+          {
+            "lat": 0,
+            "lon": 0.0002499999999999999,
+            "altitudeM": 6.374972708659011
+          },
+          {
+            "lat": 0,
+            "lon": 0.00026249999999999993,
+            "altitudeM": 6.593723732084298
+          },
+          {
+            "lat": 0,
+            "lon": 0.00027499999999999996,
+            "altitudeM": 6.8124749829374265
+          },
+          {
+            "lat": 0,
+            "lon": 0.00028749999999999994,
+            "altitudeM": 7.031226461218397
+          },
+          {
+            "lat": 0,
+            "lon": 0.0003,
+            "altitudeM": 7.2499781669272085
+          },
+          {
+            "lat": 0,
+            "lon": 0.00031249999999999995,
+            "altitudeM": 7.468730100063862
+          },
+          {
+            "lat": 0,
+            "lon": 0.00032499999999999993,
+            "altitudeM": 7.687482260628357
+          },
+          {
+            "lat": 0,
+            "lon": 0.00033749999999999996,
+            "altitudeM": 7.906234648620694
+          },
+          {
+            "lat": 0,
+            "lon": 0.00035,
+            "altitudeM": 8.124987264040872
+          },
+          {
+            "lat": 0,
+            "lon": 0.0003624999999999999,
+            "altitudeM": 8.343740106888891
+          },
+          {
+            "lat": 0,
+            "lon": 0.00037499999999999995,
+            "altitudeM": 8.562493177164752
+          },
+          {
+            "lat": 0,
+            "lon": 0.00038749999999999993,
+            "altitudeM": 8.781246474868455
+          },
+          {
+            "lat": 0,
+            "lon": 0.0004,
+            "altitudeM": 9
+          },
+          {
+            "lat": 0,
+            "lon": 0.0016375,
+            "altitudeM": 8.746700185732838
+          },
+          {
+            "lat": 0,
+            "lon": 0.002875,
+            "altitudeM": 8.495629391740975
+          },
+          {
+            "lat": 0,
+            "lon": 0.0041125,
+            "altitudeM": 8.246787618024413
+          },
+          {
+            "lat": 0,
+            "lon": 0.005350000000000001,
+            "altitudeM": 8.000174864583153
+          },
+          {
+            "lat": 0,
+            "lon": 0.0065875000000000005,
+            "altitudeM": 7.755791131417194
+          },
+          {
+            "lat": 0,
+            "lon": 0.007824999999999999,
+            "altitudeM": 7.513636418526535
+          },
+          {
+            "lat": 0,
+            "lon": 0.0090625,
+            "altitudeM": 7.273710725911177
+          },
+          {
+            "lat": 0,
+            "lon": 0.010299999999999998,
+            "altitudeM": 7.03601405357112
+          },
+          {
+            "lat": 0,
+            "lon": 0.011537500000000004,
+            "altitudeM": 6.800546401506364
+          },
+          {
+            "lat": 0,
+            "lon": 0.012775000000000002,
+            "altitudeM": 6.567307769716908
+          },
+          {
+            "lat": 0,
+            "lon": 0.014012499999999997,
+            "altitudeM": 6.336298158202753
+          },
+          {
+            "lat": 0,
+            "lon": 0.01525,
+            "altitudeM": 6.1075175669639
+          },
+          {
+            "lat": 0,
+            "lon": 0.016487500000000002,
+            "altitudeM": 5.880965996000347
+          },
+          {
+            "lat": 0,
+            "lon": 0.017725,
+            "altitudeM": 5.6566434453120955
+          },
+          {
+            "lat": 0,
+            "lon": 0.018962499999999997,
+            "altitudeM": 5.434549914899144
+          },
+          {
+            "lat": 0,
+            "lon": 0.020200000000000003,
+            "altitudeM": 5.214685404761493
+          },
+          {
+            "lat": 0,
+            "lon": 0.021437500000000005,
+            "altitudeM": 4.997049914899144
+          },
+          {
+            "lat": 0,
+            "lon": 0.022675000000000004,
+            "altitudeM": 4.781643445312095
+          },
+          {
+            "lat": 0,
+            "lon": 0.023912500000000003,
+            "altitudeM": 4.568465996000347
+          },
+          {
+            "lat": 0,
+            "lon": 0.025150000000000002,
+            "altitudeM": 4.3575175669639
+          },
+          {
+            "lat": 0,
+            "lon": 0.026387500000000005,
+            "altitudeM": 4.148798158202753
+          },
+          {
+            "lat": 0,
+            "lon": 0.027625,
+            "altitudeM": 3.9423077697169084
+          },
+          {
+            "lat": 0,
+            "lon": 0.028862500000000003,
+            "altitudeM": 3.738046401506364
+          },
+          {
+            "lat": 0,
+            "lon": 0.030100000000000002,
+            "altitudeM": 3.53601405357112
+          },
+          {
+            "lat": 0,
+            "lon": 0.031337500000000004,
+            "altitudeM": 3.3362107259111773
+          },
+          {
+            "lat": 0,
+            "lon": 0.03257500000000001,
+            "altitudeM": 3.138636418526535
+          },
+          {
+            "lat": 0,
+            "lon": 0.0338125,
+            "altitudeM": 2.943291131417194
+          },
+          {
+            "lat": 0,
+            "lon": 0.035050000000000005,
+            "altitudeM": 2.7501748645831534
+          },
+          {
+            "lat": 0,
+            "lon": 0.0362875,
+            "altitudeM": 2.5592876180244137
+          },
+          {
+            "lat": 0,
+            "lon": 0.037525,
+            "altitudeM": 2.370629391740975
+          },
+          {
+            "lat": 0,
+            "lon": 0.038762500000000005,
+            "altitudeM": 2.1842001857328373
+          },
+          {
+            "lat": 0,
+            "lon": 0.04,
+            "altitudeM": 2
+          }
+        ]
+      }
+    ],
+    "warnings": [
+      "Educational effective-Earth and single knife-edge approximation; excludes terrain profiles, reflections, foliage and weather."
+    ],
+    "explanationKeys": [
+      "terrain-obstruction",
+      "link-failed"
+    ]
+  },
+  "vhf-ridge-power": {
+    "schemaVersion": 1,
+    "propagationAvailable": true,
+    "receivedPowerDbm": -71.82488271668609,
+    "noiseFloorDbm": -87.00582875260184,
+    "snrDb": 15.180946035915753,
+    "requiredSnrDb": 12,
+    "linkMarginDb": 3.1809460359157526,
+    "success": "marginal",
+    "confidence": {
+      "level": "low",
+      "reasons": [
+        "Educational model with configured antenna gains and losses. Not a field measurement.",
+        "FM voice threshold confidence: low."
+      ]
+    },
+    "calculations": [
+      {
+        "id": "surface-distance",
+        "label": "Great-circle surface distance",
+        "value": 4447.79706578235,
+        "unit": "m",
+        "equation": "R × central angle"
+      },
+      {
+        "id": "radio-horizon",
+        "label": "Effective-Earth radio horizon",
+        "value": 11658.244579123679,
+        "unit": "m",
+        "equation": "sqrt(2kRhTX) + sqrt(2kRhRX)"
+      },
+      {
+        "id": "earth-bulge",
+        "label": "Earth bulge at obstruction",
+        "value": 0.011527862433879058,
+        "unit": "m",
+        "equation": "d1 d2 / (2kR)"
+      },
+      {
+        "id": "obstruction-height",
+        "label": "Obstruction above effective LOS",
+        "value": 7.01152786243388,
+        "unit": "m"
+      },
+      {
+        "id": "fresnel-radius",
+        "label": "First Fresnel radius at obstruction",
+        "value": 9.54149505702083,
+        "unit": "m",
+        "equation": "sqrt(λ d1 d2 / (d1+d2))"
+      },
+      {
+        "id": "knife-edge-v",
+        "label": "Knife-edge diffraction parameter",
+        "value": 1.0392289401978552,
+        "unit": "1",
+        "equation": "h sqrt(2(d1+d2)/(λ d1 d2))"
+      },
+      {
+        "id": "diffraction-loss",
+        "label": "Single knife-edge loss",
+        "value": 14.176540213446799,
+        "unit": "dB",
+        "equation": "J(v)=6.9+20log10(sqrt((v−0.1)²+1)+v−0.1), v>−0.78; otherwise 0"
+      },
+      {
+        "id": "fspl",
+        "label": "Free-space spreading loss",
+        "value": 88.63804254659948,
+        "unit": "dB",
+        "equation": "20 log10(4πdf/c)",
+        "children": [
+          {
+            "id": "wave-speed",
+            "label": "Wave speed",
+            "value": 299792458,
+            "unit": "m/s"
+          },
+          {
+            "id": "frequency",
+            "label": "Frequency",
+            "value": 145000000,
+            "unit": "Hz"
+          },
+          {
+            "id": "spreading-distance",
+            "label": "Ray path distance",
+            "value": 4447.79706578235,
+            "unit": "m"
+          }
+        ],
+        "assumptions": [
+          "Isotropic free-space spreading with antenna gains applied separately. Far-field approximation."
+        ]
+      },
+      {
+        "id": "link-budget",
+        "label": "Received power",
+        "value": -71.82488271668609,
+        "unit": "dBm",
+        "equation": "Ptx - Ltx + Gtx - Lfs - Lexcess - Lpol + Grx - Lrx",
+        "children": [
+          {
+            "id": "tx-power",
+            "label": "Transmitter power",
+            "value": 46.98970004336019,
+            "unit": "dBm"
+          },
+          {
+            "id": "tx-feedline",
+            "label": "Transmitter cable loss",
+            "value": 1,
+            "unit": "dB"
+          },
+          {
+            "id": "tx-gain",
+            "label": "Transmitter antenna gain",
+            "value": -7,
+            "unit": "dBi"
+          },
+          {
+            "id": "path-loss",
+            "label": "Free-space loss",
+            "value": 88.63804254659948,
+            "unit": "dB"
+          },
+          {
+            "id": "excess-loss",
+            "label": "Excess propagation loss",
+            "value": 14.176540213446799,
+            "unit": "dB"
+          },
+          {
+            "id": "polarization-loss",
+            "label": "Polarization loss",
+            "value": 0,
+            "unit": "dB"
+          },
+          {
+            "id": "rx-gain",
+            "label": "Receiver antenna gain",
+            "value": -7,
+            "unit": "dBi"
+          },
+          {
+            "id": "rx-feedline",
+            "label": "Receiver cable loss",
+            "value": 1,
+            "unit": "dB"
+          }
+        ]
+      },
+      {
+        "id": "noise-floor",
+        "label": "Receiver noise floor",
+        "value": -87.00582875260184,
+        "unit": "dBm",
+        "equation": "10 log10(1000 k B [Ta/Lrx + Tcable(1 - 1/Lrx) + 290(F - 1)])",
+        "children": [
+          {
+            "id": "bandwidth",
+            "label": "Receiver noise bandwidth",
+            "value": 12500,
+            "unit": "Hz"
+          },
+          {
+            "id": "noise-figure",
+            "label": "Receiver noise figure at 290 K",
+            "value": 5,
+            "unit": "dB"
+          },
+          {
+            "id": "temperature",
+            "label": "Ambient temperature",
+            "value": 290,
+            "unit": "K"
+          },
+          {
+            "id": "external-noise",
+            "label": "External antenna noise excess",
+            "value": 47,
+            "unit": "dB"
+          },
+          {
+            "id": "antenna-temperature",
+            "label": "Equivalent antenna noise temperature before cable",
+            "value": 14534429.775190903,
+            "unit": "K"
+          },
+          {
+            "id": "receiver-input-temperature",
+            "label": "Noise temperature after receiver cable",
+            "value": 11545167.590863356,
+            "unit": "K",
+            "equation": "Ta/Lrx + Tcable(1 - 1/Lrx)"
+          }
+        ]
+      },
+      {
+        "id": "travel-time",
+        "label": "Candidate path travel time",
+        "value": 0.000014836254038726851,
+        "unit": "s",
+        "equation": "distance / wave speed"
+      },
+      {
+        "id": "snr",
+        "label": "Signal-to-noise ratio",
+        "value": 15.180946035915753,
+        "unit": "dB",
+        "equation": "Received power - noise floor"
+      },
+      {
+        "id": "required-snr",
+        "label": "FM voice required SNR",
+        "value": 12,
+        "unit": "dB",
+        "equation": "SNRref + 10 log10(Bref / B)",
+        "assumptions": [
+          "Educational 12 dB input-SNR threshold, not a measured receiver limit. Icom specifies FM sensitivity using 12 dB SINAD, which is not input SNR: https://www.icomjapan.com/lineup/products/IC-2730A/",
+          "Educational threshold. Receiver filtering and implementation loss are simplified."
+        ]
+      },
+      {
+        "id": "link-margin",
+        "label": "Link margin",
+        "value": 3.1809460359157526,
+        "unit": "dB",
+        "equation": "SNR - required SNR"
+      }
+    ],
+    "limitingFactors": [
+      {
+        "id": "height",
+        "label": "Raise low antennas to 15 m",
+        "impactDb": -14.176540213446799,
+        "possibleImprovementDb": 14.176540213446799,
+        "confidence": 0.8,
+        "explanationKey": "antenna-height"
+      },
+      {
+        "id": "terrain",
+        "label": "Relocate to clear the modeled obstruction",
+        "impactDb": -14.176540213446799,
+        "possibleImprovementDb": 14.176540213446799,
+        "confidence": 0.8,
+        "explanationKey": "terrain-obstruction"
+      },
+      {
+        "id": "power",
+        "label": "Increase transmitter power tenfold",
+        "impactDb": -10,
+        "possibleImprovementDb": 10,
+        "confidence": 0.8,
+        "explanationKey": "more-power"
+      },
+      {
+        "id": "feedline",
+        "label": "Remove feedline loss",
+        "impactDb": -1.0000709474357166,
+        "possibleImprovementDb": 1.0000709474357166,
+        "confidence": 0.8,
+        "explanationKey": "feedline-loss"
+      }
+    ],
+    "propagationPaths": [
+      {
+        "type": "diffracted",
+        "points": [
+          {
+            "lat": 0,
+            "lon": 0,
+            "altitudeM": 2
+          },
+          {
+            "lat": 0,
+            "lon": 0.000012499999999999997,
+            "altitudeM": 2.2187464748684556
+          },
+          {
+            "lat": 0,
+            "lon": 0.00002499999999999999,
+            "altitudeM": 2.4374931771647526
+          },
+          {
+            "lat": 0,
+            "lon": 0.0000375,
+            "altitudeM": 2.6562401068888915
+          },
+          {
+            "lat": 0,
+            "lon": 0.00004999999999999999,
+            "altitudeM": 2.874987264040872
+          },
+          {
+            "lat": 0,
+            "lon": 0.0000625,
+            "altitudeM": 3.0937346486206936
+          },
+          {
+            "lat": 0,
+            "lon": 0.000075,
+            "altitudeM": 3.312482260628357
+          },
+          {
+            "lat": 0,
+            "lon": 0.00008749999999999999,
+            "altitudeM": 3.531230100063862
+          },
+          {
+            "lat": 0,
+            "lon": 0.0001,
+            "altitudeM": 3.7499781669272085
+          },
+          {
+            "lat": 0,
+            "lon": 0.0001125,
+            "altitudeM": 3.9687264612183966
+          },
+          {
+            "lat": 0,
+            "lon": 0.000125,
+            "altitudeM": 4.1874749829374265
+          },
+          {
+            "lat": 0,
+            "lon": 0.00013749999999999998,
+            "altitudeM": 4.406223732084298
+          },
+          {
+            "lat": 0,
+            "lon": 0.00015,
+            "altitudeM": 4.624972708659011
+          },
+          {
+            "lat": 0,
+            "lon": 0.00016249999999999997,
+            "altitudeM": 4.843721912661565
+          },
+          {
+            "lat": 0,
+            "lon": 0.00017499999999999997,
+            "altitudeM": 5.0624713440919615
+          },
+          {
+            "lat": 0,
+            "lon": 0.00018749999999999998,
+            "altitudeM": 5.281221002950199
+          },
+          {
+            "lat": 0,
+            "lon": 0.00019999999999999996,
+            "altitudeM": 5.499970889236278
+          },
+          {
+            "lat": 0,
+            "lon": 0.0002125,
+            "altitudeM": 5.718721002950199
+          },
+          {
+            "lat": 0,
+            "lon": 0.000225,
+            "altitudeM": 5.9374713440919615
+          },
+          {
+            "lat": 0,
+            "lon": 0.00023749999999999995,
+            "altitudeM": 6.156221912661565
+          },
+          {
+            "lat": 0,
+            "lon": 0.0002499999999999999,
+            "altitudeM": 6.374972708659011
+          },
+          {
+            "lat": 0,
+            "lon": 0.00026249999999999993,
+            "altitudeM": 6.593723732084298
+          },
+          {
+            "lat": 0,
+            "lon": 0.00027499999999999996,
+            "altitudeM": 6.8124749829374265
+          },
+          {
+            "lat": 0,
+            "lon": 0.00028749999999999994,
+            "altitudeM": 7.031226461218397
+          },
+          {
+            "lat": 0,
+            "lon": 0.0003,
+            "altitudeM": 7.2499781669272085
+          },
+          {
+            "lat": 0,
+            "lon": 0.00031249999999999995,
+            "altitudeM": 7.468730100063862
+          },
+          {
+            "lat": 0,
+            "lon": 0.00032499999999999993,
+            "altitudeM": 7.687482260628357
+          },
+          {
+            "lat": 0,
+            "lon": 0.00033749999999999996,
+            "altitudeM": 7.906234648620694
+          },
+          {
+            "lat": 0,
+            "lon": 0.00035,
+            "altitudeM": 8.124987264040872
+          },
+          {
+            "lat": 0,
+            "lon": 0.0003624999999999999,
+            "altitudeM": 8.343740106888891
+          },
+          {
+            "lat": 0,
+            "lon": 0.00037499999999999995,
+            "altitudeM": 8.562493177164752
+          },
+          {
+            "lat": 0,
+            "lon": 0.00038749999999999993,
+            "altitudeM": 8.781246474868455
+          },
+          {
+            "lat": 0,
+            "lon": 0.0004,
+            "altitudeM": 9
+          },
+          {
+            "lat": 0,
+            "lon": 0.0016375,
+            "altitudeM": 8.746700185732838
+          },
+          {
+            "lat": 0,
+            "lon": 0.002875,
+            "altitudeM": 8.495629391740975
+          },
+          {
+            "lat": 0,
+            "lon": 0.0041125,
+            "altitudeM": 8.246787618024413
+          },
+          {
+            "lat": 0,
+            "lon": 0.005350000000000001,
+            "altitudeM": 8.000174864583153
+          },
+          {
+            "lat": 0,
+            "lon": 0.0065875000000000005,
+            "altitudeM": 7.755791131417194
+          },
+          {
+            "lat": 0,
+            "lon": 0.007824999999999999,
+            "altitudeM": 7.513636418526535
+          },
+          {
+            "lat": 0,
+            "lon": 0.0090625,
+            "altitudeM": 7.273710725911177
+          },
+          {
+            "lat": 0,
+            "lon": 0.010299999999999998,
+            "altitudeM": 7.03601405357112
+          },
+          {
+            "lat": 0,
+            "lon": 0.011537500000000004,
+            "altitudeM": 6.800546401506364
+          },
+          {
+            "lat": 0,
+            "lon": 0.012775000000000002,
+            "altitudeM": 6.567307769716908
+          },
+          {
+            "lat": 0,
+            "lon": 0.014012499999999997,
+            "altitudeM": 6.336298158202753
+          },
+          {
+            "lat": 0,
+            "lon": 0.01525,
+            "altitudeM": 6.1075175669639
+          },
+          {
+            "lat": 0,
+            "lon": 0.016487500000000002,
+            "altitudeM": 5.880965996000347
+          },
+          {
+            "lat": 0,
+            "lon": 0.017725,
+            "altitudeM": 5.6566434453120955
+          },
+          {
+            "lat": 0,
+            "lon": 0.018962499999999997,
+            "altitudeM": 5.434549914899144
+          },
+          {
+            "lat": 0,
+            "lon": 0.020200000000000003,
+            "altitudeM": 5.214685404761493
+          },
+          {
+            "lat": 0,
+            "lon": 0.021437500000000005,
+            "altitudeM": 4.997049914899144
+          },
+          {
+            "lat": 0,
+            "lon": 0.022675000000000004,
+            "altitudeM": 4.781643445312095
+          },
+          {
+            "lat": 0,
+            "lon": 0.023912500000000003,
+            "altitudeM": 4.568465996000347
+          },
+          {
+            "lat": 0,
+            "lon": 0.025150000000000002,
+            "altitudeM": 4.3575175669639
+          },
+          {
+            "lat": 0,
+            "lon": 0.026387500000000005,
+            "altitudeM": 4.148798158202753
+          },
+          {
+            "lat": 0,
+            "lon": 0.027625,
+            "altitudeM": 3.9423077697169084
+          },
+          {
+            "lat": 0,
+            "lon": 0.028862500000000003,
+            "altitudeM": 3.738046401506364
+          },
+          {
+            "lat": 0,
+            "lon": 0.030100000000000002,
+            "altitudeM": 3.53601405357112
+          },
+          {
+            "lat": 0,
+            "lon": 0.031337500000000004,
+            "altitudeM": 3.3362107259111773
+          },
+          {
+            "lat": 0,
+            "lon": 0.03257500000000001,
+            "altitudeM": 3.138636418526535
+          },
+          {
+            "lat": 0,
+            "lon": 0.0338125,
+            "altitudeM": 2.943291131417194
+          },
+          {
+            "lat": 0,
+            "lon": 0.035050000000000005,
+            "altitudeM": 2.7501748645831534
+          },
+          {
+            "lat": 0,
+            "lon": 0.0362875,
+            "altitudeM": 2.5592876180244137
+          },
+          {
+            "lat": 0,
+            "lon": 0.037525,
+            "altitudeM": 2.370629391740975
+          },
+          {
+            "lat": 0,
+            "lon": 0.038762500000000005,
+            "altitudeM": 2.1842001857328373
+          },
+          {
+            "lat": 0,
+            "lon": 0.04,
+            "altitudeM": 2
+          }
+        ]
+      }
+    ],
+    "warnings": [
+      "Educational effective-Earth and single knife-edge approximation; excludes terrain profiles, reflections, foliage and weather."
+    ],
+    "explanationKeys": [
+      "terrain-obstruction",
+      "link-marginal"
+    ]
+  },
+  "vhf-ridge-height": {
+    "schemaVersion": 1,
+    "propagationAvailable": true,
+    "receivedPowerDbm": -67.64837960369405,
+    "noiseFloorDbm": -87.00582875260184,
+    "snrDb": 19.35744914890779,
+    "requiredSnrDb": 12,
+    "linkMarginDb": 7.35744914890779,
+    "success": "good",
+    "confidence": {
+      "level": "low",
+      "reasons": [
+        "Educational model with configured antenna gains and losses. Not a field measurement.",
+        "FM voice threshold confidence: low."
+      ]
+    },
+    "calculations": [
+      {
+        "id": "surface-distance",
+        "label": "Great-circle surface distance",
+        "value": 4447.79706578235,
+        "unit": "m",
+        "equation": "R × central angle"
+      },
+      {
+        "id": "radio-horizon",
+        "label": "Effective-Earth radio horizon",
+        "value": 21792.83113180774,
+        "unit": "m",
+        "equation": "sqrt(2kRhTX) + sqrt(2kRhRX)"
+      },
+      {
+        "id": "earth-bulge",
+        "label": "Earth bulge at obstruction",
+        "value": 0.011527862433879058,
+        "unit": "m",
+        "equation": "d1 d2 / (2kR)"
+      },
+      {
+        "id": "obstruction-height",
+        "label": "Obstruction above effective LOS",
+        "value": -5.858472137566119,
+        "unit": "m"
+      },
+      {
+        "id": "fresnel-radius",
+        "label": "First Fresnel radius at obstruction",
+        "value": 9.54149505702083,
+        "unit": "m",
+        "equation": "sqrt(λ d1 d2 / (d1+d2))"
+      },
+      {
+        "id": "knife-edge-v",
+        "label": "Knife-edge diffraction parameter",
+        "value": -0.8683262635696208,
+        "unit": "1",
+        "equation": "h sqrt(2(d1+d2)/(λ d1 d2))"
+      },
+      {
+        "id": "diffraction-loss",
+        "label": "Single knife-edge loss",
+        "value": 0,
+        "unit": "dB",
+        "equation": "J(v)=6.9+20log10(sqrt((v−0.1)²+1)+v−0.1), v>−0.78; otherwise 0"
+      },
+      {
+        "id": "fspl",
+        "label": "Free-space spreading loss",
+        "value": 88.63807964705424,
+        "unit": "dB",
+        "equation": "20 log10(4πdf/c)",
+        "children": [
+          {
+            "id": "wave-speed",
+            "label": "Wave speed",
+            "value": 299792458,
+            "unit": "m/s"
+          },
+          {
+            "id": "frequency",
+            "label": "Frequency",
+            "value": 145000000,
+            "unit": "Hz"
+          },
+          {
+            "id": "spreading-distance",
+            "label": "Ray path distance",
+            "value": 4447.816063910701,
+            "unit": "m"
+          }
+        ],
+        "assumptions": [
+          "Isotropic free-space spreading with antenna gains applied separately. Far-field approximation."
+        ]
+      },
+      {
+        "id": "link-budget",
+        "label": "Received power",
+        "value": -67.64837960369405,
+        "unit": "dBm",
+        "equation": "Ptx - Ltx + Gtx - Lfs - Lexcess - Lpol + Grx - Lrx",
+        "children": [
+          {
+            "id": "tx-power",
+            "label": "Transmitter power",
+            "value": 36.98970004336019,
+            "unit": "dBm"
+          },
+          {
+            "id": "tx-feedline",
+            "label": "Transmitter cable loss",
+            "value": 1,
+            "unit": "dB"
+          },
+          {
+            "id": "tx-gain",
+            "label": "Transmitter antenna gain",
+            "value": -7,
+            "unit": "dBi"
+          },
+          {
+            "id": "path-loss",
+            "label": "Free-space loss",
+            "value": 88.63807964705424,
+            "unit": "dB"
+          },
+          {
+            "id": "excess-loss",
+            "label": "Excess propagation loss",
+            "value": 0,
+            "unit": "dB"
+          },
+          {
+            "id": "polarization-loss",
+            "label": "Polarization loss",
+            "value": 0,
+            "unit": "dB"
+          },
+          {
+            "id": "rx-gain",
+            "label": "Receiver antenna gain",
+            "value": -7,
+            "unit": "dBi"
+          },
+          {
+            "id": "rx-feedline",
+            "label": "Receiver cable loss",
+            "value": 1,
+            "unit": "dB"
+          }
+        ]
+      },
+      {
+        "id": "noise-floor",
+        "label": "Receiver noise floor",
+        "value": -87.00582875260184,
+        "unit": "dBm",
+        "equation": "10 log10(1000 k B [Ta/Lrx + Tcable(1 - 1/Lrx) + 290(F - 1)])",
+        "children": [
+          {
+            "id": "bandwidth",
+            "label": "Receiver noise bandwidth",
+            "value": 12500,
+            "unit": "Hz"
+          },
+          {
+            "id": "noise-figure",
+            "label": "Receiver noise figure at 290 K",
+            "value": 5,
+            "unit": "dB"
+          },
+          {
+            "id": "temperature",
+            "label": "Ambient temperature",
+            "value": 290,
+            "unit": "K"
+          },
+          {
+            "id": "external-noise",
+            "label": "External antenna noise excess",
+            "value": 47,
+            "unit": "dB"
+          },
+          {
+            "id": "antenna-temperature",
+            "label": "Equivalent antenna noise temperature before cable",
+            "value": 14534429.775190903,
+            "unit": "K"
+          },
+          {
+            "id": "receiver-input-temperature",
+            "label": "Noise temperature after receiver cable",
+            "value": 11545167.590863356,
+            "unit": "K",
+            "equation": "Ta/Lrx + Tcable(1 - 1/Lrx)"
+          }
+        ]
+      },
+      {
+        "id": "travel-time",
+        "label": "Candidate path travel time",
+        "value": 0.00001483631740966179,
+        "unit": "s",
+        "equation": "distance / wave speed"
+      },
+      {
+        "id": "snr",
+        "label": "Signal-to-noise ratio",
+        "value": 19.35744914890779,
+        "unit": "dB",
+        "equation": "Received power - noise floor"
+      },
+      {
+        "id": "required-snr",
+        "label": "FM voice required SNR",
+        "value": 12,
+        "unit": "dB",
+        "equation": "SNRref + 10 log10(Bref / B)",
+        "assumptions": [
+          "Educational 12 dB input-SNR threshold, not a measured receiver limit. Icom specifies FM sensitivity using 12 dB SINAD, which is not input SNR: https://www.icomjapan.com/lineup/products/IC-2730A/",
+          "Educational threshold. Receiver filtering and implementation loss are simplified."
+        ]
+      },
+      {
+        "id": "link-margin",
+        "label": "Link margin",
+        "value": 7.35744914890779,
+        "unit": "dB",
+        "equation": "SNR - required SNR"
+      }
+    ],
+    "limitingFactors": [
+      {
+        "id": "power",
+        "label": "Increase transmitter power tenfold",
+        "impactDb": -10,
+        "possibleImprovementDb": 10,
+        "confidence": 0.8,
+        "explanationKey": "more-power"
+      },
+      {
+        "id": "feedline",
+        "label": "Remove feedline loss",
+        "impactDb": -1.0000709474357166,
+        "possibleImprovementDb": 1.0000709474357166,
+        "confidence": 0.8,
+        "explanationKey": "feedline-loss"
+      }
+    ],
+    "propagationPaths": [
+      {
+        "type": "direct",
+        "points": [
+          {
+            "lat": 0,
+            "lon": 0,
+            "altitudeM": 15
+          },
+          {
+            "lat": 0,
+            "lon": 0.00125,
+            "altitudeM": 14.558498684555492
+          },
+          {
+            "lat": 0,
+            "lon": 0.0025,
+            "altitudeM": 14.119271647526757
+          },
+          {
+            "lat": 0,
+            "lon": 0.0037500000000000003,
+            "altitudeM": 13.682318888913798
+          },
+          {
+            "lat": 0,
+            "lon": 0.004999999999999999,
+            "altitudeM": 13.247640408716613
+          },
+          {
+            "lat": 0,
+            "lon": 0.00625,
+            "altitudeM": 12.815236206935204
+          },
+          {
+            "lat": 0,
+            "lon": 0.007500000000000001,
+            "altitudeM": 12.38510628356957
+          },
+          {
+            "lat": 0,
+            "lon": 0.00875,
+            "altitudeM": 11.957250638619708
+          },
+          {
+            "lat": 0,
+            "lon": 0.01,
+            "altitudeM": 11.531669272085624
+          },
+          {
+            "lat": 0,
+            "lon": 0.011249999999999998,
+            "altitudeM": 11.108362183967314
+          },
+          {
+            "lat": 0,
+            "lon": 0.0125,
+            "altitudeM": 10.687329374264777
+          },
+          {
+            "lat": 0,
+            "lon": 0.01375,
+            "altitudeM": 10.268570842978017
+          },
+          {
+            "lat": 0,
+            "lon": 0.015000000000000001,
+            "altitudeM": 9.85208659010703
+          },
+          {
+            "lat": 0,
+            "lon": 0.01625,
+            "altitudeM": 9.437876615651819
+          },
+          {
+            "lat": 0,
+            "lon": 0.017499999999999998,
+            "altitudeM": 9.025940919612381
+          },
+          {
+            "lat": 0,
+            "lon": 0.018750000000000003,
+            "altitudeM": 8.61627950198872
+          },
+          {
+            "lat": 0,
+            "lon": 0.02,
+            "altitudeM": 8.208892362780832
+          },
+          {
+            "lat": 0,
+            "lon": 0.021250000000000005,
+            "altitudeM": 7.8037795019887195
+          },
+          {
+            "lat": 0,
+            "lon": 0.0225,
+            "altitudeM": 7.400940919612381
+          },
+          {
+            "lat": 0,
+            "lon": 0.023750000000000004,
+            "altitudeM": 7.000376615651819
+          },
+          {
+            "lat": 0,
+            "lon": 0.025,
+            "altitudeM": 6.60208659010703
+          },
+          {
+            "lat": 0,
+            "lon": 0.026250000000000006,
+            "altitudeM": 6.206070842978017
+          },
+          {
+            "lat": 0,
+            "lon": 0.0275,
+            "altitudeM": 5.8123293742647775
+          },
+          {
+            "lat": 0,
+            "lon": 0.028750000000000005,
+            "altitudeM": 5.420862183967313
+          },
+          {
+            "lat": 0,
+            "lon": 0.03,
+            "altitudeM": 5.031669272085624
+          },
+          {
+            "lat": 0,
+            "lon": 0.03125,
+            "altitudeM": 4.644750638619709
+          },
+          {
+            "lat": 0,
+            "lon": 0.0325,
+            "altitudeM": 4.260106283569569
+          },
+          {
+            "lat": 0,
+            "lon": 0.03375,
+            "altitudeM": 3.877736206935204
+          },
+          {
+            "lat": 0,
+            "lon": 0.035,
+            "altitudeM": 3.497640408716614
+          },
+          {
+            "lat": 0,
+            "lon": 0.03625,
+            "altitudeM": 3.119818888913798
+          },
+          {
+            "lat": 0,
+            "lon": 0.037500000000000006,
+            "altitudeM": 2.7442716475267575
+          },
+          {
+            "lat": 0,
+            "lon": 0.03875,
+            "altitudeM": 2.3709986845554916
+          },
+          {
+            "lat": 0,
+            "lon": 0.04,
+            "altitudeM": 2
+          }
+        ]
+      }
+    ],
+    "warnings": [
+      "Educational effective-Earth and single knife-edge approximation; excludes terrain profiles, reflections, foliage and weather."
+    ],
+    "explanationKeys": [
+      "line-of-sight",
+      "link-good"
+    ]
+  },
+  "vhf-horizon": {
+    "schemaVersion": 1,
+    "propagationAvailable": false,
+    "receivedPowerDbm": -77.60714267668004,
+    "noiseFloorDbm": -125.57865741474694,
+    "snrDb": 47.9715147380669,
+    "requiredSnrDb": 12,
+    "linkMarginDb": 35.9715147380669,
+    "success": "failed",
+    "confidence": {
+      "level": "low",
+      "reasons": [
+        "Educational model with configured antenna gains and losses. Not a field measurement.",
+        "FM voice threshold confidence: low.",
+        "The chosen propagation model has no usable return path."
+      ]
+    },
+    "calculations": [
+      {
+        "id": "surface-distance",
+        "label": "Great-circle surface distance",
+        "value": 111194.92664455874,
+        "unit": "m",
+        "equation": "R × central angle"
+      },
+      {
+        "id": "radio-horizon",
+        "label": "Effective-Earth radio horizon",
+        "value": 11658.244579123679,
+        "unit": "m",
+        "equation": "sqrt(2kRhTX) + sqrt(2kRhRX)"
+      },
+      {
+        "id": "fspl",
+        "label": "Free-space spreading loss",
+        "value": 116.59684272004023,
+        "unit": "dB",
+        "equation": "20 log10(4πdf/c)",
+        "children": [
+          {
+            "id": "wave-speed",
+            "label": "Wave speed",
+            "value": 299792458,
+            "unit": "m/s"
+          },
+          {
+            "id": "frequency",
+            "label": "Frequency",
+            "value": 145000000,
+            "unit": "Hz"
+          },
+          {
+            "id": "spreading-distance",
+            "label": "Ray path distance",
+            "value": 111194.92664455874,
+            "unit": "m"
+          }
+        ],
+        "assumptions": [
+          "Isotropic free-space spreading with antenna gains applied separately. Far-field approximation."
+        ]
+      },
+      {
+        "id": "link-budget",
+        "label": "Received power",
+        "value": -77.60714267668004,
+        "unit": "dBm",
+        "equation": "Ptx - Ltx + Gtx - Lfs - Lexcess - Lpol + Grx - Lrx",
+        "children": [
+          {
+            "id": "tx-power",
+            "label": "Transmitter power",
+            "value": 36.98970004336019,
+            "unit": "dBm"
+          },
+          {
+            "id": "tx-feedline",
+            "label": "Transmitter cable loss",
+            "value": 1,
+            "unit": "dB"
+          },
+          {
+            "id": "tx-gain",
+            "label": "Transmitter antenna gain",
+            "value": 2,
+            "unit": "dBi"
+          },
+          {
+            "id": "path-loss",
+            "label": "Free-space loss",
+            "value": 116.59684272004023,
+            "unit": "dB"
+          },
+          {
+            "id": "excess-loss",
+            "label": "Excess propagation loss",
+            "value": 0,
+            "unit": "dB"
+          },
+          {
+            "id": "polarization-loss",
+            "label": "Polarization loss",
+            "value": 0,
+            "unit": "dB"
+          },
+          {
+            "id": "rx-gain",
+            "label": "Receiver antenna gain",
+            "value": 2,
+            "unit": "dBi"
+          },
+          {
+            "id": "rx-feedline",
+            "label": "Receiver cable loss",
+            "value": 1,
+            "unit": "dB"
+          }
+        ],
+        "assumptions": [
+          "Diagnostic hypothetical budget only. No supported path reaches RX."
+        ]
+      },
+      {
+        "id": "noise-floor",
+        "label": "Receiver noise floor",
+        "value": -125.57865741474694,
+        "unit": "dBm",
+        "equation": "10 log10(1000 k B [Ta/Lrx + Tcable(1 - 1/Lrx) + 290(F - 1)])",
+        "children": [
+          {
+            "id": "bandwidth",
+            "label": "Receiver noise bandwidth",
+            "value": 12500,
+            "unit": "Hz"
+          },
+          {
+            "id": "noise-figure",
+            "label": "Receiver noise figure at 290 K",
+            "value": 5,
+            "unit": "dB"
+          },
+          {
+            "id": "temperature",
+            "label": "Ambient temperature",
+            "value": 290,
+            "unit": "K"
+          },
+          {
+            "id": "external-noise",
+            "label": "External antenna noise excess",
+            "value": 6,
+            "unit": "dB"
+          },
+          {
+            "id": "antenna-temperature",
+            "label": "Equivalent antenna noise temperature before cable",
+            "value": 1154.5107946051419,
+            "unit": "K"
+          },
+          {
+            "id": "receiver-input-temperature",
+            "label": "Noise temperature after receiver cable",
+            "value": 976.7053333787882,
+            "unit": "K",
+            "equation": "Ta/Lrx + Tcable(1 - 1/Lrx)"
+          }
+        ]
+      },
+      {
+        "id": "travel-time",
+        "label": "Candidate path travel time",
+        "value": 0.00037090635096817125,
+        "unit": "s",
+        "equation": "distance / wave speed"
+      },
+      {
+        "id": "snr",
+        "label": "Signal-to-noise ratio",
+        "value": 47.9715147380669,
+        "unit": "dB",
+        "equation": "Received power - noise floor"
+      },
+      {
+        "id": "required-snr",
+        "label": "FM voice required SNR",
+        "value": 12,
+        "unit": "dB",
+        "equation": "SNRref + 10 log10(Bref / B)",
+        "assumptions": [
+          "Educational 12 dB input-SNR threshold, not a measured receiver limit. Icom specifies FM sensitivity using 12 dB SINAD, which is not input SNR: https://www.icomjapan.com/lineup/products/IC-2730A/",
+          "Educational threshold. Receiver filtering and implementation loss are simplified."
+        ]
+      },
+      {
+        "id": "link-margin",
+        "label": "Link margin",
+        "value": 35.9715147380669,
+        "unit": "dB",
+        "equation": "SNR - required SNR"
+      }
+    ],
+    "limitingFactors": [],
+    "propagationPaths": [],
+    "warnings": [
+      "Educational effective-Earth and single knife-edge approximation; excludes terrain profiles, reflections, foliage and weather.",
+      "Beyond the modeled radio horizon. Smooth-Earth diffraction and troposcatter are not modeled.",
+      "No supported propagation path reaches the receiver. Numeric power, SNR, and margin are hypothetical budgets, not a prediction of reception."
+    ],
+    "explanationKeys": [
+      "beyond-radio-horizon",
+      "link-failed"
+    ]
+  },
+  "hf-day": {
+    "schemaVersion": 1,
+    "propagationAvailable": true,
+    "receivedPowerDbm": -72.53484658172303,
+    "noiseFloorDbm": -120.24646521290913,
+    "snrDb": 47.7116186311861,
+    "requiredSnrDb": 10,
+    "linkMarginDb": 37.7116186311861,
+    "success": "good",
+    "confidence": {
+      "level": "low",
+      "reasons": [
+        "Educational model with configured antenna gains and losses. Not a field measurement.",
+        "SSB voice threshold confidence: low.",
+        "Single effective ionospheric shell with synthetic time variation. No live space-weather data."
+      ]
+    },
+    "calculations": [
+      {
+        "id": "surface-distance",
+        "label": "Great-circle surface distance",
+        "value": 2223898.532891175,
+        "unit": "m",
+        "equation": "R × central angle"
+      },
+      {
+        "id": "earth-radius",
+        "label": "Spherical Earth radius",
+        "value": 6371000,
+        "unit": "m"
+      },
+      {
+        "id": "hf-effective-height",
+        "label": "Effective ionosphere shell height",
+        "value": 300000,
+        "unit": "m"
+      },
+      {
+        "id": "hf-critical-day",
+        "label": "Configured daytime critical frequency",
+        "value": 7,
+        "unit": "MHz"
+      },
+      {
+        "id": "hf-critical-night",
+        "label": "Configured nighttime critical frequency",
+        "value": 3,
+        "unit": "MHz"
+      },
+      {
+        "id": "hf-absorption-day",
+        "label": "Configured daytime absorption at 10 MHz per hop",
+        "value": 4,
+        "unit": "dB"
+      },
+      {
+        "id": "hf-absorption-night",
+        "label": "Configured nighttime absorption at 10 MHz per hop",
+        "value": 0.5,
+        "unit": "dB"
+      },
+      {
+        "id": "hf-hops",
+        "label": "Required skywave hops",
+        "value": 1,
+        "unit": "hops",
+        "equation": "ceil(surface distance / maximum hop span)"
+      },
+      {
+        "id": "hf-max-hop-distance",
+        "label": "Maximum shell hop span",
+        "value": 3835825.918634469,
+        "unit": "m",
+        "equation": "2R acos(R/(R+H))"
+      },
+      {
+        "id": "hf-local-hour",
+        "label": "Midpoint local solar hour",
+        "value": 12,
+        "unit": "h",
+        "equation": "UTC hour + midpoint longitude / 15"
+      },
+      {
+        "id": "hf-critical-frequency",
+        "label": "Modeled critical frequency",
+        "value": 7,
+        "unit": "MHz"
+      },
+      {
+        "id": "hf-muf",
+        "label": "Modeled maximum usable frequency",
+        "value": 20.734448065045722,
+        "unit": "MHz",
+        "equation": "foF2 / cos(shell incidence)"
+      },
+      {
+        "id": "hf-absorption",
+        "label": "Modeled absorption",
+        "value": 2.0408163265306123,
+        "unit": "dB",
+        "equation": "A10 × (10/fMHz)² × hops"
+      },
+      {
+        "id": "hf-ground-loss",
+        "label": "Ground reflection loss",
+        "value": 0,
+        "unit": "dB",
+        "equation": "(hops−1) × reflection loss"
+      },
+      {
+        "id": "hf-ray-length",
+        "label": "Total candidate ray length",
+        "value": 2350630.224276663,
+        "unit": "m",
+        "equation": "sum of spherical-shell chord legs"
+      },
+      {
+        "id": "fspl",
+        "label": "Free-space spreading loss",
+        "value": 122.79403025519242,
+        "unit": "dB",
+        "equation": "20 log10(4πdf/c)",
+        "children": [
+          {
+            "id": "wave-speed",
+            "label": "Wave speed",
+            "value": 299792458,
+            "unit": "m/s"
+          },
+          {
+            "id": "frequency",
+            "label": "Frequency",
+            "value": 14000000,
+            "unit": "Hz"
+          },
+          {
+            "id": "spreading-distance",
+            "label": "Ray path distance",
+            "value": 2350630.224276663,
+            "unit": "m"
+          }
+        ],
+        "assumptions": [
+          "Isotropic free-space spreading with antenna gains applied separately. Far-field approximation."
+        ]
+      },
+      {
+        "id": "link-budget",
+        "label": "Received power",
+        "value": -72.53484658172303,
+        "unit": "dBm",
+        "equation": "Ptx - Ltx + Gtx - Lfs - Lexcess - Lpol + Grx - Lrx",
+        "children": [
+          {
+            "id": "tx-power",
+            "label": "Transmitter power",
+            "value": 50,
+            "unit": "dBm"
+          },
+          {
+            "id": "tx-feedline",
+            "label": "Transmitter cable loss",
+            "value": 1,
+            "unit": "dB"
+          },
+          {
+            "id": "tx-gain",
+            "label": "Transmitter antenna gain",
+            "value": 2.15,
+            "unit": "dBi"
+          },
+          {
+            "id": "path-loss",
+            "label": "Free-space loss",
+            "value": 122.79403025519242,
+            "unit": "dB"
+          },
+          {
+            "id": "excess-loss",
+            "label": "Excess propagation loss",
+            "value": 2.0408163265306123,
+            "unit": "dB"
+          },
+          {
+            "id": "polarization-loss",
+            "label": "Polarization loss",
+            "value": 0,
+            "unit": "dB"
+          },
+          {
+            "id": "rx-gain",
+            "label": "Receiver antenna gain",
+            "value": 2.15,
+            "unit": "dBi"
+          },
+          {
+            "id": "rx-feedline",
+            "label": "Receiver cable loss",
+            "value": 1,
+            "unit": "dB"
+          }
+        ]
+      },
+      {
+        "id": "noise-floor",
+        "label": "Receiver noise floor",
+        "value": -120.24646521290913,
+        "unit": "dBm",
+        "equation": "10 log10(1000 k B [Ta/Lrx + Tcable(1 - 1/Lrx) + 290(F - 1)])",
+        "children": [
+          {
+            "id": "bandwidth",
+            "label": "Receiver noise bandwidth",
+            "value": 2400,
+            "unit": "Hz"
+          },
+          {
+            "id": "noise-figure",
+            "label": "Receiver noise figure at 290 K",
+            "value": 5,
+            "unit": "dB"
+          },
+          {
+            "id": "temperature",
+            "label": "Ambient temperature",
+            "value": 290,
+            "unit": "K"
+          },
+          {
+            "id": "external-noise",
+            "label": "External antenna noise excess",
+            "value": 20.820738179602394,
+            "unit": "dB"
+          },
+          {
+            "id": "antenna-temperature",
+            "label": "Equivalent antenna noise temperature before cable",
+            "value": 35032.55527027908,
+            "unit": "K"
+          },
+          {
+            "id": "receiver-input-temperature",
+            "label": "Noise temperature after receiver cable",
+            "value": 27886.992597651562,
+            "unit": "K",
+            "equation": "Ta/Lrx + Tcable(1 - 1/Lrx)"
+          }
+        ]
+      },
+      {
+        "id": "travel-time",
+        "label": "Candidate path travel time",
+        "value": 0.007840858439062742,
+        "unit": "s",
+        "equation": "distance / wave speed"
+      },
+      {
+        "id": "snr",
+        "label": "Signal-to-noise ratio",
+        "value": 47.7116186311861,
+        "unit": "dB",
+        "equation": "Received power - noise floor"
+      },
+      {
+        "id": "required-snr",
+        "label": "SSB voice required SNR",
+        "value": 10,
+        "unit": "dB",
+        "equation": "SNRref + 10 log10(Bref / B)",
+        "assumptions": [
+          "Educational 10 dB threshold at 2400 Hz, not a universal intelligibility limit. Receiver specification context: https://www.icomjapan.com/lineup/products/IC-7300_USA/?open=2",
+          "Educational threshold. Receiver filtering and implementation loss are simplified."
+        ]
+      },
+      {
+        "id": "link-margin",
+        "label": "Link margin",
+        "value": 37.7116186311861,
+        "unit": "dB",
+        "equation": "SNR - required SNR"
+      }
+    ],
+    "limitingFactors": [
+      {
+        "id": "power",
+        "label": "Increase transmitter power tenfold",
+        "impactDb": -9.999999999999986,
+        "possibleImprovementDb": 9.999999999999986,
+        "confidence": 0.3,
+        "explanationKey": "more-power"
+      },
+      {
+        "id": "feedline",
+        "label": "Remove feedline loss",
+        "impactDb": -1.0288229468438033,
+        "possibleImprovementDb": 1.0288229468438033,
+        "confidence": 0.3,
+        "explanationKey": "feedline-loss"
+      }
+    ],
+    "propagationPaths": [
+      {
+        "type": "skywave",
+        "points": [
+          {
+            "lat": 0,
+            "lon": 0,
+            "altitudeM": 10
+          },
+          {
+            "lat": 0,
+            "lon": 10,
+            "altitudeM": 300000
+          },
+          {
+            "lat": 0,
+            "lon": 20,
+            "altitudeM": 10
+          }
+        ]
+      }
+    ],
+    "warnings": [
+      "Low-confidence educational HF shell model, not an operational propagation forecast. MUF and maximum hop span use sea-level endpoints and equal hop spacing; ray lengths include endpoint heights. Secant-law reflection, cosine local daylight and inverse-square absorption are simplified; no ionosonde data, season, solar cycle, fading or magnetoionic effects.",
+      "HF polarization rotation is not resolved by this educational model. No fixed polarization loss is applied."
+    ],
+    "explanationKeys": [
+      "hf-skywave",
+      "link-good"
+    ]
+  },
+  "hf-night": {
+    "schemaVersion": 1,
+    "propagationAvailable": false,
+    "receivedPowerDbm": -70.74913229600875,
+    "noiseFloorDbm": -120.24646521290913,
+    "snrDb": 49.497332916900376,
+    "requiredSnrDb": 10,
+    "linkMarginDb": 39.497332916900376,
+    "success": "failed",
+    "confidence": {
+      "level": "low",
+      "reasons": [
+        "Educational model with configured antenna gains and losses. Not a field measurement.",
+        "SSB voice threshold confidence: low.",
+        "Single effective ionospheric shell with synthetic time variation. No live space-weather data.",
+        "The chosen propagation model has no usable return path."
+      ]
+    },
+    "calculations": [
+      {
+        "id": "surface-distance",
+        "label": "Great-circle surface distance",
+        "value": 2223898.532891175,
+        "unit": "m",
+        "equation": "R × central angle"
+      },
+      {
+        "id": "earth-radius",
+        "label": "Spherical Earth radius",
+        "value": 6371000,
+        "unit": "m"
+      },
+      {
+        "id": "hf-effective-height",
+        "label": "Effective ionosphere shell height",
+        "value": 300000,
+        "unit": "m"
+      },
+      {
+        "id": "hf-critical-day",
+        "label": "Configured daytime critical frequency",
+        "value": 7,
+        "unit": "MHz"
+      },
+      {
+        "id": "hf-critical-night",
+        "label": "Configured nighttime critical frequency",
+        "value": 3,
+        "unit": "MHz"
+      },
+      {
+        "id": "hf-absorption-day",
+        "label": "Configured daytime absorption at 10 MHz per hop",
+        "value": 4,
+        "unit": "dB"
+      },
+      {
+        "id": "hf-absorption-night",
+        "label": "Configured nighttime absorption at 10 MHz per hop",
+        "value": 0.5,
+        "unit": "dB"
+      },
+      {
+        "id": "hf-hops",
+        "label": "Required skywave hops",
+        "value": 1,
+        "unit": "hops",
+        "equation": "ceil(surface distance / maximum hop span)"
+      },
+      {
+        "id": "hf-max-hop-distance",
+        "label": "Maximum shell hop span",
+        "value": 3835825.918634469,
+        "unit": "m",
+        "equation": "2R acos(R/(R+H))"
+      },
+      {
+        "id": "hf-local-hour",
+        "label": "Midpoint local solar hour",
+        "value": 0,
+        "unit": "h",
+        "equation": "UTC hour + midpoint longitude / 15"
+      },
+      {
+        "id": "hf-critical-frequency",
+        "label": "Modeled critical frequency",
+        "value": 3,
+        "unit": "MHz"
+      },
+      {
+        "id": "hf-muf",
+        "label": "Modeled maximum usable frequency",
+        "value": 8.886192027876737,
+        "unit": "MHz",
+        "equation": "foF2 / cos(shell incidence)"
+      },
+      {
+        "id": "hf-absorption",
+        "label": "Modeled absorption",
+        "value": 0.25510204081632654,
+        "unit": "dB",
+        "equation": "A10 × (10/fMHz)² × hops"
+      },
+      {
+        "id": "hf-ground-loss",
+        "label": "Ground reflection loss",
+        "value": 0,
+        "unit": "dB",
+        "equation": "(hops−1) × reflection loss"
+      },
+      {
+        "id": "hf-ray-length",
+        "label": "Total candidate ray length",
+        "value": 2350630.224276663,
+        "unit": "m",
+        "equation": "sum of spherical-shell chord legs"
+      },
+      {
+        "id": "fspl",
+        "label": "Free-space spreading loss",
+        "value": 122.79403025519242,
+        "unit": "dB",
+        "equation": "20 log10(4πdf/c)",
+        "children": [
+          {
+            "id": "wave-speed",
+            "label": "Wave speed",
+            "value": 299792458,
+            "unit": "m/s"
+          },
+          {
+            "id": "frequency",
+            "label": "Frequency",
+            "value": 14000000,
+            "unit": "Hz"
+          },
+          {
+            "id": "spreading-distance",
+            "label": "Ray path distance",
+            "value": 2350630.224276663,
+            "unit": "m"
+          }
+        ],
+        "assumptions": [
+          "Isotropic free-space spreading with antenna gains applied separately. Far-field approximation."
+        ]
+      },
+      {
+        "id": "link-budget",
+        "label": "Received power",
+        "value": -70.74913229600875,
+        "unit": "dBm",
+        "equation": "Ptx - Ltx + Gtx - Lfs - Lexcess - Lpol + Grx - Lrx",
+        "children": [
+          {
+            "id": "tx-power",
+            "label": "Transmitter power",
+            "value": 50,
+            "unit": "dBm"
+          },
+          {
+            "id": "tx-feedline",
+            "label": "Transmitter cable loss",
+            "value": 1,
+            "unit": "dB"
+          },
+          {
+            "id": "tx-gain",
+            "label": "Transmitter antenna gain",
+            "value": 2.15,
+            "unit": "dBi"
+          },
+          {
+            "id": "path-loss",
+            "label": "Free-space loss",
+            "value": 122.79403025519242,
+            "unit": "dB"
+          },
+          {
+            "id": "excess-loss",
+            "label": "Excess propagation loss",
+            "value": 0.25510204081632654,
+            "unit": "dB"
+          },
+          {
+            "id": "polarization-loss",
+            "label": "Polarization loss",
+            "value": 0,
+            "unit": "dB"
+          },
+          {
+            "id": "rx-gain",
+            "label": "Receiver antenna gain",
+            "value": 2.15,
+            "unit": "dBi"
+          },
+          {
+            "id": "rx-feedline",
+            "label": "Receiver cable loss",
+            "value": 1,
+            "unit": "dB"
+          }
+        ],
+        "assumptions": [
+          "Diagnostic hypothetical budget only. No supported path reaches RX."
+        ]
+      },
+      {
+        "id": "noise-floor",
+        "label": "Receiver noise floor",
+        "value": -120.24646521290913,
+        "unit": "dBm",
+        "equation": "10 log10(1000 k B [Ta/Lrx + Tcable(1 - 1/Lrx) + 290(F - 1)])",
+        "children": [
+          {
+            "id": "bandwidth",
+            "label": "Receiver noise bandwidth",
+            "value": 2400,
+            "unit": "Hz"
+          },
+          {
+            "id": "noise-figure",
+            "label": "Receiver noise figure at 290 K",
+            "value": 5,
+            "unit": "dB"
+          },
+          {
+            "id": "temperature",
+            "label": "Ambient temperature",
+            "value": 290,
+            "unit": "K"
+          },
+          {
+            "id": "external-noise",
+            "label": "External antenna noise excess",
+            "value": 20.820738179602394,
+            "unit": "dB"
+          },
+          {
+            "id": "antenna-temperature",
+            "label": "Equivalent antenna noise temperature before cable",
+            "value": 35032.55527027908,
+            "unit": "K"
+          },
+          {
+            "id": "receiver-input-temperature",
+            "label": "Noise temperature after receiver cable",
+            "value": 27886.992597651562,
+            "unit": "K",
+            "equation": "Ta/Lrx + Tcable(1 - 1/Lrx)"
+          }
+        ]
+      },
+      {
+        "id": "travel-time",
+        "label": "Candidate path travel time",
+        "value": 0.007840858439062742,
+        "unit": "s",
+        "equation": "distance / wave speed"
+      },
+      {
+        "id": "snr",
+        "label": "Signal-to-noise ratio",
+        "value": 49.497332916900376,
+        "unit": "dB",
+        "equation": "Received power - noise floor"
+      },
+      {
+        "id": "required-snr",
+        "label": "SSB voice required SNR",
+        "value": 10,
+        "unit": "dB",
+        "equation": "SNRref + 10 log10(Bref / B)",
+        "assumptions": [
+          "Educational 10 dB threshold at 2400 Hz, not a universal intelligibility limit. Receiver specification context: https://www.icomjapan.com/lineup/products/IC-7300_USA/?open=2",
+          "Educational threshold. Receiver filtering and implementation loss are simplified."
+        ]
+      },
+      {
+        "id": "link-margin",
+        "label": "Link margin",
+        "value": 39.497332916900376,
+        "unit": "dB",
+        "equation": "SNR - required SNR"
+      }
+    ],
+    "limitingFactors": [
+      {
+        "id": "frequency",
+        "label": "Try 80% of modeled MUF to restore a path",
+        "impactDb": 0,
+        "possibleImprovementDb": 0,
+        "confidence": 0.3,
+        "explanationKey": "hf-frequency"
+      }
+    ],
+    "propagationPaths": [
+      {
+        "type": "skywave",
+        "points": [
+          {
+            "lat": 0,
+            "lon": 0,
+            "altitudeM": 10
+          },
+          {
+            "lat": 0,
+            "lon": 10,
+            "altitudeM": 300000
+          },
+          {
+            "lat": 0,
+            "lon": 18.89627686508047,
+            "altitudeM": 782841.2622549487
+          }
+        ]
+      }
+    ],
+    "warnings": [
+      "Low-confidence educational HF shell model, not an operational propagation forecast. MUF and maximum hop span use sea-level endpoints and equal hop spacing; ray lengths include endpoint heights. Secant-law reflection, cosine local daylight and inverse-square absorption are simplified; no ionosonde data, season, solar cycle, fading or magnetoionic effects.",
+      "Frequency exceeds modeled MUF. The ray escapes; numeric loss is a diagnostic for the unavailable candidate route.",
+      "HF polarization rotation is not resolved by this educational model. No fixed polarization loss is applied.",
+      "No supported propagation path reaches the receiver. Numeric power, SNR, and margin are hypothetical budgets, not a prediction of reception."
+    ],
+    "explanationKeys": [
+      "hf-above-muf",
+      "link-failed"
+    ]
+  },
+  "hf-above-muf": {
+    "schemaVersion": 1,
+    "propagationAvailable": false,
+    "receivedPowerDbm": -77.55833908046534,
+    "noiseFloorDbm": -128.9614054078578,
+    "snrDb": 51.40306632739245,
+    "requiredSnrDb": 10,
+    "linkMarginDb": 41.40306632739245,
+    "success": "failed",
+    "confidence": {
+      "level": "low",
+      "reasons": [
+        "Educational model with configured antenna gains and losses. Not a field measurement.",
+        "SSB voice threshold confidence: low.",
+        "Single effective ionospheric shell with synthetic time variation. No live space-weather data.",
+        "The chosen propagation model has no usable return path."
+      ]
+    },
+    "calculations": [
+      {
+        "id": "surface-distance",
+        "label": "Great-circle surface distance",
+        "value": 2223898.532891175,
+        "unit": "m",
+        "equation": "R × central angle"
+      },
+      {
+        "id": "earth-radius",
+        "label": "Spherical Earth radius",
+        "value": 6371000,
+        "unit": "m"
+      },
+      {
+        "id": "hf-effective-height",
+        "label": "Effective ionosphere shell height",
+        "value": 300000,
+        "unit": "m"
+      },
+      {
+        "id": "hf-critical-day",
+        "label": "Configured daytime critical frequency",
+        "value": 7,
+        "unit": "MHz"
+      },
+      {
+        "id": "hf-critical-night",
+        "label": "Configured nighttime critical frequency",
+        "value": 3,
+        "unit": "MHz"
+      },
+      {
+        "id": "hf-absorption-day",
+        "label": "Configured daytime absorption at 10 MHz per hop",
+        "value": 4,
+        "unit": "dB"
+      },
+      {
+        "id": "hf-absorption-night",
+        "label": "Configured nighttime absorption at 10 MHz per hop",
+        "value": 0.5,
+        "unit": "dB"
+      },
+      {
+        "id": "hf-hops",
+        "label": "Required skywave hops",
+        "value": 1,
+        "unit": "hops",
+        "equation": "ceil(surface distance / maximum hop span)"
+      },
+      {
+        "id": "hf-max-hop-distance",
+        "label": "Maximum shell hop span",
+        "value": 3835825.918634469,
+        "unit": "m",
+        "equation": "2R acos(R/(R+H))"
+      },
+      {
+        "id": "hf-local-hour",
+        "label": "Midpoint local solar hour",
+        "value": 12,
+        "unit": "h",
+        "equation": "UTC hour + midpoint longitude / 15"
+      },
+      {
+        "id": "hf-critical-frequency",
+        "label": "Modeled critical frequency",
+        "value": 7,
+        "unit": "MHz"
+      },
+      {
+        "id": "hf-muf",
+        "label": "Modeled maximum usable frequency",
+        "value": 20.734448065045722,
+        "unit": "MHz",
+        "equation": "foF2 / cos(shell incidence)"
+      },
+      {
+        "id": "hf-absorption",
+        "label": "Modeled absorption",
+        "value": 0.4444444444444444,
+        "unit": "dB",
+        "equation": "A10 × (10/fMHz)² × hops"
+      },
+      {
+        "id": "hf-ground-loss",
+        "label": "Ground reflection loss",
+        "value": 0,
+        "unit": "dB",
+        "equation": "(hops−1) × reflection loss"
+      },
+      {
+        "id": "hf-ray-length",
+        "label": "Total candidate ray length",
+        "value": 2350630.224276663,
+        "unit": "m",
+        "equation": "sum of spherical-shell chord legs"
+      },
+      {
+        "id": "fspl",
+        "label": "Free-space spreading loss",
+        "value": 129.4138946360209,
+        "unit": "dB",
+        "equation": "20 log10(4πdf/c)",
+        "children": [
+          {
+            "id": "wave-speed",
+            "label": "Wave speed",
+            "value": 299792458,
+            "unit": "m/s"
+          },
+          {
+            "id": "frequency",
+            "label": "Frequency",
+            "value": 30000000,
+            "unit": "Hz"
+          },
+          {
+            "id": "spreading-distance",
+            "label": "Ray path distance",
+            "value": 2350630.224276663,
+            "unit": "m"
+          }
+        ],
+        "assumptions": [
+          "Isotropic free-space spreading with antenna gains applied separately. Far-field approximation."
+        ]
+      },
+      {
+        "id": "link-budget",
+        "label": "Received power",
+        "value": -77.55833908046534,
+        "unit": "dBm",
+        "equation": "Ptx - Ltx + Gtx - Lfs - Lexcess - Lpol + Grx - Lrx",
+        "children": [
+          {
+            "id": "tx-power",
+            "label": "Transmitter power",
+            "value": 50,
+            "unit": "dBm"
+          },
+          {
+            "id": "tx-feedline",
+            "label": "Transmitter cable loss",
+            "value": 1,
+            "unit": "dB"
+          },
+          {
+            "id": "tx-gain",
+            "label": "Transmitter antenna gain",
+            "value": 2.15,
+            "unit": "dBi"
+          },
+          {
+            "id": "path-loss",
+            "label": "Free-space loss",
+            "value": 129.4138946360209,
+            "unit": "dB"
+          },
+          {
+            "id": "excess-loss",
+            "label": "Excess propagation loss",
+            "value": 0.4444444444444444,
+            "unit": "dB"
+          },
+          {
+            "id": "polarization-loss",
+            "label": "Polarization loss",
+            "value": 0,
+            "unit": "dB"
+          },
+          {
+            "id": "rx-gain",
+            "label": "Receiver antenna gain",
+            "value": 2.15,
+            "unit": "dBi"
+          },
+          {
+            "id": "rx-feedline",
+            "label": "Receiver cable loss",
+            "value": 1,
+            "unit": "dB"
+          }
+        ],
+        "assumptions": [
+          "Diagnostic hypothetical budget only. No supported path reaches RX."
+        ]
+      },
+      {
+        "id": "noise-floor",
+        "label": "Receiver noise floor",
+        "value": -128.9614054078578,
+        "unit": "dBm",
+        "equation": "10 log10(1000 k B [Ta/Lrx + Tcable(1 - 1/Lrx) + 290(F - 1)])",
+        "children": [
+          {
+            "id": "bandwidth",
+            "label": "Receiver noise bandwidth",
+            "value": 2400,
+            "unit": "Hz"
+          },
+          {
+            "id": "noise-figure",
+            "label": "Receiver noise figure at 290 K",
+            "value": 5,
+            "unit": "dB"
+          },
+          {
+            "id": "temperature",
+            "label": "Ambient temperature",
+            "value": 290,
+            "unit": "K"
+          },
+          {
+            "id": "external-noise",
+            "label": "External antenna noise excess",
+            "value": 11.354332115017655,
+            "unit": "dB"
+          },
+          {
+            "id": "antenna-temperature",
+            "label": "Equivalent antenna noise temperature before cable",
+            "value": 3961.240488534058,
+            "unit": "K"
+          },
+          {
+            "id": "receiver-input-temperature",
+            "label": "Noise temperature after receiver cable",
+            "value": 3206.1699765055673,
+            "unit": "K",
+            "equation": "Ta/Lrx + Tcable(1 - 1/Lrx)"
+          }
+        ]
+      },
+      {
+        "id": "travel-time",
+        "label": "Candidate path travel time",
+        "value": 0.007840858439062742,
+        "unit": "s",
+        "equation": "distance / wave speed"
+      },
+      {
+        "id": "snr",
+        "label": "Signal-to-noise ratio",
+        "value": 51.40306632739245,
+        "unit": "dB",
+        "equation": "Received power - noise floor"
+      },
+      {
+        "id": "required-snr",
+        "label": "SSB voice required SNR",
+        "value": 10,
+        "unit": "dB",
+        "equation": "SNRref + 10 log10(Bref / B)",
+        "assumptions": [
+          "Educational 10 dB threshold at 2400 Hz, not a universal intelligibility limit. Receiver specification context: https://www.icomjapan.com/lineup/products/IC-7300_USA/?open=2",
+          "Educational threshold. Receiver filtering and implementation loss are simplified."
+        ]
+      },
+      {
+        "id": "link-margin",
+        "label": "Link margin",
+        "value": 41.40306632739245,
+        "unit": "dB",
+        "equation": "SNR - required SNR"
+      }
+    ],
+    "limitingFactors": [
+      {
+        "id": "frequency",
+        "label": "Try 80% of modeled MUF to restore a path",
+        "impactDb": 0,
+        "possibleImprovementDb": 0,
+        "confidence": 0.3,
+        "explanationKey": "hf-frequency"
+      }
+    ],
+    "propagationPaths": [
+      {
+        "type": "skywave",
+        "points": [
+          {
+            "lat": 0,
+            "lon": 0,
+            "altitudeM": 10
+          },
+          {
+            "lat": 0,
+            "lon": 10,
+            "altitudeM": 300000
+          },
+          {
+            "lat": 0,
+            "lon": 18.89627686508047,
+            "altitudeM": 782841.2622549487
+          }
+        ]
+      }
+    ],
+    "warnings": [
+      "Low-confidence educational HF shell model, not an operational propagation forecast. MUF and maximum hop span use sea-level endpoints and equal hop spacing; ray lengths include endpoint heights. Secant-law reflection, cosine local daylight and inverse-square absorption are simplified; no ionosonde data, season, solar cycle, fading or magnetoionic effects.",
+      "Frequency exceeds modeled MUF. The ray escapes; numeric loss is a diagnostic for the unavailable candidate route.",
+      "HF polarization rotation is not resolved by this educational model. No fixed polarization loss is applied.",
+      "No supported propagation path reaches the receiver. Numeric power, SNR, and margin are hypothetical budgets, not a prediction of reception."
+    ],
+    "explanationKeys": [
+      "hf-above-muf",
+      "link-failed"
+    ]
+  },
+  "hf-absorption": {
+    "schemaVersion": 1,
+    "propagationAvailable": true,
+    "receivedPowerDbm": -176.13370976715055,
+    "noiseFloorDbm": -94.87356487957798,
+    "snrDb": -81.26014488757257,
+    "requiredSnrDb": 10,
+    "linkMarginDb": -91.26014488757257,
+    "success": "failed",
+    "confidence": {
+      "level": "low",
+      "reasons": [
+        "Educational model with configured antenna gains and losses. Not a field measurement.",
+        "SSB voice threshold confidence: low.",
+        "Single effective ionospheric shell with synthetic time variation. No live space-weather data."
+      ]
+    },
+    "calculations": [
+      {
+        "id": "surface-distance",
+        "label": "Great-circle surface distance",
+        "value": 2223898.532891175,
+        "unit": "m",
+        "equation": "R × central angle"
+      },
+      {
+        "id": "earth-radius",
+        "label": "Spherical Earth radius",
+        "value": 6371000,
+        "unit": "m"
+      },
+      {
+        "id": "hf-effective-height",
+        "label": "Effective ionosphere shell height",
+        "value": 300000,
+        "unit": "m"
+      },
+      {
+        "id": "hf-critical-day",
+        "label": "Configured daytime critical frequency",
+        "value": 7,
+        "unit": "MHz"
+      },
+      {
+        "id": "hf-critical-night",
+        "label": "Configured nighttime critical frequency",
+        "value": 3,
+        "unit": "MHz"
+      },
+      {
+        "id": "hf-absorption-day",
+        "label": "Configured daytime absorption at 10 MHz per hop",
+        "value": 4,
+        "unit": "dB"
+      },
+      {
+        "id": "hf-absorption-night",
+        "label": "Configured nighttime absorption at 10 MHz per hop",
+        "value": 0.5,
+        "unit": "dB"
+      },
+      {
+        "id": "hf-hops",
+        "label": "Required skywave hops",
+        "value": 1,
+        "unit": "hops",
+        "equation": "ceil(surface distance / maximum hop span)"
+      },
+      {
+        "id": "hf-max-hop-distance",
+        "label": "Maximum shell hop span",
+        "value": 3835825.918634469,
+        "unit": "m",
+        "equation": "2R acos(R/(R+H))"
+      },
+      {
+        "id": "hf-local-hour",
+        "label": "Midpoint local solar hour",
+        "value": 12,
+        "unit": "h",
+        "equation": "UTC hour + midpoint longitude / 15"
+      },
+      {
+        "id": "hf-critical-frequency",
+        "label": "Modeled critical frequency",
+        "value": 7,
+        "unit": "MHz"
+      },
+      {
+        "id": "hf-muf",
+        "label": "Modeled maximum usable frequency",
+        "value": 20.734448065045722,
+        "unit": "MHz",
+        "equation": "foF2 / cos(shell incidence)"
+      },
+      {
+        "id": "hf-absorption",
+        "label": "Modeled absorption",
+        "value": 123.45679012345678,
+        "unit": "dB",
+        "equation": "A10 × (10/fMHz)² × hops"
+      },
+      {
+        "id": "hf-ground-loss",
+        "label": "Ground reflection loss",
+        "value": 0,
+        "unit": "dB",
+        "equation": "(hops−1) × reflection loss"
+      },
+      {
+        "id": "hf-ray-length",
+        "label": "Total candidate ray length",
+        "value": 2350630.224276663,
+        "unit": "m",
+        "equation": "sum of spherical-shell chord legs"
+      },
+      {
+        "id": "fspl",
+        "label": "Free-space spreading loss",
+        "value": 104.97691964369379,
+        "unit": "dB",
+        "equation": "20 log10(4πdf/c)",
+        "children": [
+          {
+            "id": "wave-speed",
+            "label": "Wave speed",
+            "value": 299792458,
+            "unit": "m/s"
+          },
+          {
+            "id": "frequency",
+            "label": "Frequency",
+            "value": 1800000,
+            "unit": "Hz"
+          },
+          {
+            "id": "spreading-distance",
+            "label": "Ray path distance",
+            "value": 2350630.224276663,
+            "unit": "m"
+          }
+        ],
+        "assumptions": [
+          "Isotropic free-space spreading with antenna gains applied separately. Far-field approximation."
+        ]
+      },
+      {
+        "id": "link-budget",
+        "label": "Received power",
+        "value": -176.13370976715055,
+        "unit": "dBm",
+        "equation": "Ptx - Ltx + Gtx - Lfs - Lexcess - Lpol + Grx - Lrx",
+        "children": [
+          {
+            "id": "tx-power",
+            "label": "Transmitter power",
+            "value": 50,
+            "unit": "dBm"
+          },
+          {
+            "id": "tx-feedline",
+            "label": "Transmitter cable loss",
+            "value": 1,
+            "unit": "dB"
+          },
+          {
+            "id": "tx-gain",
+            "label": "Transmitter antenna gain",
+            "value": 2.15,
+            "unit": "dBi"
+          },
+          {
+            "id": "path-loss",
+            "label": "Free-space loss",
+            "value": 104.97691964369379,
+            "unit": "dB"
+          },
+          {
+            "id": "excess-loss",
+            "label": "Excess propagation loss",
+            "value": 123.45679012345678,
+            "unit": "dB"
+          },
+          {
+            "id": "polarization-loss",
+            "label": "Polarization loss",
+            "value": 0,
+            "unit": "dB"
+          },
+          {
+            "id": "rx-gain",
+            "label": "Receiver antenna gain",
+            "value": 2.15,
+            "unit": "dBi"
+          },
+          {
+            "id": "rx-feedline",
+            "label": "Receiver cable loss",
+            "value": 1,
+            "unit": "dB"
+          }
+        ]
+      },
+      {
+        "id": "noise-floor",
+        "label": "Receiver noise floor",
+        "value": -94.87356487957798,
+        "unit": "dBm",
+        "equation": "10 log10(1000 k B [Ta/Lrx + Tcable(1 - 1/Lrx) + 290(F - 1)])",
+        "children": [
+          {
+            "id": "bandwidth",
+            "label": "Receiver noise bandwidth",
+            "value": 2400,
+            "unit": "Hz"
+          },
+          {
+            "id": "noise-figure",
+            "label": "Receiver noise figure at 290 K",
+            "value": 5,
+            "unit": "dB"
+          },
+          {
+            "id": "temperature",
+            "label": "Ambient temperature",
+            "value": 290,
+            "unit": "K"
+          },
+          {
+            "id": "external-noise",
+            "label": "External antenna noise excess",
+            "value": 46.299206354045445,
+            "unit": "dB"
+          },
+          {
+            "id": "antenna-temperature",
+            "label": "Equivalent antenna noise temperature before cable",
+            "value": 12368545.564502483,
+            "unit": "K"
+          },
+          {
+            "id": "receiver-input-temperature",
+            "label": "Noise temperature after receiver cable",
+            "value": 9824744.609170029,
+            "unit": "K",
+            "equation": "Ta/Lrx + Tcable(1 - 1/Lrx)"
+          }
+        ]
+      },
+      {
+        "id": "travel-time",
+        "label": "Candidate path travel time",
+        "value": 0.007840858439062742,
+        "unit": "s",
+        "equation": "distance / wave speed"
+      },
+      {
+        "id": "snr",
+        "label": "Signal-to-noise ratio",
+        "value": -81.26014488757257,
+        "unit": "dB",
+        "equation": "Received power - noise floor"
+      },
+      {
+        "id": "required-snr",
+        "label": "SSB voice required SNR",
+        "value": 10,
+        "unit": "dB",
+        "equation": "SNRref + 10 log10(Bref / B)",
+        "assumptions": [
+          "Educational 10 dB threshold at 2400 Hz, not a universal intelligibility limit. Receiver specification context: https://www.icomjapan.com/lineup/products/IC-7300_USA/?open=2",
+          "Educational threshold. Receiver filtering and implementation loss are simplified."
+        ]
+      },
+      {
+        "id": "link-margin",
+        "label": "Link margin",
+        "value": -91.26014488757257,
+        "unit": "dB",
+        "equation": "SNR - required SNR"
+      }
+    ],
+    "limitingFactors": [
+      {
+        "id": "frequency",
+        "label": "Try 80% of modeled MUF",
+        "impactDb": -102.7128230550353,
+        "possibleImprovementDb": 102.7128230550353,
+        "confidence": 0.3,
+        "explanationKey": "hf-frequency"
+      },
+      {
+        "id": "power",
+        "label": "Increase transmitter power tenfold",
+        "impactDb": -10,
+        "possibleImprovementDb": 10,
+        "confidence": 0.3,
+        "explanationKey": "more-power"
+      },
+      {
+        "id": "feedline",
+        "label": "Remove feedline loss",
+        "impactDb": -1.0000833704538508,
+        "possibleImprovementDb": 1.0000833704538508,
+        "confidence": 0.3,
+        "explanationKey": "feedline-loss"
+      }
+    ],
+    "propagationPaths": [
+      {
+        "type": "skywave",
+        "points": [
+          {
+            "lat": 0,
+            "lon": 0,
+            "altitudeM": 10
+          },
+          {
+            "lat": 0,
+            "lon": 10,
+            "altitudeM": 300000
+          },
+          {
+            "lat": 0,
+            "lon": 20,
+            "altitudeM": 10
+          }
+        ]
+      }
+    ],
+    "warnings": [
+      "Low-confidence educational HF shell model, not an operational propagation forecast. MUF and maximum hop span use sea-level endpoints and equal hop spacing; ray lengths include endpoint heights. Secant-law reflection, cosine local daylight and inverse-square absorption are simplified; no ionosonde data, season, solar cycle, fading or magnetoionic effects.",
+      "HF polarization rotation is not resolved by this educational model. No fixed polarization loss is applied."
+    ],
+    "explanationKeys": [
+      "hf-skywave",
+      "hf-absorption",
+      "link-failed"
+    ]
+  },
+  "hf-multihop": {
+    "schemaVersion": 1,
+    "propagationAvailable": true,
+    "receivedPowerDbm": -106.87058921567274,
+    "noiseFloorDbm": -111.7281420268597,
+    "snrDb": 4.857552811186963,
+    "requiredSnrDb": 10,
+    "linkMarginDb": -5.142447188813037,
+    "success": "failed",
+    "confidence": {
+      "level": "low",
+      "reasons": [
+        "Educational model with configured antenna gains and losses. Not a field measurement.",
+        "SSB voice threshold confidence: low.",
+        "Single effective ionospheric shell with synthetic time variation. No live space-weather data."
+      ]
+    },
+    "calculations": [
+      {
+        "id": "surface-distance",
+        "label": "Great-circle surface distance",
+        "value": 8895594.1315647,
+        "unit": "m",
+        "equation": "R × central angle"
+      },
+      {
+        "id": "earth-radius",
+        "label": "Spherical Earth radius",
+        "value": 6371000,
+        "unit": "m"
+      },
+      {
+        "id": "hf-effective-height",
+        "label": "Effective ionosphere shell height",
+        "value": 300000,
+        "unit": "m"
+      },
+      {
+        "id": "hf-critical-day",
+        "label": "Configured daytime critical frequency",
+        "value": 7,
+        "unit": "MHz"
+      },
+      {
+        "id": "hf-critical-night",
+        "label": "Configured nighttime critical frequency",
+        "value": 3,
+        "unit": "MHz"
+      },
+      {
+        "id": "hf-absorption-day",
+        "label": "Configured daytime absorption at 10 MHz per hop",
+        "value": 4,
+        "unit": "dB"
+      },
+      {
+        "id": "hf-absorption-night",
+        "label": "Configured nighttime absorption at 10 MHz per hop",
+        "value": 0.5,
+        "unit": "dB"
+      },
+      {
+        "id": "hf-hops",
+        "label": "Required skywave hops",
+        "value": 3,
+        "unit": "hops",
+        "equation": "ceil(surface distance / maximum hop span)"
+      },
+      {
+        "id": "hf-max-hop-distance",
+        "label": "Maximum shell hop span",
+        "value": 3835825.918634469,
+        "unit": "m",
+        "equation": "2R acos(R/(R+H))"
+      },
+      {
+        "id": "hf-local-hour",
+        "label": "Midpoint local solar hour",
+        "value": 12,
+        "unit": "h",
+        "equation": "UTC hour + midpoint longitude / 15"
+      },
+      {
+        "id": "hf-critical-frequency",
+        "label": "Modeled critical frequency",
+        "value": 7,
+        "unit": "MHz"
+      },
+      {
+        "id": "hf-muf",
+        "label": "Modeled maximum usable frequency",
+        "value": 22.89838168340064,
+        "unit": "MHz",
+        "equation": "foF2 / cos(shell incidence)"
+      },
+      {
+        "id": "hf-absorption",
+        "label": "Modeled absorption",
+        "value": 24.48979591836735,
+        "unit": "dB",
+        "equation": "A10 × (10/fMHz)² × hops"
+      },
+      {
+        "id": "hf-ground-loss",
+        "label": "Ground reflection loss",
+        "value": 6,
+        "unit": "dB",
+        "equation": "(hops−1) × reflection loss"
+      },
+      {
+        "id": "hf-ray-length",
+        "label": "Total candidate ray length",
+        "value": 9258752.261892693,
+        "unit": "m",
+        "equation": "sum of spherical-shell chord legs"
+      },
+      {
+        "id": "fspl",
+        "label": "Free-space spreading loss",
+        "value": 128.6807932973054,
+        "unit": "dB",
+        "equation": "20 log10(4πdf/c)",
+        "children": [
+          {
+            "id": "wave-speed",
+            "label": "Wave speed",
+            "value": 299792458,
+            "unit": "m/s"
+          },
+          {
+            "id": "frequency",
+            "label": "Frequency",
+            "value": 7000000,
+            "unit": "Hz"
+          },
+          {
+            "id": "spreading-distance",
+            "label": "Ray path distance",
+            "value": 9258752.261892693,
+            "unit": "m"
+          }
+        ],
+        "assumptions": [
+          "Isotropic free-space spreading with antenna gains applied separately. Far-field approximation."
+        ]
+      },
+      {
+        "id": "link-budget",
+        "label": "Received power",
+        "value": -106.87058921567274,
+        "unit": "dBm",
+        "equation": "Ptx - Ltx + Gtx - Lfs - Lexcess - Lpol + Grx - Lrx",
+        "children": [
+          {
+            "id": "tx-power",
+            "label": "Transmitter power",
+            "value": 50,
+            "unit": "dBm"
+          },
+          {
+            "id": "tx-feedline",
+            "label": "Transmitter cable loss",
+            "value": 1,
+            "unit": "dB"
+          },
+          {
+            "id": "tx-gain",
+            "label": "Transmitter antenna gain",
+            "value": 2.15,
+            "unit": "dBi"
+          },
+          {
+            "id": "path-loss",
+            "label": "Free-space loss",
+            "value": 128.6807932973054,
+            "unit": "dB"
+          },
+          {
+            "id": "excess-loss",
+            "label": "Excess propagation loss",
+            "value": 30.48979591836735,
+            "unit": "dB"
+          },
+          {
+            "id": "polarization-loss",
+            "label": "Polarization loss",
+            "value": 0,
+            "unit": "dB"
+          },
+          {
+            "id": "rx-gain",
+            "label": "Receiver antenna gain",
+            "value": 2.15,
+            "unit": "dBi"
+          },
+          {
+            "id": "rx-feedline",
+            "label": "Receiver cable loss",
+            "value": 1,
+            "unit": "dB"
+          }
+        ]
+      },
+      {
+        "id": "noise-floor",
+        "label": "Receiver noise floor",
+        "value": -111.7281420268597,
+        "unit": "dBm",
+        "equation": "10 log10(1000 k B [Ta/Lrx + Tcable(1 - 1/Lrx) + 290(F - 1)])",
+        "children": [
+          {
+            "id": "bandwidth",
+            "label": "Receiver noise bandwidth",
+            "value": 2400,
+            "unit": "Hz"
+          },
+          {
+            "id": "noise-figure",
+            "label": "Receiver noise figure at 290 K",
+            "value": 5,
+            "unit": "dB"
+          },
+          {
+            "id": "temperature",
+            "label": "Ambient temperature",
+            "value": 290,
+            "unit": "K"
+          },
+          {
+            "id": "external-noise",
+            "label": "External antenna noise excess",
+            "value": 29.430196055592255,
+            "unit": "dB"
+          },
+          {
+            "id": "antenna-temperature",
+            "label": "Equivalent antenna noise temperature before cable",
+            "value": 254341.71973988335,
+            "unit": "K"
+          },
+          {
+            "id": "receiver-input-temperature",
+            "label": "Noise temperature after receiver cable",
+            "value": 202090.45406964945,
+            "unit": "K",
+            "equation": "Ta/Lrx + Tcable(1 - 1/Lrx)"
+          }
+        ]
+      },
+      {
+        "id": "travel-time",
+        "label": "Candidate path travel time",
+        "value": 0.0308838732090208,
+        "unit": "s",
+        "equation": "distance / wave speed"
+      },
+      {
+        "id": "snr",
+        "label": "Signal-to-noise ratio",
+        "value": 4.857552811186963,
+        "unit": "dB",
+        "equation": "Received power - noise floor"
+      },
+      {
+        "id": "required-snr",
+        "label": "SSB voice required SNR",
+        "value": 10,
+        "unit": "dB",
+        "equation": "SNRref + 10 log10(Bref / B)",
+        "assumptions": [
+          "Educational 10 dB threshold at 2400 Hz, not a universal intelligibility limit. Receiver specification context: https://www.icomjapan.com/lineup/products/IC-7300_USA/?open=2",
+          "Educational threshold. Receiver filtering and implementation loss are simplified."
+        ]
+      },
+      {
+        "id": "link-margin",
+        "label": "Link margin",
+        "value": -5.142447188813037,
+        "unit": "dB",
+        "equation": "SNR - required SNR"
+      }
+    ],
+    "limitingFactors": [
+      {
+        "id": "frequency",
+        "label": "Try 80% of modeled MUF",
+        "impactDb": -12.557909084074737,
+        "possibleImprovementDb": 12.557909084074737,
+        "confidence": 0.3,
+        "explanationKey": "hf-frequency"
+      },
+      {
+        "id": "power",
+        "label": "Increase transmitter power tenfold",
+        "impactDb": -10,
+        "possibleImprovementDb": 10,
+        "confidence": 0.3,
+        "explanationKey": "more-power"
+      },
+      {
+        "id": "feedline",
+        "label": "Remove feedline loss",
+        "impactDb": -1.0040426656979378,
+        "possibleImprovementDb": 1.0040426656979378,
+        "confidence": 0.3,
+        "explanationKey": "feedline-loss"
+      }
+    ],
+    "propagationPaths": [
+      {
+        "type": "skywave",
+        "points": [
+          {
+            "lat": 0,
+            "lon": 0,
+            "altitudeM": 10
+          },
+          {
+            "lat": 0,
+            "lon": 13.333333333333332,
+            "altitudeM": 300000
+          },
+          {
+            "lat": 0,
+            "lon": 26.666666666666664,
+            "altitudeM": 0
+          },
+          {
+            "lat": 0,
+            "lon": 40,
+            "altitudeM": 300000
+          },
+          {
+            "lat": 0,
+            "lon": 53.33333333333333,
+            "altitudeM": 0
+          },
+          {
+            "lat": 0,
+            "lon": 66.66666666666666,
+            "altitudeM": 300000
+          },
+          {
+            "lat": 0,
+            "lon": 80,
+            "altitudeM": 10
+          }
+        ]
+      }
+    ],
+    "warnings": [
+      "Low-confidence educational HF shell model, not an operational propagation forecast. MUF and maximum hop span use sea-level endpoints and equal hop spacing; ray lengths include endpoint heights. Secant-law reflection, cosine local daylight and inverse-square absorption are simplified; no ionosonde data, season, solar cycle, fading or magnetoionic effects.",
+      "HF polarization rotation is not resolved by this educational model. No fixed polarization loss is applied."
+    ],
+    "explanationKeys": [
+      "hf-skywave",
+      "hf-absorption",
+      "link-failed"
+    ]
+  },
+  "hf-ft8": {
+    "schemaVersion": 1,
+    "propagationAvailable": true,
+    "receivedPowerDbm": -126.87058921567274,
+    "noiseFloorDbm": -111.55085435725539,
+    "snrDb": -15.319734858417348,
+    "requiredSnrDb": -21,
+    "linkMarginDb": 5.680265141582652,
+    "success": "marginal",
+    "confidence": {
+      "level": "low",
+      "reasons": [
+        "Educational model with configured antenna gains and losses. Not a field measurement.",
+        "FT8 threshold confidence: medium.",
+        "Single effective ionospheric shell with synthetic time variation. No live space-weather data."
+      ]
+    },
+    "calculations": [
+      {
+        "id": "surface-distance",
+        "label": "Great-circle surface distance",
+        "value": 8895594.1315647,
+        "unit": "m",
+        "equation": "R × central angle"
+      },
+      {
+        "id": "earth-radius",
+        "label": "Spherical Earth radius",
+        "value": 6371000,
+        "unit": "m"
+      },
+      {
+        "id": "hf-effective-height",
+        "label": "Effective ionosphere shell height",
+        "value": 300000,
+        "unit": "m"
+      },
+      {
+        "id": "hf-critical-day",
+        "label": "Configured daytime critical frequency",
+        "value": 7,
+        "unit": "MHz"
+      },
+      {
+        "id": "hf-critical-night",
+        "label": "Configured nighttime critical frequency",
+        "value": 3,
+        "unit": "MHz"
+      },
+      {
+        "id": "hf-absorption-day",
+        "label": "Configured daytime absorption at 10 MHz per hop",
+        "value": 4,
+        "unit": "dB"
+      },
+      {
+        "id": "hf-absorption-night",
+        "label": "Configured nighttime absorption at 10 MHz per hop",
+        "value": 0.5,
+        "unit": "dB"
+      },
+      {
+        "id": "hf-hops",
+        "label": "Required skywave hops",
+        "value": 3,
+        "unit": "hops",
+        "equation": "ceil(surface distance / maximum hop span)"
+      },
+      {
+        "id": "hf-max-hop-distance",
+        "label": "Maximum shell hop span",
+        "value": 3835825.918634469,
+        "unit": "m",
+        "equation": "2R acos(R/(R+H))"
+      },
+      {
+        "id": "hf-local-hour",
+        "label": "Midpoint local solar hour",
+        "value": 12,
+        "unit": "h",
+        "equation": "UTC hour + midpoint longitude / 15"
+      },
+      {
+        "id": "hf-critical-frequency",
+        "label": "Modeled critical frequency",
+        "value": 7,
+        "unit": "MHz"
+      },
+      {
+        "id": "hf-muf",
+        "label": "Modeled maximum usable frequency",
+        "value": 22.89838168340064,
+        "unit": "MHz",
+        "equation": "foF2 / cos(shell incidence)"
+      },
+      {
+        "id": "hf-absorption",
+        "label": "Modeled absorption",
+        "value": 24.48979591836735,
+        "unit": "dB",
+        "equation": "A10 × (10/fMHz)² × hops"
+      },
+      {
+        "id": "hf-ground-loss",
+        "label": "Ground reflection loss",
+        "value": 6,
+        "unit": "dB",
+        "equation": "(hops−1) × reflection loss"
+      },
+      {
+        "id": "hf-ray-length",
+        "label": "Total candidate ray length",
+        "value": 9258752.261892693,
+        "unit": "m",
+        "equation": "sum of spherical-shell chord legs"
+      },
+      {
+        "id": "fspl",
+        "label": "Free-space spreading loss",
+        "value": 128.6807932973054,
+        "unit": "dB",
+        "equation": "20 log10(4πdf/c)",
+        "children": [
+          {
+            "id": "wave-speed",
+            "label": "Wave speed",
+            "value": 299792458,
+            "unit": "m/s"
+          },
+          {
+            "id": "frequency",
+            "label": "Frequency",
+            "value": 7000000,
+            "unit": "Hz"
+          },
+          {
+            "id": "spreading-distance",
+            "label": "Ray path distance",
+            "value": 9258752.261892693,
+            "unit": "m"
+          }
+        ],
+        "assumptions": [
+          "Isotropic free-space spreading with antenna gains applied separately. Far-field approximation."
+        ]
+      },
+      {
+        "id": "link-budget",
+        "label": "Received power",
+        "value": -126.87058921567274,
+        "unit": "dBm",
+        "equation": "Ptx - Ltx + Gtx - Lfs - Lexcess - Lpol + Grx - Lrx",
+        "children": [
+          {
+            "id": "tx-power",
+            "label": "Transmitter power",
+            "value": 30,
+            "unit": "dBm"
+          },
+          {
+            "id": "tx-feedline",
+            "label": "Transmitter cable loss",
+            "value": 1,
+            "unit": "dB"
+          },
+          {
+            "id": "tx-gain",
+            "label": "Transmitter antenna gain",
+            "value": 2.15,
+            "unit": "dBi"
+          },
+          {
+            "id": "path-loss",
+            "label": "Free-space loss",
+            "value": 128.6807932973054,
+            "unit": "dB"
+          },
+          {
+            "id": "excess-loss",
+            "label": "Excess propagation loss",
+            "value": 30.48979591836735,
+            "unit": "dB"
+          },
+          {
+            "id": "polarization-loss",
+            "label": "Polarization loss",
+            "value": 0,
+            "unit": "dB"
+          },
+          {
+            "id": "rx-gain",
+            "label": "Receiver antenna gain",
+            "value": 2.15,
+            "unit": "dBi"
+          },
+          {
+            "id": "rx-feedline",
+            "label": "Receiver cable loss",
+            "value": 1,
+            "unit": "dB"
+          }
+        ]
+      },
+      {
+        "id": "noise-floor",
+        "label": "Receiver noise floor",
+        "value": -111.55085435725539,
+        "unit": "dBm",
+        "equation": "10 log10(1000 k B [Ta/Lrx + Tcable(1 - 1/Lrx) + 290(F - 1)])",
+        "children": [
+          {
+            "id": "bandwidth",
+            "label": "Receiver noise bandwidth",
+            "value": 2500,
+            "unit": "Hz"
+          },
+          {
+            "id": "noise-figure",
+            "label": "Receiver noise figure at 290 K",
+            "value": 5,
+            "unit": "dB"
+          },
+          {
+            "id": "temperature",
+            "label": "Ambient temperature",
+            "value": 290,
+            "unit": "K"
+          },
+          {
+            "id": "external-noise",
+            "label": "External antenna noise excess",
+            "value": 29.430196055592255,
+            "unit": "dB"
+          },
+          {
+            "id": "antenna-temperature",
+            "label": "Equivalent antenna noise temperature before cable",
+            "value": 254341.71973988335,
+            "unit": "K"
+          },
+          {
+            "id": "receiver-input-temperature",
+            "label": "Noise temperature after receiver cable",
+            "value": 202090.45406964945,
+            "unit": "K",
+            "equation": "Ta/Lrx + Tcable(1 - 1/Lrx)"
+          }
+        ]
+      },
+      {
+        "id": "travel-time",
+        "label": "Candidate path travel time",
+        "value": 0.0308838732090208,
+        "unit": "s",
+        "equation": "distance / wave speed"
+      },
+      {
+        "id": "snr",
+        "label": "Signal-to-noise ratio",
+        "value": -15.319734858417348,
+        "unit": "dB",
+        "equation": "Received power - noise floor"
+      },
+      {
+        "id": "required-snr",
+        "label": "FT8 required SNR",
+        "value": -21,
+        "unit": "dB",
+        "equation": "SNRref + 10 log10(Bref / B)",
+        "assumptions": [
+          "WSJT-X User Guide protocol summary gives approximate FT8 threshold -21 dB referenced to 2500 Hz; decoding depends on timing, interference and implementation: https://wsjt.sourceforge.io/wsjtx-main_en.html",
+          "Educational threshold. Receiver filtering and implementation loss are simplified."
+        ]
+      },
+      {
+        "id": "link-margin",
+        "label": "Link margin",
+        "value": 5.680265141582652,
+        "unit": "dB",
+        "equation": "SNR - required SNR"
+      }
+    ],
+    "limitingFactors": [
+      {
+        "id": "frequency",
+        "label": "Try 80% of modeled MUF",
+        "impactDb": -12.557909084074737,
+        "possibleImprovementDb": 12.557909084074737,
+        "confidence": 0.3,
+        "explanationKey": "hf-frequency"
+      },
+      {
+        "id": "power",
+        "label": "Increase transmitter power tenfold",
+        "impactDb": -10,
+        "possibleImprovementDb": 10,
+        "confidence": 0.3,
+        "explanationKey": "more-power"
+      },
+      {
+        "id": "feedline",
+        "label": "Remove feedline loss",
+        "impactDb": -1.0040426656979378,
+        "possibleImprovementDb": 1.0040426656979378,
+        "confidence": 0.3,
+        "explanationKey": "feedline-loss"
+      }
+    ],
+    "propagationPaths": [
+      {
+        "type": "skywave",
+        "points": [
+          {
+            "lat": 0,
+            "lon": 0,
+            "altitudeM": 10
+          },
+          {
+            "lat": 0,
+            "lon": 13.333333333333332,
+            "altitudeM": 300000
+          },
+          {
+            "lat": 0,
+            "lon": 26.666666666666664,
+            "altitudeM": 0
+          },
+          {
+            "lat": 0,
+            "lon": 40,
+            "altitudeM": 300000
+          },
+          {
+            "lat": 0,
+            "lon": 53.33333333333333,
+            "altitudeM": 0
+          },
+          {
+            "lat": 0,
+            "lon": 66.66666666666666,
+            "altitudeM": 300000
+          },
+          {
+            "lat": 0,
+            "lon": 80,
+            "altitudeM": 10
+          }
+        ]
+      }
+    ],
+    "warnings": [
+      "Low-confidence educational HF shell model, not an operational propagation forecast. MUF and maximum hop span use sea-level endpoints and equal hop spacing; ray lengths include endpoint heights. Secant-law reflection, cosine local daylight and inverse-square absorption are simplified; no ionosonde data, season, solar cycle, fading or magnetoionic effects.",
+      "HF polarization rotation is not resolved by this educational model. No fixed polarization loss is applied."
+    ],
+    "explanationKeys": [
+      "hf-skywave",
+      "hf-absorption",
+      "link-marginal"
+    ]
+  },
+  "microwave-clear": {
+    "schemaVersion": 1,
+    "propagationAvailable": true,
+    "receivedPowerDbm": -38.95310759629325,
+    "noiseFloorDbm": -128.00608706414752,
+    "snrDb": 89.05297946785427,
+    "requiredSnrDb": 12,
+    "linkMarginDb": 77.05297946785427,
+    "success": "good",
+    "confidence": {
+      "level": "low",
+      "reasons": [
+        "Educational model with configured antenna gains and losses. Not a field measurement.",
+        "FM voice threshold confidence: low."
+      ]
+    },
+    "calculations": [
+      {
+        "id": "surface-distance",
+        "label": "Great-circle surface distance",
+        "value": 5559.746332227936,
+        "unit": "m",
+        "equation": "R × central angle"
+      },
+      {
+        "id": "radio-horizon",
+        "label": "Effective-Earth radio horizon",
+        "value": 31927.417684491804,
+        "unit": "m",
+        "equation": "sqrt(2kRhTX) + sqrt(2kRhRX)"
+      },
+      {
+        "id": "earth-bulge",
+        "label": "Earth bulge at obstruction",
+        "value": 0.45485568315495006,
+        "unit": "m",
+        "equation": "d1 d2 / (2kR)"
+      },
+      {
+        "id": "obstruction-height",
+        "label": "Obstruction above effective LOS",
+        "value": -9.54514431684505,
+        "unit": "m"
+      },
+      {
+        "id": "fresnel-radius",
+        "label": "First Fresnel radius at obstruction",
+        "value": 13.176565446193582,
+        "unit": "m",
+        "equation": "sqrt(λ d1 d2 / (d1+d2))"
+      },
+      {
+        "id": "knife-edge-v",
+        "label": "Knife-edge diffraction parameter",
+        "value": -1.0244606307169573,
+        "unit": "1",
+        "equation": "h sqrt(2(d1+d2)/(λ d1 d2))"
+      },
+      {
+        "id": "diffraction-loss",
+        "label": "Single knife-edge loss",
+        "value": 0,
+        "unit": "dB",
+        "equation": "J(v)=6.9+20log10(sqrt((v−0.1)²+1)+v−0.1), v>−0.78; otherwise 0"
+      },
+      {
+        "id": "fspl",
+        "label": "Free-space spreading loss",
+        "value": 114.95310759629325,
+        "unit": "dB",
+        "equation": "20 log10(4πdf/c)",
+        "children": [
+          {
+            "id": "wave-speed",
+            "label": "Wave speed",
+            "value": 299792458,
+            "unit": "m/s"
+          },
+          {
+            "id": "frequency",
+            "label": "Frequency",
+            "value": 2400000000,
+            "unit": "Hz"
+          },
+          {
+            "id": "spreading-distance",
+            "label": "Ray path distance",
+            "value": 5559.746332227936,
+            "unit": "m"
+          }
+        ],
+        "assumptions": [
+          "Isotropic free-space spreading with antenna gains applied separately. Far-field approximation."
+        ]
+      },
+      {
+        "id": "link-budget",
+        "label": "Received power",
+        "value": -38.95310759629325,
+        "unit": "dBm",
+        "equation": "Ptx - Ltx + Gtx - Lfs - Lexcess - Lpol + Grx - Lrx",
+        "children": [
+          {
+            "id": "tx-power",
+            "label": "Transmitter power",
+            "value": 30,
+            "unit": "dBm"
+          },
+          {
+            "id": "tx-feedline",
+            "label": "Transmitter cable loss",
+            "value": 1,
+            "unit": "dB"
+          },
+          {
+            "id": "tx-gain",
+            "label": "Transmitter antenna gain",
+            "value": 24,
+            "unit": "dBi"
+          },
+          {
+            "id": "path-loss",
+            "label": "Free-space loss",
+            "value": 114.95310759629325,
+            "unit": "dB"
+          },
+          {
+            "id": "excess-loss",
+            "label": "Excess propagation loss",
+            "value": 0,
+            "unit": "dB"
+          },
+          {
+            "id": "polarization-loss",
+            "label": "Polarization loss",
+            "value": 0,
+            "unit": "dB"
+          },
+          {
+            "id": "rx-gain",
+            "label": "Receiver antenna gain",
+            "value": 24,
+            "unit": "dBi"
+          },
+          {
+            "id": "rx-feedline",
+            "label": "Receiver cable loss",
+            "value": 1,
+            "unit": "dB"
+          }
+        ]
+      },
+      {
+        "id": "noise-floor",
+        "label": "Receiver noise floor",
+        "value": -128.00608706414752,
+        "unit": "dBm",
+        "equation": "10 log10(1000 k B [Ta/Lrx + Tcable(1 - 1/Lrx) + 290(F - 1)])",
+        "children": [
+          {
+            "id": "bandwidth",
+            "label": "Receiver noise bandwidth",
+            "value": 12500,
+            "unit": "Hz"
+          },
+          {
+            "id": "noise-figure",
+            "label": "Receiver noise figure at 290 K",
+            "value": 5,
+            "unit": "dB"
+          },
+          {
+            "id": "temperature",
+            "label": "Ambient temperature",
+            "value": 290,
+            "unit": "K"
+          },
+          {
+            "id": "external-noise",
+            "label": "External antenna noise excess",
+            "value": 0,
+            "unit": "dB"
+          },
+          {
+            "id": "antenna-temperature",
+            "label": "Equivalent antenna noise temperature before cable",
+            "value": 290,
+            "unit": "K"
+          },
+          {
+            "id": "receiver-input-temperature",
+            "label": "Noise temperature after receiver cable",
+            "value": 290,
+            "unit": "K",
+            "equation": "Ta/Lrx + Tcable(1 - 1/Lrx)"
+          }
+        ]
+      },
+      {
+        "id": "travel-time",
+        "label": "Candidate path travel time",
+        "value": 0.00001854531754840856,
+        "unit": "s",
+        "equation": "distance / wave speed"
+      },
+      {
+        "id": "snr",
+        "label": "Signal-to-noise ratio",
+        "value": 89.05297946785427,
+        "unit": "dB",
+        "equation": "Received power - noise floor"
+      },
+      {
+        "id": "required-snr",
+        "label": "FM voice required SNR",
+        "value": 12,
+        "unit": "dB",
+        "equation": "SNRref + 10 log10(Bref / B)",
+        "assumptions": [
+          "Educational 12 dB input-SNR threshold, not a measured receiver limit. Icom specifies FM sensitivity using 12 dB SINAD, which is not input SNR: https://www.icomjapan.com/lineup/products/IC-2730A/",
+          "Educational threshold. Receiver filtering and implementation loss are simplified."
+        ]
+      },
+      {
+        "id": "link-margin",
+        "label": "Link margin",
+        "value": 77.05297946785427,
+        "unit": "dB",
+        "equation": "SNR - required SNR"
+      }
+    ],
+    "limitingFactors": [
+      {
+        "id": "power",
+        "label": "Increase transmitter power tenfold",
+        "impactDb": -10,
+        "possibleImprovementDb": 10,
+        "confidence": 0.8,
+        "explanationKey": "more-power"
+      },
+      {
+        "id": "feedline",
+        "label": "Remove feedline loss",
+        "impactDb": -2,
+        "possibleImprovementDb": 2,
+        "confidence": 0.8,
+        "explanationKey": "feedline-loss"
+      }
+    ],
+    "propagationPaths": [
+      {
+        "type": "direct",
+        "points": [
+          {
+            "lat": 0,
+            "lon": 0,
+            "altitudeM": 15
+          },
+          {
+            "lat": 0,
+            "lon": 0.0015625,
+            "altitudeM": 14.944919819617954
+          },
+          {
+            "lat": 0,
+            "lon": 0.003125,
+            "altitudeM": 14.893393199260558
+          },
+          {
+            "lat": 0,
+            "lon": 0.0046875,
+            "altitudeM": 14.84542013892781
+          },
+          {
+            "lat": 0,
+            "lon": 0.00625,
+            "altitudeM": 14.80100063861971
+          },
+          {
+            "lat": 0,
+            "lon": 0.0078125,
+            "altitudeM": 14.760134698336257
+          },
+          {
+            "lat": 0,
+            "lon": 0.009375,
+            "altitudeM": 14.722822318077453
+          },
+          {
+            "lat": 0,
+            "lon": 0.0109375,
+            "altitudeM": 14.689063497843296
+          },
+          {
+            "lat": 0,
+            "lon": 0.0125,
+            "altitudeM": 14.658858237633787
+          },
+          {
+            "lat": 0,
+            "lon": 0.014062499999999999,
+            "altitudeM": 14.632206537448926
+          },
+          {
+            "lat": 0,
+            "lon": 0.015624999999999998,
+            "altitudeM": 14.609108397288715
+          },
+          {
+            "lat": 0,
+            "lon": 0.0171875,
+            "altitudeM": 14.58956381715315
+          },
+          {
+            "lat": 0,
+            "lon": 0.01875,
+            "altitudeM": 14.573572797042234
+          },
+          {
+            "lat": 0,
+            "lon": 0.020312499999999997,
+            "altitudeM": 14.561135336955966
+          },
+          {
+            "lat": 0,
+            "lon": 0.021874999999999995,
+            "altitudeM": 14.552251436894347
+          },
+          {
+            "lat": 0,
+            "lon": 0.0234375,
+            "altitudeM": 14.546921096857375
+          },
+          {
+            "lat": 0,
+            "lon": 0.025,
+            "altitudeM": 14.54514431684505
+          },
+          {
+            "lat": 0,
+            "lon": 0.026562499999999996,
+            "altitudeM": 14.546921096857375
+          },
+          {
+            "lat": 0,
+            "lon": 0.028124999999999997,
+            "altitudeM": 14.552251436894347
+          },
+          {
+            "lat": 0,
+            "lon": 0.0296875,
+            "altitudeM": 14.561135336955966
+          },
+          {
+            "lat": 0,
+            "lon": 0.031249999999999997,
+            "altitudeM": 14.573572797042234
+          },
+          {
+            "lat": 0,
+            "lon": 0.032812499999999994,
+            "altitudeM": 14.58956381715315
+          },
+          {
+            "lat": 0,
+            "lon": 0.034375,
+            "altitudeM": 14.609108397288715
+          },
+          {
+            "lat": 0,
+            "lon": 0.0359375,
+            "altitudeM": 14.632206537448926
+          },
+          {
+            "lat": 0,
+            "lon": 0.0375,
+            "altitudeM": 14.658858237633787
+          },
+          {
+            "lat": 0,
+            "lon": 0.0390625,
+            "altitudeM": 14.689063497843296
+          },
+          {
+            "lat": 0,
+            "lon": 0.040624999999999994,
+            "altitudeM": 14.722822318077453
+          },
+          {
+            "lat": 0,
+            "lon": 0.0421875,
+            "altitudeM": 14.760134698336257
+          },
+          {
+            "lat": 0,
+            "lon": 0.04375,
+            "altitudeM": 14.80100063861971
+          },
+          {
+            "lat": 0,
+            "lon": 0.0453125,
+            "altitudeM": 14.84542013892781
+          },
+          {
+            "lat": 0,
+            "lon": 0.046875,
+            "altitudeM": 14.893393199260558
+          },
+          {
+            "lat": 0,
+            "lon": 0.048437499999999994,
+            "altitudeM": 14.944919819617954
+          },
+          {
+            "lat": 0,
+            "lon": 0.05,
+            "altitudeM": 15
+          }
+        ]
+      }
+    ],
+    "warnings": [
+      "Educational effective-Earth and single knife-edge approximation; excludes terrain profiles, reflections, foliage and weather."
+    ],
+    "explanationKeys": [
+      "line-of-sight",
+      "link-good"
+    ]
+  }
+}

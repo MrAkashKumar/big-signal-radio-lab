@@ -1,0 +1,134 @@
+.dl-workspace [hidden] {
+  display: none !important;
+}
+.df-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+.df-title {
+  font-size: clamp(24px, 3vw, 36px);
+  margin: 6px 0 0;
+  letter-spacing: -0.04em;
+}
+.df-mission-picker {
+  width: min(380px, 45%);
+  margin: 0;
+}
+.df-objective {
+  color: var(--text-secondary, #b9c4ad);
+  max-width: 100ch;
+  font-size: 14px;
+  margin: 14px 0;
+}
+.df-focus-nav,
+.df-control-nav {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.df-focus-nav {
+  border-bottom: 1px solid #354330;
+  padding-bottom: 10px;
+  margin-bottom: 16px;
+  position: sticky;
+  top: 0;
+  z-index: 3;
+  background: #10180f;
+}
+.df-focus-nav button[aria-current],
+.df-control-nav button[aria-current] {
+  background: #d1f888;
+  color: #172012;
+  border-color: #d1f888;
+}
+.df-focus-nav .df-test {
+  margin-left: auto;
+}
+.df-control-nav {
+  padding: 8px;
+  border: 1px solid #354330;
+  border-bottom: 0;
+  border-radius: 10px 10px 0 0;
+  background: #172015;
+}
+.df-control-nav button {
+  flex: 1;
+  padding: 9px 8px;
+}
+.df-layout {
+  align-items: start;
+}
+.df-control-scroll {
+  max-height: min(650px, calc(100dvh - 285px));
+  overflow: auto;
+  scrollbar-gutter: stable;
+}
+.df-control-scroll .dl-panel {
+  border-radius: 0 0 10px 10px;
+}
+.df-layout .dl-network-view {
+  height: clamp(260px, 40vh, 430px);
+}
+.df-layout .dl-map {
+  max-height: 430px;
+}
+.df-predict-wrapper .dl-prediction {
+  margin: 12px 0;
+}
+.df-file-tools {
+  margin: 12px 0;
+  color: #bac8ad;
+  font-size: 13px;
+}
+.df-file-tools summary {
+  cursor: pointer;
+  padding: 8px 0;
+}
+.df-file-tools .dl-actionbar {
+  flex-wrap: wrap;
+}
+.df-results-layout {
+  grid-template-columns: minmax(0, 1fr);
+}
+.df-empty {
+  padding: 28px;
+}
+.df-brief .dl-intro {
+  margin-bottom: 20px;
+}
+.df-brief .dl-heading {
+  font-size: 30px;
+}
+@media (max-width: 850px) {
+  .df-header {
+    align-items: start;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .df-mission-picker {
+    width: 100%;
+  }
+  .df-focus-nav {
+    flex-wrap: wrap;
+    position: static;
+  }
+  .df-focus-nav button {
+    padding: 10px 8px;
+    font-size: 12px;
+  }
+  .df-focus-nav .df-test {
+    margin-left: 0;
+  }
+  .df-layout {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .df-control-scroll {
+    max-height: none;
+    overflow: visible;
+  }
+  .df-layout .dl-network-view {
+    height: 280px;
+  }
+}

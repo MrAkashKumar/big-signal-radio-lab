@@ -1,0 +1,17 @@
+{
+  "name": "@bigsignal/simulation",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    "./physics": "./src/physics.ts",
+    "./band-noise": "./src/bandNoise.ts",
+    ".": "./src/index.ts",
+    "./examples": "./examples/scenarios.ts"
+  },
+  "dependencies": {
+    "@bigsignal/contracts": "workspace:*",
+    "@bigsignal/units": "workspace:*",
+    "@bigsignal/propagation": "workspace:*"
+  }
+}

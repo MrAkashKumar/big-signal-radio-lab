@@ -1,0 +1,503 @@
+.product-app [hidden] {
+  display: none !important;
+}
+.product-app {
+  padding-inline: 28px;
+}
+.product-header {
+  height: 64px;
+}
+.product-app .product-brand {
+  font-size: 17px;
+}
+.product-app .primary-nav button {
+  padding: 14px 12px;
+}
+.secondary-nav {
+  padding-block: 10px;
+}
+.focused-app .product-footer {
+  display: none;
+}
+.focused-app .lesson-header {
+  padding: 14px 0 10px;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 4px 16px;
+  align-items: center;
+}
+.focused-app .lesson-header > button {
+  grid-column: 1;
+  padding: 0;
+  width: fit-content;
+}
+.focused-app .lesson-header > .eyebrow {
+  grid-column: 1;
+  margin: 2px 0;
+  font-size: 9px;
+}
+.focused-app .lesson-header h1 {
+  grid-column: 1;
+  font-size: 25px;
+  letter-spacing: -0.7px;
+  margin: 0;
+}
+.focused-app .lesson-header > p {
+  grid-column: 1;
+  font-size: 12px;
+  margin: 2px 0 0;
+  max-width: none;
+}
+.focused-app .lesson-header .mastery-badge {
+  grid-column: 2;
+  grid-row: 2 / 5;
+}
+.lesson-phases,
+.workspace-views,
+.mobile-workspace-switch {
+  display: flex;
+  gap: 5px;
+}
+.product-app .lesson-phases {
+  margin-bottom: 12px;
+  border-bottom: 1px solid #34412e;
+}
+.product-app .lesson-phases button {
+  border: 0;
+  border-radius: 6px 6px 0 0;
+  background: transparent;
+  padding: 11px 18px;
+  font-size: 12px;
+}
+.product-app .lesson-phases button[aria-pressed="true"] {
+  background: #304225;
+  color: #d3f6a7;
+  box-shadow: inset 0 -2px #ccec98;
+}
+.product-app .lesson-phases button:disabled {
+  opacity: 0.4;
+}
+.lesson-stage {
+  max-height: calc(100dvh - 310px);
+  overflow-y: auto;
+  scrollbar-gutter: stable;
+  padding-right: 5px;
+}
+.lesson-stage .lesson-intro,
+.lesson-stage .lesson-debrief {
+  margin: 0;
+}
+.lesson-stage .surface {
+  padding: 23px;
+}
+.lesson-stage .microwave {
+  max-height: 125px;
+}
+.lesson-stage .primary {
+  margin-top: 12px;
+}
+.lesson-run-guide {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  gap: 12px;
+  margin-bottom: 8px;
+}
+.product-app .lesson-run-guide details {
+  border: 0;
+  padding: 6px 0;
+  flex: 1;
+}
+.lesson-run-guide li,
+.lesson-run-guide p {
+  font-size: 12px;
+  line-height: 1.7;
+}
+.product-app .lesson-run-guide > button {
+  padding: 8px 12px;
+  font-size: 11px;
+}
+.product-app .lesson-file-actions {
+  padding: 7px 0;
+}
+.product-app .lesson-file-actions button {
+  padding: 5px 9px;
+  font-size: 10px;
+}
+.focused-app .lab-page-heading {
+  padding: 13px 0 9px;
+  display: flex;
+  gap: 18px;
+  align-items: baseline;
+}
+.lab-page-heading > .eyebrow {
+  display: none;
+}
+.focused-app .lab-page-heading h1 {
+  font-size: 25px;
+  letter-spacing: -0.8px;
+  margin: 0;
+  white-space: nowrap;
+}
+.lab-page-heading h1 br {
+  display: none;
+}
+.lab-page-heading h1 em::before {
+  content: " ";
+}
+.focused-app .lab-page-heading p {
+  font-size: 12px;
+  margin: 0;
+}
+.focused-app .experiment-bar {
+  margin-bottom: 12px;
+  gap: 7px;
+}
+.focused-app .experiment-bar label {
+  flex-direction: row;
+  align-items: center;
+  gap: 9px;
+  font-size: 11px;
+}
+.focused-app .experiment-bar input {
+  padding: 7px 10px;
+  max-width: 340px;
+}
+.focused-app .experiment-bar button {
+  min-height: 33px;
+  padding: 7px 10px;
+}
+.experiment-workspace {
+  min-width: 0;
+}
+.product-app .experiment-workspace .lab-workspace {
+  grid-template-columns: minmax(0, 1fr) 310px;
+  align-items: stretch;
+  gap: 14px;
+  height: max(380px, calc(100dvh - 285px));
+}
+.lesson-run-guide + .experiment-workspace .lab-workspace {
+  height: max(300px, calc(100dvh - 390px));
+}
+.experiment-workspace .visual-column {
+  min-height: 0;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #34412e;
+  border-radius: 10px;
+  background: #141d15;
+  overflow: hidden;
+}
+.product-app .workspace-views {
+  padding: 6px;
+  border-bottom: 1px solid #34412e;
+  flex-shrink: 0;
+  overflow-x: auto;
+}
+.product-app .workspace-views button {
+  flex-shrink: 0;
+  border: 0;
+  background: transparent;
+  padding: 9px 12px;
+  font-size: 11px;
+}
+.product-app .workspace-views button[aria-pressed="true"] {
+  background: #34462a;
+  color: #dcf9b3;
+}
+.workspace-content {
+  flex: 1;
+  min-height: 0;
+  overflow: auto;
+  overscroll-behavior: contain;
+  scrollbar-gutter: stable;
+}
+.workspace-content > div {
+  min-height: 100%;
+}
+.workspace-content > div:first-of-type {
+  padding: 12px;
+}
+.product-app .experiment-workspace .scene-card {
+  border: 0;
+  border-radius: 0;
+}
+.product-app .experiment-workspace .scene-top {
+  height: 37px;
+  padding-inline: 14px;
+}
+.product-app .experiment-workspace .scene {
+  height: max(235px, calc(100dvh - 450px));
+}
+.lesson-run-guide + .experiment-workspace .scene {
+  height: max(180px, calc(100dvh - 555px));
+}
+.product-app .experiment-workspace .scene-bottom {
+  padding: 8px 12px;
+  min-height: 44px;
+}
+.product-app .experiment-workspace .lab-toolbar {
+  padding: 7px 12px;
+  gap: 6px;
+}
+.product-app .experiment-workspace .lab-toolbar button {
+  padding: 6px 8px;
+  font-size: 10px;
+}
+.product-app .experiment-workspace .configure {
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  padding: 0;
+}
+.configure .panel-title {
+  padding: 13px 17px;
+  border-bottom: 1px solid #34412e;
+  flex-shrink: 0;
+}
+.configure .panel-title h2 {
+  font-size: 17px;
+}
+.configure-scroll {
+  padding: 17px;
+  min-height: 0;
+  flex: 1;
+  overflow: auto;
+  overscroll-behavior: contain;
+  scrollbar-gutter: stable;
+}
+.configure-scroll > label {
+  margin-bottom: 17px;
+}
+/* Keep radio controls usable even when the fixed action footer grows at zoom. */
+.product-app .experiment-workspace .lab-workspace:has(.configure) {
+  min-height: 640px;
+}
+.product-app .configure .configure-scroll {
+  min-height: 300px;
+  overflow-y: auto;
+  scrollbar-color: #597788 #edf3f6;
+  scrollbar-width: auto;
+  scroll-padding-block: 20px;
+}
+.product-app .configure .configure-scroll-hint {
+  flex: 0 0 auto;
+  margin: 0;
+  padding: 9px 18px;
+  background: #edf4f8;
+  border-bottom: 1px solid #c5d6e0;
+  color: #425d70;
+  font-size: 12px;
+  line-height: 1.5;
+}
+.product-app .configure .configure-scroll :is(p, small),
+.product-app .configure .panel-title span {
+  color: #425d70;
+}
+.product-app .configure .configure-scroll:focus-visible {
+  outline: 3px solid #246786;
+  outline-offset: -3px;
+}
+.product-app .configure .configure-action .send-help {
+  color: #344d60;
+  font-size: 12px;
+  line-height: 1.5;
+}
+.product-app .configure .configure-action .send:disabled {
+  opacity: 1;
+  color: #52616c;
+  background: #e2e8eb;
+  border-color: #bac8d1;
+  box-shadow: none;
+  cursor: not-allowed;
+}
+@media (max-width: 760px), (max-height: 650px) {
+  .product-app .experiment-workspace .lab-workspace:has(.configure) {
+    height: auto;
+    min-height: 0;
+  }
+  .product-app .experiment-workspace .configure .configure-scroll {
+    flex: none;
+    min-height: 0;
+    overflow: visible;
+  }
+  .product-app .configure .configure-scroll-hint {
+    display: none;
+  }
+}
+.configure-action {
+  flex-shrink: 0;
+  padding: 10px 15px;
+  border-top: 1px solid #455437;
+  background: #202c1b;
+}
+.configure-action fieldset {
+  padding: 0;
+  border: 0;
+  margin: 0;
+}
+.configure-action legend {
+  font-size: 10px;
+  margin-bottom: 7px;
+}
+.configure-action .choice-grid {
+  grid-template-columns: repeat(3, 1fr);
+  margin: 0 0 7px;
+}
+.product-app .configure-action .send {
+  padding: 10px;
+  margin: 0;
+  font-size: 21px;
+}
+.product-app .configure-action .send-help {
+  margin: 7px 0 0;
+  font-size: 9px;
+}
+.configure-action .error-message:empty {
+  display: none;
+}
+.product-app .workspace-content .lab-results {
+  margin: 0;
+  border: 0;
+  border-radius: 0;
+}
+.product-app .workspace-content .comparison,
+.product-app .workspace-content .challenge-result {
+  border: 0;
+  margin: 0;
+}
+.product-app .workspace-content .pin-result {
+  margin: 0 20px 20px;
+}
+.mobile-workspace-switch {
+  display: none;
+}
+@media (max-width: 1000px) {
+  .product-app {
+    padding-inline: 18px;
+  }
+  .product-app .experiment-workspace .lab-workspace {
+    grid-template-columns: minmax(0, 1fr) 275px;
+    gap: 10px;
+  }
+  .focused-app .lab-page-heading p {
+    display: none;
+  }
+  .product-app .workspace-views button {
+    padding: 9px;
+  }
+}
+@media (max-width: 760px) {
+  .product-app {
+    padding-inline: 12px;
+  }
+  .product-header {
+    height: 57px;
+  }
+  .product-app .primary-nav {
+    display: flex;
+    overflow-x: auto;
+  }
+  .product-app .primary-nav button {
+    font-size: 8px;
+    white-space: nowrap;
+    padding: 12px 7px;
+  }
+  .product-app .primary-nav button:last-child {
+    white-space: normal;
+  }
+  .secondary-nav {
+    padding-block: 8px;
+    gap: 14px;
+  }
+  .secondary-nav > span {
+    display: none;
+  }
+  .focused-app .lesson-header h1 {
+    font-size: 21px;
+  }
+  .focused-app .lesson-header > p {
+    font-size: 11px;
+    line-height: 1.4;
+  }
+  .focused-app .lesson-header .mastery-badge {
+    font-size: 7px;
+    padding: 6px;
+  }
+  .product-app .lesson-phases {
+    gap: 0;
+  }
+  .product-app .lesson-phases button {
+    flex: 1;
+    padding: 10px 5px;
+    font-size: 10px;
+  }
+  .lesson-stage {
+    max-height: calc(100dvh - 310px);
+  }
+  .lesson-stage .lesson-intro,
+  .lesson-stage .lesson-debrief {
+    grid-template-columns: 1fr;
+  }
+  .product-app .mobile-workspace-switch {
+    display: flex;
+    padding-bottom: 8px;
+  }
+  .product-app .mobile-workspace-switch button {
+    flex: 1;
+    font-size: 11px;
+    padding: 8px;
+  }
+  .product-app .mobile-workspace-switch button[aria-pressed="true"] {
+    background: #33452a;
+    color: #d1f09e;
+  }
+  .product-app .experiment-workspace .lab-workspace {
+    grid-template-columns: 1fr;
+    height: max(390px, calc(100dvh - 335px));
+  }
+  .lesson-run-guide + .experiment-workspace .lab-workspace {
+    height: max(370px, calc(100dvh - 380px));
+  }
+  .mobile-workspace .configure,
+  .mobile-controls .visual-column {
+    display: none !important;
+  }
+  .product-app .experiment-workspace .scene {
+    height: max(225px, calc(100dvh - 500px));
+  }
+  .lesson-run-guide + .experiment-workspace .scene {
+    height: max(205px, calc(100dvh - 545px));
+  }
+  .configure-scroll .lab-controls {
+    display: flex !important;
+  }
+  .product-app .configure .panel-title {
+    padding: 12px 16px;
+  }
+  .focused-app .experiment-bar {
+    flex-wrap: wrap;
+  }
+  .focused-app .experiment-bar label {
+    flex-basis: 100%;
+    margin: 0;
+  }
+  .focused-app .experiment-bar input {
+    max-width: none;
+  }
+  .focused-app .experiment-bar button {
+    font-size: 9px;
+  }
+  .focused-app .lab-page-heading h1 {
+    font-size: 24px;
+    white-space: normal;
+  }
+  .product-app .lesson-run-guide > button {
+    font-size: 10px;
+  }
+  .lesson-run-guide summary {
+    font-size: 10px;
+  }
+}

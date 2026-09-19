@@ -1,0 +1,11 @@
+{
+  "name": "@bigsignal/contracts",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": "./index.ts",
+    "./mockSimulation": "./mockSimulation.ts",
+    "./exampleScenario": "./exampleScenario.ts"
+  }
+}

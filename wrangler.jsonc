@@ -1,0 +1,29 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "bigsignal",
+  "main": "apps/worker/index.ts",
+  "compatibility_date": "2026-09-13",
+  "compatibility_flags": ["nodejs_compat"],
+  "workers_dev": false,
+  "preview_urls": false,
+  "routes": [{ "pattern": "bigsignal.edmundlim.systems", "custom_domain": true }],
+  "assets": {
+    "directory": "apps/web/dist",
+    "binding": "ASSETS",
+    "not_found_handling": "single-page-application",
+    "run_worker_first": ["/api", "/api/*"]
+  },
+  "vars": {
+    "APP_ORIGIN": "https://bigsignal.edmundlim.systems",
+    "OPENAI_TEXT_MODEL": "gpt-5.4-mini",
+    "OPENAI_VOICE_MODEL": "gpt-realtime-2.1-mini",
+    "OPENAI_VOICE_THRESHOLD": "0.7",
+    "OPENAI_VOICE_SILENCE_MS": "1000",
+    "OPENAI_VOICE_NOISE_REDUCTION": "near_field"
+  },
+  "observability": {
+    "enabled": true,
+    "logs": { "enabled": true, "invocation_logs": true, "head_sampling_rate": 1 },
+    "traces": { "enabled": true, "head_sampling_rate": 0.1 }
+  }
+}

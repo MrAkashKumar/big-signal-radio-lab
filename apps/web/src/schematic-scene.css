@@ -1,0 +1,130 @@
+.schematic-scene {
+  margin: 0;
+  width: 100%;
+  background: radial-gradient(ellipse at 50% 25%, #1e3526 0, #111d17 65%);
+  color: #e6efdf;
+  border-radius: 12px;
+  overflow: hidden;
+}
+.schematic-scene svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  min-height: 210px;
+  font-family: inherit;
+}
+.schematic-kicker {
+  fill: #91a589;
+  font-size: 10px;
+  letter-spacing: 1.2px;
+  font-weight: 650;
+}
+.schematic-label,
+.schematic-layer-label {
+  fill: #b7cab0;
+  font-size: 14px;
+}
+.schematic-layer-label {
+  fill: #b1d8ee;
+  font-size: 12px;
+}
+.schematic-earth-label {
+  fill: #8aafa1;
+  font-size: 20px;
+  letter-spacing: 7px;
+}
+.schematic-station-label {
+  fill: currentColor;
+  font-weight: 800;
+  font-size: 20px;
+}
+.schematic-empty {
+  fill: #c3d0ba;
+  font-size: 12px;
+}
+.schematic-tx {
+  color: #d1fa94;
+}
+.schematic-rx {
+  color: #f7ba7b;
+}
+.schematic-stations {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 0 24px 12px;
+}
+.schematic-stations p {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 3px 9px;
+  margin: 0;
+  font-size: 12px;
+  line-height: 1.4;
+}
+.schematic-stations b {
+  grid-row: span 2;
+  align-self: center;
+  font-size: 17px;
+}
+.schematic-stations p:last-child {
+  text-align: right;
+}
+.schematic-stations p:last-child b {
+  grid-column: 2;
+}
+.schematic-stations p:last-child span {
+  grid-column: 1;
+}
+.schematic-stations span:last-child {
+  color: #a1b19a;
+  font-size: 11px;
+}
+.schematic-scene figcaption {
+  padding: 12px 24px 16px;
+  border-top: 1px solid #2d3f30;
+  color: #a6b69e;
+  font-size: 12px;
+  line-height: 1.6;
+}
+.schematic-scene figcaption b {
+  color: #cfdec4;
+}
+.schematic-running .schematic-signal {
+  stroke-dasharray: 13 9;
+  animation: schematic-travel 850ms linear infinite;
+}
+@keyframes schematic-travel {
+  to {
+    stroke-dashoffset: -44;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .schematic-running .schematic-signal {
+    animation: none;
+    stroke-dasharray: none;
+  }
+}
+@media (max-width: 520px) {
+  .schematic-scene svg {
+    min-height: 180px;
+  }
+  .schematic-stations {
+    padding: 0 12px 12px;
+    gap: 10px;
+    flex-direction: column;
+  }
+  .schematic-stations p:last-child {
+    text-align: left;
+  }
+  .schematic-stations p:last-child b {
+    grid-column: 1;
+  }
+  .schematic-stations p:last-child span {
+    grid-column: 2;
+  }
+  .schematic-scene figcaption {
+    padding: 12px;
+    font-size: 12px;
+  }
+}

@@ -1,0 +1,101 @@
+/* Shared light-surface palette. Dark teaching scenes keep their own contrast. */
+.product-app .primary:hover:not(:disabled),
+.product-app .primary:active:not(:disabled) { background:#10594e; color:#fff; border-color:#10594e; }
+/* Override the global light hover treatment inside the dark rescue scene. */
+.product-app .rescue-scene .rescue-story-controls button { box-shadow:none; }
+.product-app .rescue-scene .rescue-story-controls button:hover:not(:disabled),
+.product-app .rescue-scene .rescue-story-controls button:active:not(:disabled) { background:#2b5261; color:#f2faf7; border-color:#91bcb6; box-shadow:none; }
+.product-app .rescue-scene .rescue-story-controls button[aria-pressed=true],
+.product-app .rescue-scene .rescue-story-controls button[aria-pressed=true]:hover:not(:disabled),
+.product-app .rescue-scene .rescue-story-controls button[aria-pressed=true]:active:not(:disabled) { background:#c3f0db; color:#173e36; border-color:#c3f0db; box-shadow:none; }
+.product-app .rescue-scene .rescue-story-controls button:focus-visible { outline:3px solid #f1cc85; outline-offset:3px; }
+.product-app .rescue-scene figcaption button { background:#173441; color:#e4f2eb; box-shadow:none; }
+.product-app .rescue-scene figcaption button:hover:not(:disabled),
+.product-app .rescue-scene figcaption button:active:not(:disabled) { background:#2b5261; color:#fff; border-color:#91bcb6; box-shadow:none; }
+:root { --workshop-paper:#f5f7fa; --workshop-sheet:#fff; --workshop-ink:#203447; --workshop-muted:#526579; --workshop-line:#d8e1e9; --workshop-blue:#236385; }
+.product-app { color:var(--workshop-ink); background:var(--workshop-paper); }
+.product-app .product-header { min-height:76px; height:auto; padding-block:12px; gap:16px; }
+.product-app .product-brand { background:transparent; border:0; box-shadow:none; white-space:nowrap; padding:0; }
+.product-app .product-brand small { white-space:normal; }
+.product-app .primary-nav { display:flex; gap:6px; padding:7px; margin-top:10px; background:#e9eef3; border:1px solid #d8e1e9; border-radius:12px; overflow:visible; flex-wrap:wrap; }
+.product-app .primary-nav button { flex:1 1 auto; justify-content:center; min-height:44px; padding:11px 15px; border:1px solid transparent; color:#42566b; font-size:13px; font-weight:600; background:transparent; border-radius:8px; }
+.product-app .primary-nav button:hover { background:#f7f9fc; color:#203447; }
+.product-app .primary-nav button[aria-current=page] { color:#164f70; background:#fff; border-color:#cbd9e3; box-shadow:0 2px 5px #213d5010; }
+.product-app .primary-nav button[aria-current=page]::after { display:none; }
+.product-app .nav-section-dot { width:6px; height:6px; opacity:1; }
+.product-app .secondary-nav { display:flex; flex-wrap:wrap; align-items:center; gap:5px; padding:10px 0 14px; }
+.product-app .secondary-nav button { min-height:38px; padding:8px 12px; font-size:12px; color:#506478; border:1px solid transparent; border-radius:7px; }
+.product-app .secondary-nav button:hover { background:#e9eff4; color:#203447; }
+.product-app .secondary-nav button[aria-current=page] { background:#e3eef5; color:#194f70; border-color:#cbdde8; }
+.product-app :is(button,input,select,textarea,summary):focus-visible { outline:3px solid #2582b3; outline-offset:3px; }
+.product-app :is(.workspace-views,.result-tabs,.mobile-workspace-switch,.lesson-phases) { gap:5px; padding:5px; background:#edf2f6; border:1px solid #d6e0e8; border-radius:10px; }
+.product-app :is(.workspace-views,.result-tabs,.mobile-workspace-switch,.lesson-phases) button { min-height:40px; border:1px solid transparent; border-radius:7px; padding:9px 12px; font-size:12px; color:#40596c; background:transparent; }
+.product-app :is(.workspace-views,.result-tabs,.mobile-workspace-switch,.lesson-phases) button[aria-pressed=true] { background:#236385; color:#fff; box-shadow:none; border-color:#236385; }
+.product-app :is(.workspace-views,.result-tabs,.mobile-workspace-switch,.lesson-phases) button:hover:not([aria-pressed=true]) { background:#dde8ef; color:#203447; }
+.product-app .tab-story { background:#fff; border-color:#d5e1e8; box-shadow:0 3px 12px #20344706; }
+.product-app .tab-story header { background:var(--story-tint); border-bottom:1px solid #dce5e9; margin-bottom:17px; }
+.product-app .tab-story header button { background:#ffffffc9; color:#3d5668; min-height:40px; }
+.product-app .tab-story-copy>p { color:#42596b; }
+.product-app .tab-story-steps button { min-height:62px; background:#f4f7fa; color:#3c5469; }
+.product-app .tab-story-steps button[aria-pressed=true] { color:#fff; background:var(--story-accent); }
+.product-app .tab-story-visual-footer button { background:#234b59; color:#f2faf7; min-height:36px; }
+.product-app .tab-story-visual-footer button:hover, .product-app .tab-story-visual-footer button[aria-pressed=true] { background:#365f69; color:#fff; }
+.product-app .experiment-bar { gap:8px; padding:12px; background:#fff; border:1px solid #d8e1e9; border-radius:10px; }
+.product-app .experiment-bar button { min-height:40px; border-radius:7px; }
+.product-app :is(input,select,textarea) { border-radius:7px; }
+.product-app .metric-grid>div { border-color:#d7e2e9; }
+.product-app .metric-explanation { color:#4c6275; }
+.product-app .radio-guide summary { display:flex; gap:12px; align-items:center; color:#29495e; }
+.product-app .radio-guide summary>span:nth-child(2) { display:flex; flex:1; min-width:0; flex-direction:column; align-items:flex-start; gap:3px; }
+.product-app .radio-guide summary b { color:#29495e; float:none; margin:0; font-size:13px; }
+.product-app .radio-guide summary small { color:#52697b; margin:0; line-height:1.5; }
+.product-app button:disabled { cursor:not-allowed; }
+.product-app :is(.df-focus-nav,.df-control-nav,.al-tabs) { display:flex; flex-wrap:wrap; gap:6px; background:#edf2f6; border:1px solid #d6e0e8; border-radius:10px; padding:7px; }
+.product-app :is(.df-focus-nav,.df-control-nav,.al-tabs) button { min-height:44px; padding:10px 12px; color:#304f65; border:1px solid #cfdae3; background:#fff; border-radius:7px; }
+.product-app :is(.df-focus-nav,.df-control-nav) button[aria-current],
+.product-app .al-tabs button[aria-pressed=true] { color:#fff; background:#236385; border-color:#236385; }
+.product-app .df-focus-nav .df-test { color:#203447; background:#f0cf86; border-color:#c7a24f; }
+.product-app .lesson-stage { max-height:none; overflow:visible; }
+@media (max-width:1149px) {
+  .product-app.focused-app .header-actions { padding-right:0; }
+  .product-app.focused-app .tutor-launcher { top:auto; bottom:14px; right:14px; }
+}
+@media (max-width:760px), (max-height:650px) {
+  .product-app .df-control-scroll { max-height:none; overflow:visible; }
+  .product-app .df-focus-nav { position:static; }
+  .product-app :is(.df-focus-nav,.df-control-nav,.al-tabs) button { flex:1 1 auto; }
+}
+@media(max-width:760px) {
+  .product-app { padding-bottom:90px; }
+  .product-app .product-header { flex-wrap:wrap; }
+  .product-app .header-actions { flex-wrap:wrap; justify-content:flex-end; }
+  .product-app .header-actions button { white-space:normal; }
+  .product-app { padding-inline:14px; }
+  .product-app .product-header { min-height:68px; padding-block:12px; }
+  .product-app .product-brand { font-size:20px; gap:8px; }
+  .product-app .product-brand small { font-size:10px; }
+  .product-app .header-actions { padding-right:0; gap:6px; }
+  .product-app .header-actions button { min-height:42px; font-size:11px; padding:8px; }
+  .product-app .primary-nav { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:4px; padding:5px; }
+  .product-app .primary-nav button { width:100%; min-width:0; min-height:44px; white-space:normal; font-size:12px; padding:9px 7px; line-height:1.3; }
+  .product-app .primary-nav button:last-child { grid-column:1 / -1; }
+  .product-app .secondary-nav { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:3px; padding:8px 0; }
+  .product-app .secondary-nav button { padding:8px 3px; min-height:44px; font-size:11px; line-height:1.3; white-space:normal; }
+  .product-app .secondary-nav>span { display:none; }
+  .product-app :is(.workspace-views,.result-tabs,.lesson-phases) { display:flex; flex-wrap:wrap; }
+  .product-app :is(.workspace-views,.result-tabs,.lesson-phases) button { flex:1 1 auto; min-height:44px; padding:8px; }
+  .product-app .tab-story { margin:13px 0; border-radius:12px; }
+  .product-app .tab-story h2 { font-size:23px; }
+  .product-app .tab-story header { padding:14px; gap:12px; }
+  .product-app .tab-story header button { flex:0 0 88px; font-size:10px; }
+  .product-app .tab-story-steps { gap:5px; }
+  .product-app .tab-story-steps button { padding:9px 7px; line-height:1.5; }
+  .product-app .tab-story-explanation { font-size:14px; line-height:1.65; }
+  .product-app .experiment-bar { flex-wrap:wrap; }
+  .product-app .experiment-bar>label { flex:1 1 100%; min-width:0; }
+  .product-app .experiment-bar input { width:100%; min-width:0; }
+  .product-app .experiment-bar button { flex:1 1 auto; min-height:44px; }
+  .product-app :is(input,select,textarea) { font-size:16px; max-width:100%; }
+  .product-app .tutor-launcher { top:auto; bottom:12px; right:12px; }
+}
+@media(prefers-reduced-motion:reduce) { .product-app * { transition:none !important; } }

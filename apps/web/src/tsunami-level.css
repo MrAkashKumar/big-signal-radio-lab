@@ -1,0 +1,361 @@
+.hospital-level {
+  color: #dce5d5;
+  padding: 12px 0 28px;
+}
+.hospital-demo-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 4px 0 20px;
+}
+.hospital-demo-heading > div:first-child {
+  max-width: 820px;
+}
+.hospital-demo-heading h1 {
+  font-size: clamp(28px, 3vw, 42px);
+  line-height: 1.08;
+  letter-spacing: -1px;
+  font-weight: 600;
+  margin: 9px 0 10px;
+}
+.hospital-demo .hospital-demo-heading p {
+  font-size: 14px;
+  line-height: 1.5;
+  color: #afbea4;
+  max-width: 740px;
+  margin: 0;
+}
+.hospital-demo-actions {
+  display: flex;
+  gap: 6px;
+  flex-shrink: 0;
+}
+.hospital-demo .hospital-demo-actions button {
+  font-size: 11px;
+  padding: 7px 10px;
+  color: #b6c6a8;
+  background: transparent;
+  border: 1px solid #3c4e33;
+  border-radius: 5px;
+  white-space: nowrap;
+}
+.hospital-demo-workspace {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 330px;
+  align-items: stretch;
+  border: 1px solid #3a4d32;
+  border-radius: 10px;
+  overflow: hidden;
+  background: #142016;
+}
+.hospital-demo-map {
+  min-width: 0;
+}
+.hospital-operator {
+  background: #1d2b1d;
+  padding: 22px;
+  border-left: 1px solid #3b4d32;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+.hospital-operator-header .eyebrow {
+  font-size: 9px;
+  letter-spacing: 0.12em;
+  color: #aabc98;
+}
+.hospital-operator-header h2 {
+  font-size: 25px;
+  line-height: 1.15;
+  letter-spacing: -0.6px;
+  margin: 9px 0;
+}
+.hospital-demo .hospital-operator-header p {
+  font-size: 11px;
+  line-height: 1.4;
+  color: #a7b99a;
+  margin: 0 0 20px;
+}
+.hospital-operator-message > span {
+  font-size: 9px;
+  color: #99ac8a;
+  letter-spacing: 0.04em;
+}
+.hospital-operator-message blockquote {
+  font-size: 17px;
+  line-height: 1.55;
+  margin: 10px 0 23px;
+  padding: 0;
+  color: #eef2e6;
+}
+.hospital-operator-settings {
+  border: 0;
+  padding: 0;
+  margin: 0 0 17px;
+  min-width: 0;
+}
+.hospital-operator-settings legend {
+  font-size: 11px;
+  color: #b8c9a6;
+  padding: 0;
+  margin-bottom: 12px;
+}
+.hospital-operator-choice {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 9px;
+}
+.hospital-operator-choice > span {
+  font-size: 12px;
+  color: #c3cfb7;
+}
+.hospital-operator-choice > div {
+  display: flex;
+  gap: 5px;
+}
+.hospital-demo .hospital-operator-choice button {
+  font-family: inherit;
+  font-size: 12px;
+  padding: 9px 10px;
+  line-height: 1.15;
+  background: #152218;
+  color: #b9c9aa;
+  border: 1px solid #536847;
+  border-radius: 5px;
+  min-width: 84px;
+}
+.hospital-demo .hospital-operator-choice button[aria-pressed="true"] {
+  background: #cedbb1;
+  color: #1b291a;
+  border-color: #cedbb1;
+}
+.hospital-operator-choice button small {
+  font-size: 9px;
+}
+.hospital-demo .hospital-operator-equipment {
+  font-size: 10px;
+  line-height: 1.5;
+  color: #91a784;
+  margin: 13px 0 0;
+}
+.hospital-demo .hospital-send-message {
+  font-family: inherit;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  min-height: 50px;
+  padding: 12px 16px;
+  font-size: 16px;
+  font-weight: 600;
+  background: #d2e3a9;
+  border: 1px solid #d2e3a9;
+  color: #1a2917;
+  border-radius: 6px;
+  width: 100%;
+  cursor: pointer;
+}
+.hospital-demo .hospital-send-message:hover:not(:disabled) {
+  background: #e1edc2;
+}
+.hospital-demo button:disabled {
+  cursor: default;
+  opacity: 0.55;
+}
+.hospital-operator-status {
+  min-height: 100px;
+  padding-top: 17px;
+}
+.hospital-demo .hospital-operator-status p {
+  font-size: 13px;
+  line-height: 1.5;
+  color: #b6c6a6;
+  margin: 0;
+}
+.hospital-operator-status strong {
+  display: block;
+  font-size: 19px;
+  line-height: 1.2;
+  color: #e4f0cb;
+  margin: 0 0 8px;
+}
+.hospital-operator-status small {
+  display: block;
+  font-size: 10px;
+  line-height: 1.5;
+  color: #97ad89;
+  margin-top: 9px;
+}
+.hospital-demo-details {
+  margin-top: 15px;
+  border-top: 1px solid #34462e;
+  padding: 4px 0;
+  font-size: 12px;
+}
+.hospital-demo-details > summary {
+  cursor: pointer;
+  color: #c1d1b1;
+  padding: 13px 0;
+}
+.hospital-demo-evidence {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  padding: 10px 0 16px;
+}
+.hospital-demo-evidence h2 {
+  font-size: 24px;
+  line-height: 1.2;
+  margin: 7px 0 16px;
+  max-width: 400px;
+}
+.hospital-demo-evidence h3 {
+  font-size: 16px;
+  margin: 22px 0 10px;
+}
+.hospital-demo .hospital-demo-evidence p {
+  font-size: 12px;
+  line-height: 1.6;
+  color: #aabb9e;
+  margin: 8px 0;
+}
+.hospital-demo .hospital-demo-evidence .hospital-evidence-note {
+  font-size: 11px;
+  color: #8ea381;
+}
+.hospital-demo a {
+  color: #c8ddaf;
+  text-underline-offset: 3px;
+  font-size: 11px;
+}
+.hospital-demo-sources {
+  padding-left: 17px;
+}
+.hospital-demo-sources li {
+  margin: 9px 0;
+}
+.hospital-demo-techniques {
+  list-style: none;
+  padding: 0;
+}
+.hospital-demo-techniques li {
+  margin-top: 16px;
+}
+.hospital-demo-techniques strong {
+  font-size: 12px;
+  color: #cad8bd;
+}
+.hospital-demo-lessons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 8px 0 18px;
+}
+.hospital-demo .hospital-demo-lessons button {
+  font: inherit;
+  font-size: 11px;
+  background: #21301e;
+  border: 1px solid #4a5b3f;
+  color: #ccdcbc;
+  padding: 9px 12px;
+  border-radius: 5px;
+}
+.hospital-demo button:focus-visible,
+.hospital-demo summary:focus-visible,
+.hospital-demo a:focus-visible {
+  outline: 2px solid #d3efb1;
+  outline-offset: 3px;
+}
+.tsunami-entry {
+  display: flex;
+  gap: 24px;
+  align-items: center;
+  width: 100%;
+  margin: 0 0 20px;
+  text-align: left;
+  padding: 20px;
+}
+.tsunami-entry strong {
+  flex: 1;
+}
+@media (max-width: 1050px) {
+  .hospital-demo-workspace {
+    grid-template-columns: minmax(0, 1fr) 300px;
+  }
+  .hospital-operator {
+    padding: 19px;
+  }
+  .hospital-demo .hospital-operator-choice button {
+    min-width: 74px;
+    padding: 8px;
+  }
+  .hospital-demo-heading {
+    align-items: flex-start;
+    gap: 14px;
+  }
+}
+@media (max-width: 760px) {
+  .hospital-demo-heading {
+    flex-direction: column;
+    gap: 12px;
+    padding-bottom: 16px;
+  }
+  .hospital-demo-heading h1 {
+    font-size: 30px;
+  }
+  .hospital-demo .hospital-demo-heading p {
+    font-size: 13px;
+  }
+  .hospital-demo-workspace {
+    display: flex;
+    flex-direction: column;
+  }
+  .hospital-demo-map {
+    order: 2;
+  }
+  .hospital-operator {
+    order: 1;
+    border-left: 0;
+    border-bottom: 1px solid #3b4d32;
+    padding: 20px;
+  }
+  .hospital-operator-message blockquote {
+    font-size: 18px;
+    margin-bottom: 18px;
+  }
+  .hospital-operator-header p {
+    margin-bottom: 14px;
+  }
+  .hospital-operator-choice > div {
+    flex: 1;
+    justify-content: flex-end;
+  }
+  .hospital-demo .hospital-operator-choice button {
+    min-width: 100px;
+  }
+  .hospital-operator-status {
+    min-height: 0;
+    padding-top: 14px;
+  }
+  .hospital-demo-evidence {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  .tsunami-entry {
+    flex-direction: column;
+    align-items: start;
+    gap: 8px;
+  }
+}
+
+.product-app .hospital-demo-heading h1 {
+  font-size: clamp(28px, 2.7vw, 36px);
+  line-height: 1.1;
+  margin: 8px 0 10px;
+}
+.hospital-demo .hospital-operator-status {
+  min-height: 45px;
+}
