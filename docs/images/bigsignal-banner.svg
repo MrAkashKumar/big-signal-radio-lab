@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="430" viewBox="0 0 1280 430" role="img" aria-labelledby="title desc">
+  <title id="title">BIG SIGNAL — Radio Science Lab</title>
+  <desc id="desc">A conceptual radio path crosses a mountain from base camp to a remote team. See the signal. Understand the science. Not a simulation result.</desc>
+  <defs>
+    <linearGradient id="bg" x2="1" y2="1"><stop stop-color="#102937"/><stop offset="1" stop-color="#174c59"/></linearGradient>
+    <linearGradient id="hill" x2="0" y2="1"><stop stop-color="#588c85"/><stop offset="1" stop-color="#234752"/></linearGradient>
+  </defs>
+  <rect width="1280" height="430" rx="24" fill="url(#bg)"/>
+  <g fill="none" stroke="#7cb4b4" opacity=".12"><circle cx="1060" cy="150" r="85"/><circle cx="1060" cy="150" r="150"/><circle cx="1060" cy="150" r="230"/></g>
+  <g font-family="Arial, Helvetica, sans-serif">
+    <text x="64" y="77" font-size="16" letter-spacing="4" fill="#9bdccb">BUILD · EXPERIMENT · DISCOVER</text>
+    <text x="60" y="164" font-size="76" font-weight="800" fill="#fff">BIG SIGNAL</text>
+    <text x="64" y="220" font-size="34" fill="#a6e4d2">Radio Science Lab</text>
+    <text x="64" y="282" font-size="23" fill="#ecf3f6">See the signal. Understand the science.</text>
+    <text x="64" y="319" font-size="18" fill="#c1d3dc">Predict. Send. Explain. Try again.</text>
+    <rect x="64" y="355" width="293" height="35" rx="17" fill="#a6e4d2"/>
+    <text x="84" y="378" font-size="14" font-weight="700" fill="#153b43">NO HARDWARE. JUST CURIOSITY.</text>
+  </g>
+  <path d="M700 345 827 178 928 283 1032 214 1240 345Z" fill="url(#hill)"/>
+  <path d="M675 346 804 285 887 321 998 273 1240 348 1240 375 675 375Z" fill="#345e65"/>
+  <path d="M733 291 Q951 12 1163 294" fill="none" stroke="#edcd84" stroke-width="4" stroke-dasharray="9 9"/>
+  <g stroke="#d3eee5" stroke-width="4" fill="none"><path d="M733 338V278m-18 13h36m-31 47 13-38 13 38M1163 338V278m-18 13h36m-31 47 13-38 13 38"/></g>
+  <g fill="#fff" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="700"><text x="698" y="366">BASE CAMP</text><text x="1110" y="366">REMOTE TEAM</text></g>
+  <text x="805" y="406" fill="#bed4d9" font-family="Arial, Helvetica, sans-serif" font-size="12">CONCEPT ILLUSTRATION · NOT COMPUTED COVERAGE</text>
+</svg>

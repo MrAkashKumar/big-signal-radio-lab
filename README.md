@@ -1,4 +1,10 @@
-# B I G S I G N A L
+# BIG SIGNAL — Radio Science Lab
+
+![BIG SIGNAL — Radio Science Lab. See the signal. Understand the science.](docs/images/bigsignal-banner.svg)
+
+**See the signal. Understand the science.**
+
+[Get started](#run-the-product) · [First experiment](#your-first-experiment-step-by-step) · [Website preview](#website-preview) · [Documentation](#documentation)
 
 An interactive educational radio laboratory for students, teachers, and curious people. Build a connection between two radios, see what gets in the way, and discover how to improve it. No radio hardware or account is required.
 
@@ -16,7 +22,15 @@ The same ideas help explain field expeditions, remote communities, and disaster-
 
 For contributors, see the [project structure and code placement guide](docs/PROJECT_STRUCTURE.md).
 
-Install [Bun](https://bun.sh/) before starting. From the repository root:
+1. Install Git and [Bun](https://bun.sh/). The repository pins Bun `1.3.14` in `package.json`.
+2. Clone the project and enter the repository:
+
+```sh
+git clone https://github.com/EdmundLimBoEn/BIGSIGNAL-astra-hackathon-2026.git
+cd BIGSIGNAL-astra-hackathon-2026
+```
+
+3. Install the locked dependencies and start the website:
 
 ```sh
 bun install --frozen-lockfile
@@ -24,6 +38,41 @@ bun run dev
 ```
 
 Open the local URL printed by Vite (normally `http://127.0.0.1:5173/`). Start with **Enter the hospital mission** on the home screen, choose the guided lessons, or select a mode in the navigation. Returning visits can restore your locally saved workspace. The core app does not require a cloud backend or API key.
+
+Stop the development server with `Ctrl+C` in its terminal. If the normal port is occupied, use the URL Vite prints instead.
+
+## Website preview
+
+These are actual captures of the local website, taken on 19 September 2026 at the available browser width. The banner above is a project illustration, not a screenshot or calculated radio path. Layout adapts to screen size.
+
+| Start with a human story | Explore the illustrated challenge |
+| --- | --- |
+| ![Website home: Phones are down. Hope isn't. with navigation and hospital mission button.](docs/images/website-home.jpg) | ![Website rescue story: a hospital, obstructing terrain, hilltop relay, and relief base.](docs/images/website-rescue-story.jpg) |
+
+The rescue illustration explains a scenario; only the laboratory's engine results assess a modeled connection. See [how to update these pictures](docs/images/README.md).
+
+## Your first experiment, step by step
+
+1. Select **Learn**, then the first beginner lesson, **What even is radio?** Read its brief. Later lessons may be locked until the previous lesson is completed; each tier has its own starting point.
+2. Follow the lesson into **Experiment**. For unrestricted exploration, choose **Radio lab** instead.
+3. Find **Your radio**. On a narrow screen, select **Adjust radio**. Desktop radio settings scroll independently; mobile settings use page scrolling.
+4. Choose a prediction: **Strong**, **Marginal**, or **No link**. This enables **SEND IT**; your guess does not determine the engine result.
+5. Press **SEND IT**. On a narrow screen, switch to **Explore & results**, then **Results**. Read the status, explanation, and numeric results; inspect **WHY** and **MATH** where available.
+6. Change only one setting, such as transmitter power or antenna height, and run again. Compare the actual outcomes. More power does not remove an obstruction or guarantee communication.
+7. In a lesson, finish **Reflect** and the transfer question. In Radio lab, give the experiment a name and choose **Save**; use **Export** for a portable backup.
+
+**Want a guided introduction?** Select **Project walkthrough**. Its visual tour works locally. Spoken explanations require the separately configured tutor, consent, microphone permission, and internet access; follow [Tutor setup](docs/TUTOR_SETUP.md).
+
+### If something seems unavailable
+
+| What you see | What to do |
+| --- | --- |
+| SEND IT is disabled | Choose a prediction first and check any validation message. |
+| A lesson is locked | Complete its prerequisite, or use Radio lab for free exploration. |
+| Controls are not visible | Open Adjust radio on small screens; scroll Radio settings on desktop. |
+| 3D is slow or unavailable | Select POTATO graphics for the lightweight scene. Physics stays the same. |
+| Ask Signal cannot connect | Core lessons still work. Check the optional server setup; a configured status does not prove provider access. |
+| An old version appears offline | Reconnect, close old tabs, reopen, and wait for the updated offline-ready status. Export important work before clearing site data. |
 
 ## Work in one place
 
@@ -102,6 +151,18 @@ bun x vite preview apps/web --host 127.0.0.1 --port 4180
 
 The production artifact is `apps/web/dist`. Load the preview once and wait for **Ready offline**. The core lessons, simulations, and bundled assets then work on an offline reload. Close old tabs and reopen after updates. The development server does not install an offline cache.
 
+## Documentation
+
+| Document | Who it helps / what it answers |
+| --- | --- |
+| [BRD — Business requirements](BRD.md) | Stakeholders: why the product exists, audiences, scope, value, risks, and proposed success measures. |
+| [PRD — Product requirements](PRD.md) | Product and engineering: user journeys, functional requirements, priorities, and acceptance criteria. |
+| [Architecture](docs/ARCHITECTURE.md) | Developers: components, simulation boundaries, data flow, storage, optional tutor, and deployment. |
+| [Project structure](docs/PROJECT_STRUCTURE.md) | Contributors: where code belongs and how to verify a change. |
+| [Tutor setup](docs/TUTOR_SETUP.md) | Operators: optional text/voice setup, consent, security, and live verification. |
+| [Cloudflare deployment](docs/CLOUDFLARE.md) | Maintainers: configured Worker, deployment checks, and secret provisioning. |
+| [Screenshot guide](docs/images/README.md) | Documentation authors: where images live and how to embed or refresh them. |
+
 ## Inspect the engineering
 
 | Location | Responsibility |
@@ -127,4 +188,4 @@ Model assumptions, equations, units, and confidence appear in MATH and the equip
 - [Original build plan](docs/BUILD_PLAN.md)
 - [Collaboration workflow](CONTRIBUTING.md)
 
-The stack is TypeScript, React, Vite, Three.js, React Three Fiber, and Vitest with the committed Bun lockfile. The optional Bun server uses the OpenAI Agents SDK and Realtime API; its key stays on the server. There is no configured hosted deployment target.
+The stack is TypeScript, React, Vite, Three.js, React Three Fiber, and Vitest with the committed Bun lockfile. The optional Bun server uses the OpenAI Agents SDK and Realtime API; its key stays on the server. A Cloudflare Worker and custom-domain deployment are configured in the repository; see [deployment instructions](docs/CLOUDFLARE.md). Configuration alone does not verify that a hosted instance or its tutor is currently available.
